@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Analistas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Id regional</th>
+      <th>Fone contato</th>
+      <th>Funcao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @analistas.each do |analista| %>
+      <tr>
+        <td><%= analista.nome %></td>
+        <td><%= analista.email %></td>
+        <td><%= analista.id_regional %></td>
+        <td><%= analista.fone_contato %></td>
+        <td><%= analista.funcao %></td>
+        <td><%= link_to 'Show', analista %></td>
+        <td><%= link_to 'Edit', edit_analista_path(analista) %></td>
+        <td><%= link_to 'Destroy', analista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Analista', new_analista_path %>

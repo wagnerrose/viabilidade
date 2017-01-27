@@ -1,0 +1,2 @@
+class Analista < ApplicationRecord
+end

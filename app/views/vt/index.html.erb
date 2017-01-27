@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vt</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vt numero</th>
+      <th>Id cliente</th>
+      <th>Data solicitacao</th>
+      <th>Solicitante</th>
+      <th>Analista</th>
+      <th>Servico</th>
+      <th>Uf origem</th>
+      <th>Origem</th>
+      <th>Uf destino</th>
+      <th>Destino</th>
+      <th>Popa</th>
+      <th>Popb</th>
+      <th>Resultado vt</th>
+      <th>Justificativa vt</th>
+      <th>Data resultado</th>
+      <th>Comentario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vt.each do |vt| %>
+      <tr>
+        <td><%= vt.vt_numero %></td>
+        <td><%= vt.id_cliente %></td>
+        <td><%= vt.data_solicitacao %></td>
+        <td><%= vt.solicitante %></td>
+        <td><%= vt.analista %></td>
+        <td><%= vt.servico %></td>
+        <td><%= vt.uf_origem %></td>
+        <td><%= vt.origem %></td>
+        <td><%= vt.uf_destino %></td>
+        <td><%= vt.destino %></td>
+        <td><%= vt.popa %></td>
+        <td><%= vt.popb %></td>
+        <td><%= vt.resultado_vt %></td>
+        <td><%= vt.justificativa_vt %></td>
+        <td><%= vt.data_resultado %></td>
+        <td><%= vt.comentario %></td>
+        <td><%= link_to 'Show', vt %></td>
+        <td><%= link_to 'Edit', edit_vt_path(vt) %></td>
+        <td><%= link_to 'Destroy', vt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vt', new_vt_path %>

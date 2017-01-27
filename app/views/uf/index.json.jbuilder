@@ -1,0 +1,1 @@
+json.array! @uf, partial: 'uf/uf', as: :uf

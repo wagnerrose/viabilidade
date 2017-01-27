@@ -1,0 +1,42 @@
+<%= form_for(analista) do |f| %>
+  <% if analista.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analista.errors.count, "error") %> prohibited this analista from being saved:</h2>
+
+      <ul>
+      <% analista.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_regional %>
+    <%= f.text_field :id_regional %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fone_contato %>
+    <%= f.text_field :fone_contato %>
+  </div>
+
+  <div class="field">
+    <%= f.label :funcao %>
+    <%= f.text_field :funcao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

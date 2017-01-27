@@ -1,0 +1,32 @@
+<%= form_for(justificativa) do |f| %>
+  <% if justificativa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(justificativa.errors.count, "error") %> prohibited this justificativa from being saved:</h2>
+
+      <ul>
+      <% justificativa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cod_justificativa %>
+    <%= f.text_field :cod_justificativa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

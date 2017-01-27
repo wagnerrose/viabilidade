@@ -1,0 +1,32 @@
+<%= form_for(localidade) do |f| %>
+  <% if localidade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(localidade.errors.count, "error") %> prohibited this localidade from being saved:</h2>
+
+      <ul>
+      <% localidade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf %>
+    <%= f.text_field :uf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cod_localidade %>
+    <%= f.text_field :cod_localidade %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

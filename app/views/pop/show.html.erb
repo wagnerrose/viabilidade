@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pop.nome %>
+</p>
+
+<p>
+  <strong>Designacao:</strong>
+  <%= @pop.designacao %>
+</p>
+
+<p>
+  <strong>Detentor:</strong>
+  <%= @pop.detentor %>
+</p>
+
+<p>
+  <strong>Uf:</strong>
+  <%= @pop.uf %>
+</p>
+
+<p>
+  <strong>Cod localidade:</strong>
+  <%= @pop.cod_localidade %>
+</p>
+
+<%= link_to 'Edit', edit_pop_path(@pop) %> |
+<%= link_to 'Back', pop_index_path %>

@@ -1,0 +1,1 @@
+json.array! @pop, partial: 'pop/pop', as: :pop

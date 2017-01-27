@@ -1,0 +1,97 @@
+<%= form_for(vt) do |f| %>
+  <% if vt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vt.errors.count, "error") %> prohibited this vt from being saved:</h2>
+
+      <ul>
+      <% vt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vt_numero %>
+    <%= f.text_field :vt_numero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :id_cliente %>
+    <%= f.number_field :id_cliente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_solicitacao %>
+    <%= f.date_select :data_solicitacao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :solicitante %>
+    <%= f.text_field :solicitante %>
+  </div>
+
+  <div class="field">
+    <%= f.label :analista %>
+    <%= f.text_field :analista %>
+  </div>
+
+  <div class="field">
+    <%= f.label :servico %>
+    <%= f.text_field :servico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf_origem %>
+    <%= f.text_field :uf_origem %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origem %>
+    <%= f.text_field :origem %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf_destino %>
+    <%= f.text_field :uf_destino %>
+  </div>
+
+  <div class="field">
+    <%= f.label :destino %>
+    <%= f.text_field :destino %>
+  </div>
+
+  <div class="field">
+    <%= f.label :popa %>
+    <%= f.text_field :popa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :popb %>
+    <%= f.text_field :popb %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resultado_vt %>
+    <%= f.text_field :resultado_vt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :justificativa_vt %>
+    <%= f.text_field :justificativa_vt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_resultado %>
+    <%= f.date_select :data_resultado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comentario %>
+    <%= f.text_area :comentario %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

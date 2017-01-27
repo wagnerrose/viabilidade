@@ -1,0 +1,1 @@
+json.array! @justificativas, partial: 'justificativas/justificativa', as: :justificativa

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @analista.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @analista.email %>
+</p>
+
+<p>
+  <strong>Id regional:</strong>
+  <%= @analista.id_regional %>
+</p>
+
+<p>
+  <strong>Fone contato:</strong>
+  <%= @analista.fone_contato %>
+</p>
+
+<p>
+  <strong>Funcao:</strong>
+  <%= @analista.funcao %>
+</p>
+
+<%= link_to 'Edit', edit_analista_path(@analista) %> |
+<%= link_to 'Back', analistas_path %>

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vt_numero: MyString
+  id_cliente: 1
+  data_solicitacao: 2017-01-27
+  solicitante: MyString
+  analista: MyString
+  servico: MyString
+  uf_origem: MyString
+  origem: MyString
+  uf_destino: MyString
+  destino: MyString
+  popa: MyString
+  popb: MyString
+  resultado_vt: MyString
+  justificativa_vt: MyString
+  data_resultado: 2017-01-27
+  comentario: MyText
+
+two:
+  vt_numero: MyString
+  id_cliente: 1
+  data_solicitacao: 2017-01-27
+  solicitante: MyString
+  analista: MyString
+  servico: MyString
+  uf_origem: MyString
+  origem: MyString
+  uf_destino: MyString
+  destino: MyString
+  popa: MyString
+  popb: MyString
+  resultado_vt: MyString
+  justificativa_vt: MyString
+  data_resultado: 2017-01-27
+  comentario: MyText

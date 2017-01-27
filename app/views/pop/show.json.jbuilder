@@ -1,0 +1,1 @@
+json.partial! "pop/pop", pop: @pop
