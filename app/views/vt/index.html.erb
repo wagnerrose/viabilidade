@@ -5,22 +5,22 @@
 <table>
   <thead>
     <tr>
-      <th>Vt numero</th>
-      <th>Id cliente</th>
-      <th>Data solicitacao</th>
+      <th>Número VT</th>
+      <th>Cliente</th>
+      <th>Data Solicitação</th>
       <th>Solicitante</th>
       <th>Analista</th>
-      <th>Servico</th>
-      <th>Uf origem</th>
+      <th>Serviço</th>
+      <th>UF Origem</th>
       <th>Origem</th>
-      <th>Uf destino</th>
+      <th>UF Destino</th>
       <th>Destino</th>
-      <th>Popa</th>
-      <th>Popb</th>
+      <th>POP A</th>
+      <th>POP B</th>
       <th>Resultado vt</th>
       <th>Justificativa vt</th>
-      <th>Data resultado</th>
-      <th>Comentario</th>
+      <th>Data do Resultado</th>
+      <th>Comentário</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -44,9 +44,9 @@
         <td><%= vt.justificativa_vt %></td>
         <td><%= vt.data_resultado %></td>
         <td><%= vt.comentario %></td>
-        <td><%= link_to 'Show', vt %></td>
-        <td><%= link_to 'Edit', edit_vt_path(vt) %></td>
-        <td><%= link_to 'Destroy', vt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', vt %></td>
+        <td><%= link_to 'Editar', edit_vt_path(vt) %></td>
+        <td><%= link_to 'Apagar', vt, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -54,4 +54,4 @@
 
 <br>
 
-<%= link_to 'New Vt', new_vt_path %>
+<%= link_to 'Nova Viabilidade', new_vt_path %>

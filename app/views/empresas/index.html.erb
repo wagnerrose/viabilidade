@@ -6,12 +6,12 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Endereco</th>
+      <th>Endereço</th>
       <th>Cidade</th>
-      <th>Uf</th>
-      <th>Nome contato</th>
-      <th>Telefone contato</th>
-      <th>Cnpj</th>
+      <th>UF</th>
+      <th>Nome de Contato</th>
+      <th>Telefone Cidadeontato</th>
+      <th>CNPJ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +26,9 @@
         <td><%= empresa.nome_contato %></td>
         <td><%= empresa.telefone_contato %></td>
         <td><%= empresa.cnpj %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', empresa %></td>
+        <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+        <td><%= link_to 'Apagar', empresa, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Empresa', new_empresa_path %>
+<%= link_to 'Cadastrar nova Empresa', new_empresa_path %>

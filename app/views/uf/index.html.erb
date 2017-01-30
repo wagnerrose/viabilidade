@@ -16,9 +16,9 @@
       <tr>
         <td><%= uf.nome %></td>
         <td><%= uf.sigla %></td>
-        <td><%= link_to 'Show', uf %></td>
-        <td><%= link_to 'Edit', edit_uf_path(uf) %></td>
-        <td><%= link_to 'Destroy', uf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', uf %></td>
+        <td><%= link_to 'Editar', edit_uf_path(uf) %></td>
+        <td><%= link_to 'Apagar', uf, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Uf', new_uf_path %>
+<%= link_to 'Nova UF', new_uf_path %>

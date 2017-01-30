@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Uf</th>
-      <th>Cod localidade</th>
+      <th>UF</th>
+      <th>Código Localidade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= localidade.nome %></td>
         <td><%= localidade.uf %></td>
         <td><%= localidade.cod_localidade %></td>
-        <td><%= link_to 'Show', localidade %></td>
-        <td><%= link_to 'Edit', edit_localidade_path(localidade) %></td>
-        <td><%= link_to 'Destroy', localidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', localidade %></td>
+        <td><%= link_to 'Editar', edit_localidade_path(localidade) %></td>
+        <td><%= link_to 'Apagar', localidade, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Localidade', new_localidade_path %>
+<%= link_to 'Cadastrar nova Localidade', new_localidade_path %>

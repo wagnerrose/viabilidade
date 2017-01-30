@@ -8,8 +8,8 @@
       <th>Nome</th>
       <th>Email</th>
       <th>Id regional</th>
-      <th>Fone contato</th>
-      <th>Funcao</th>
+      <th>Fone Contato</th>
+      <th>Função</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +22,9 @@
         <td><%= analista.id_regional %></td>
         <td><%= analista.fone_contato %></td>
         <td><%= analista.funcao %></td>
-        <td><%= link_to 'Show', analista %></td>
-        <td><%= link_to 'Edit', edit_analista_path(analista) %></td>
-        <td><%= link_to 'Destroy', analista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', analista %></td>
+        <td><%= link_to 'Editar', edit_analista_path(analista) %></td>
+        <td><%= link_to 'Apagar', analista, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Analista', new_analista_path %>
+<%= link_to 'Cadastro de novo Analista', new_analista_path %>

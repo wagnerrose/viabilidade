@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Designacao</th>
+      <th>Designação</th>
       <th>Detentor</th>
-      <th>Uf</th>
-      <th>Cod localidade</th>
+      <th>UF</th>
+      <th>Código Localidade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +22,9 @@
         <td><%= pop.detentor %></td>
         <td><%= pop.uf %></td>
         <td><%= pop.cod_localidade %></td>
-        <td><%= link_to 'Show', pop %></td>
-        <td><%= link_to 'Edit', edit_pop_path(pop) %></td>
-        <td><%= link_to 'Destroy', pop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', pop %></td>
+        <td><%= link_to 'Editar', edit_pop_path(pop) %></td>
+        <td><%= link_to 'Apagar', pop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Pop', new_pop_path %>
+<%= link_to 'Cadastrar Novo POP', new_pop_path %>
