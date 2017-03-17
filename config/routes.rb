@@ -9,5 +9,15 @@ Rails.application.routes.draw do
   resources :empresas
   resources :analistas
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'vt#index'
+  root 'welcome#index'
+  get 'viabilidade' => 'vt#index'
+  get 'pop' => 'pop#index'
+  get 'justificativas' => 'justificativas#index'
+  get 'localidades' => 'localidades#index'
+  get 'servicos' => 'servicos#index'
+  get 'uf' => 'uf#index'
+  get 'regionais' => 'regionais#index'
+  get 'empresas' => 'empresas#index'
+  get 'analistas' => 'analistas#index'
+  
 end
