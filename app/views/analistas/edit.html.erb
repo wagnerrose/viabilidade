@@ -1,6 +1,5 @@
-<h1>Editar Analista</h1>
-
-<%= render 'form', analista: @analista %>
-
-<%= link_to 'Mostrar', @analista %> |
-<%= link_to 'Voltar', analistas_path %>
+<%- model_class = Analista -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

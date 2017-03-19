@@ -1,6 +1,5 @@
-<h1>Editar POP</h1>
-
-<%= render 'form', pop: @pop %>
-
-<%= link_to 'Mostrar', @pop %> |
-<%= link_to 'Voltar', pop_index_path %>
+<%- model_class = Pop -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

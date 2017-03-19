@@ -1,6 +1,5 @@
-<h1>Editing Servico</h1>
-
-<%= render 'form', servico: @servico %>
-
-<%= link_to 'Mostar', @servico %> |
-<%= link_to 'Voltar', servicos_path %>
+<%- model_class = Servico -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

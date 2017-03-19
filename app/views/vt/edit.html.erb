@@ -1,6 +1,5 @@
-<h1>Alterar Viabilidade</h1>
-
-<%= render 'form', vt: @vt %>
-
-<%= link_to 'Mostrar', @vt %> |
-<%= link_to 'Voltar', vt_index_path %>
+<%- model_class = Vt -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

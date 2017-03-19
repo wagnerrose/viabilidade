@@ -1,42 +1,62 @@
-<%= form_for(analista) do |f| %>
-  <% if analista.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(analista.errors.count, "error") %> prohibited this analista from being saved:</h2>
+<%= form_for @analista, :html => { :class => "form-horizontal analista" } do |f| %>
 
-      <ul>
-      <% analista.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @analista.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@analista.errors.count, "error") %> prohibited this analista from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @analista.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :id_regional, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :id_regional, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:id_regional) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fone_contato, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fone_contato, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fone_contato) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :funcao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :funcao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:funcao) %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                analistas_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :id_regional %>
-    <%= f.text_field :id_regional %>
-  </div>
-
-  <div class="field">
-    <%= f.label :fone_contato %>
-    <%= f.text_field :fone_contato %>
-  </div>
-
-  <div class="field">
-    <%= f.label :funcao %>
-    <%= f.text_field :funcao %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

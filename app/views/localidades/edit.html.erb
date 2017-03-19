@@ -1,6 +1,5 @@
-<h1>Editing Localidade</h1>
-
-<%= render 'form', localidade: @localidade %>
-
-<%= link_to 'Mostrar', @localidade %> |
-<%= link_to 'Voltar', localidades_path %>
+<%- model_class = Localidade -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

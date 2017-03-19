@@ -1,5 +1,5 @@
-<h1>Cadastro de nova Regional</h1>
-
-<%= render 'form', regional: @regional %>
-
-<%= link_to 'Voltar', regionais_path %>
+<%- model_class = Regional -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

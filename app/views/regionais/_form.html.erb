@@ -1,27 +1,41 @@
-<%= form_for(regional) do |f| %>
-  <% if regional.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(regional.errors.count, "error") %> prohibited this regional from being saved:</h2>
+<%= form_for @regional, :html => { :class => "form-horizontal regional" } do |f| %>
 
-      <ul>
-      <% regional.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @regional.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@regional.errors.count, "error") %> prohibited this regional from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @regional.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :codigo_regional %>
-    <%= f.text_field :codigo_regional %>
+  <div class="form-group">
+    <%= f.label :codigo_regional, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :codigo_regional, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:codigo_regional) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
   </div>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                regionais_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

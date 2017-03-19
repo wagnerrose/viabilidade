@@ -1,27 +1,41 @@
-<%= form_for(uf) do |f| %>
-  <% if uf.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(uf.errors.count, "error") %> prohibited this uf from being saved:</h2>
+<%= form_for @uf, :html => { :class => "form-horizontal uf" } do |f| %>
 
-      <ul>
-      <% uf.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @uf.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@uf.errors.count, "error") %> prohibited this uf from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @uf.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sigla, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :sigla, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sigla) %>
   </div>
 
-  <div class="field">
-    <%= f.label :sigla %>
-    <%= f.text_field :sigla %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                uf_index_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

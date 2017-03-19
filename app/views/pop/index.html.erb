@@ -1,35 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pop</h1>
-
-<table>
+<%- model_class = Pop -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Designação</th>
-      <th>Detentor</th>
-      <th>UF</th>
-      <th>Código Localidade</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:designacao) %></th>
+      <th><%= model_class.human_attribute_name(:detentor) %></th>
+      <th><%= model_class.human_attribute_name(:uf) %></th>
+      <th><%= model_class.human_attribute_name(:cod_localidade) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @pop.each do |pop| %>
       <tr>
+        <td><%= link_to pop.id, pop_path(pop) %></td>
         <td><%= pop.nome %></td>
         <td><%= pop.designacao %></td>
         <td><%= pop.detentor %></td>
         <td><%= pop.uf %></td>
         <td><%= pop.cod_localidade %></td>
-        <td><%= link_to 'Mostrar', pop %></td>
-        <td><%= link_to 'Editar', edit_pop_path(pop) %></td>
-        <td><%= link_to 'Apagar', pop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l pop.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      pop_path(pop), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_pop_path(pop), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      pop_path(pop),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Cadastrar Novo POP', new_pop_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_pop_path,
+            :class => 'btn btn-primary' %>
