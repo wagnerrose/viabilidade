@@ -10,28 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127181937) do
+ActiveRecord::Schema.define(version: 20170322171103) do
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "admin_useres", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_useres_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_useres_on_reset_password_token", unique: true
+  end
 
   create_table "analistas", force: :cascade do |t|
     t.string   "nome"
     t.string   "email"
-    t.string   "id_regional"
     t.string   "fone_contato"
     t.string   "funcao"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "regional_id"
+    t.index ["regional_id"], name: "index_analistas_on_regional_id"
   end
 
   create_table "empresas", force: :cascade do |t|
-    t.string   "nome"
     t.string   "endereco"
     t.string   "cidade"
     t.string   "uf"
     t.string   "nome_contato"
-    t.string   "telefone_contato"
     t.string   "cnpj"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "nome_fantasia"
+    t.string   "email"
+    t.string   "sap"
+    t.string   "celular"
+    t.string   "fixo"
+    t.string   "cep"
+    t.string   "razao"
   end
 
   create_table "justificativas", force: :cascade do |t|
@@ -61,17 +98,17 @@ ActiveRecord::Schema.define(version: 20170127181937) do
   end
 
   create_table "regionais", force: :cascade do |t|
-    t.string   "codigo_regional"
+    t.string   "cod_regional"
     t.string   "nome"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "servicos", force: :cascade do |t|
     t.string   "nome"
-    t.integer  "codigo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "codigo"
   end
 
   create_table "uf", force: :cascade do |t|
@@ -81,9 +118,26 @@ ActiveRecord::Schema.define(version: 20170127181937) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "nome"
+    t.index ["email"], name: "index_usuarios_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
+  end
+
   create_table "vt", force: :cascade do |t|
     t.string   "vt_numero"
-    t.integer  "id_cliente"
     t.date     "data_solicitacao"
     t.string   "solicitante"
     t.string   "analista"
@@ -100,6 +154,8 @@ ActiveRecord::Schema.define(version: 20170127181937) do
     t.text     "comentario"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "empresa_id"
+    t.index ["empresa_id"], name: "index_vt_on_empresa_id"
   end
 
 end

@@ -69,6 +69,6 @@ class RegionaisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def regional_params
-      params.require(:regional).permit(:codigo_regional, :nome)
+      params.require(:regional).permit(:cod_regional, :nome)
     end
 end

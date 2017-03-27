@@ -5,22 +5,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:uf) %></th>
       <th><%= model_class.human_attribute_name(:cod_localidade) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @localidades.each do |localidade| %>
       <tr>
-        <td><%= link_to localidade.id, localidade_path(localidade) %></td>
+        <!--<td><%= link_to localidade.id, localidade_path(localidade) %></td>-->
         <td><%= localidade.nome %></td>
         <td><%= localidade.uf %></td>
         <td><%= localidade.cod_localidade %></td>
-        <td><%=l localidade.created_at %></td>
+        <!--<td><%=l localidade.created_at %></td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       localidade_path(localidade), :class => 'btn btn-default btn-xs' %>

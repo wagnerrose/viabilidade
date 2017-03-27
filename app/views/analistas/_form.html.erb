@@ -30,11 +30,12 @@
     <%=f.error_span(:email) %>
   </div>
   <div class="form-group">
-    <%= f.label :id_regional, :class => 'control-label col-lg-2' %>
+    <%= f.label :regional_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :id_regional, :class => 'form-control' %>
+      <!--<%= f.text_field :regional_id, :class => 'form-control' %>-->
+      <%= f.collection_select(:regional_id, Regional.all, :id, :nome, include_blank: true) %>
     </div>
-    <%=f.error_span(:id_regional) %>
+    <%=f.error_span(:regional_id) %>
   </div>
   <div class="form-group">
     <%= f.label :fone_contato, :class => 'control-label col-lg-2' %>
@@ -46,7 +47,7 @@
   <div class="form-group">
     <%= f.label :funcao, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :funcao, :class => 'form-control' %>
+      <%= f.select(:funcao, ['Eng. Comerical','Gerente de Contas'], {include_blank: false}) %>
     </div>
     <%=f.error_span(:funcao) %>
   </div>

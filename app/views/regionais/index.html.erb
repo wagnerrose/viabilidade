@@ -5,20 +5,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:codigo_regional) %></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:cod_regional) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @regionais.each do |regional| %>
       <tr>
-        <td><%= link_to regional.id, regional_path(regional) %></td>
-        <td><%= regional.codigo_regional %></td>
+        <!--<td><%= link_to regional.id, regional_path(regional) %></td>-->
+        <td><%= regional.cod_regional %></td>
         <td><%= regional.nome %></td>
-        <td><%=l regional.created_at %></td>
+        <!--<td><%=l regional.created_at %></td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       regional_path(regional), :class => 'btn btn-default btn-xs' %>

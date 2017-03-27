@@ -69,6 +69,6 @@ class VtController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vt_params
-      params.require(:vt).permit(:vt_numero, :id_cliente, :data_solicitacao, :solicitante, :analista, :servico, :uf_origem, :origem, :uf_destino, :destino, :popa, :popb, :resultado_vt, :justificativa_vt, :data_resultado, :comentario)
+      params.require(:vt).permit(:vt_numero, :empresa_id, :data_solicitacao, :solicitante, :analista, :servico, :uf_origem, :origem, :uf_destino, :destino, :popa, :popb, :resultado_vt, :justificativa_vt, :data_resultado, :comentario)
     end
 end

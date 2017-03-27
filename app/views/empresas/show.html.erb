@@ -4,21 +4,31 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
-  <dd><%= @empresa.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:razao) %>:</strong></dt>
+  <dd><%= @empresa.razao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nome_fantasia) %>:</strong></dt>
+  <dd><%= @empresa.nome_fantasia %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cnpj) %>:</strong></dt>
+  <dd><%= @empresa.cnpj %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sap) %>:</strong></dt>
+  <dd><%= @empresa.sap %></dd>
   <dt><strong><%= model_class.human_attribute_name(:endereco) %>:</strong></dt>
   <dd><%= @empresa.endereco %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cidade) %>:</strong></dt>
   <dd><%= @empresa.cidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cep) %>:</strong></dt>
+  <dd><%= @empresa.cep %></dd>
   <dt><strong><%= model_class.human_attribute_name(:uf) %>:</strong></dt>
   <dd><%= @empresa.uf %></dd>
   <dt><strong><%= model_class.human_attribute_name(:nome_contato) %>:</strong></dt>
   <dd><%= @empresa.nome_contato %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:telefone_contato) %>:</strong></dt>
-  <dd><%= @empresa.telefone_contato %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cnpj) %>:</strong></dt>
-  <dd><%= @empresa.cnpj %></dd>
-</dl>
+  <dt><strong><%= model_class.human_attribute_name(:fixo) %>:</strong></dt>
+  <dd><%= @empresa.fixo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:celular) %>:</strong></dt>
+  <dd><%= @empresa.celular %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @empresa.email %></dd>
+  </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               empresas_path, :class => 'btn btn-default'  %>

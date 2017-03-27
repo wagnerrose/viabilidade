@@ -29,9 +29,9 @@
   <tbody>
     <% @vt.each do |vt| %>
       <tr>
-        <td><%= link_to vt.id, vt_path(vt) %></td>
+        <!--<td><%= link_to vt.id, vt_path(vt) %></td>-->
         <td><%= vt.vt_numero %></td>
-        <td><%= vt.id_cliente %></td>
+        <td><%= vt.empresa_id %></td>
         <td><%= vt.data_solicitacao %></td>
         <td><%= vt.solicitante %></td>
         <td><%= vt.analista %></td>
@@ -46,7 +46,7 @@
         <td><%= vt.justificativa_vt %></td>
         <td><%= vt.data_resultado %></td>
         <td><%= vt.comentario %></td>
-        <td><%=l vt.created_at %></td>
+        <!--<td><%=l vt.created_at %></td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       vt_path(vt), :class => 'btn btn-default btn-xs' %>

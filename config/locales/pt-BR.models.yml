@@ -1,0 +1,64 @@
+"pt-BR":
+  activerecord:
+    models:
+      servico: "Serviços"
+      pop: "Pontos de Presença-(POP)"
+      vt: "Viabilidade"
+    attributes:
+      servico:
+        id: "ID"
+        nome: "Nome"
+        codigo: "Código"
+        created_at: "Criado em"
+      analista:
+        email: "E-mail"
+        funcao: "Função"
+        created_at: "Criado em"
+      regional:
+        cod_regional: "Código"
+      empresa:
+        razao: "Razão"
+        nome_fantasia: "Nome Fantasia"
+        cnpj: "CNPJ"
+        sap: "SAP"
+        endereco: "Endereço"
+        cep: "CEP"
+        uf: "UF"
+        nome_contato: "Contato"
+        fixo: "Fixo"
+        celular: "Celular"
+        email: "E-mail"
+        created_at: "Criado em"
+      uf:
+        created_at: "Criado em"
+      localidade:
+        uf: "UF"
+        created_at: "Criado em"
+        cod_localidade: "Código"
+      justificativa:
+        cod_justificativa: "Código"
+        created_at: "Criado em"
+      pop:
+        uf: "UF"
+        designacao: "Designação"
+        cod_localidade: "Localidade"
+        created_at: "Criado em"
+      vt:
+        vt_numero: "Número"
+        data_solicitacao: "Solicitado"
+        data_resultado: "Resposta"
+        solicitante: "Solicitante"
+        analista: "Analista"
+        servico: "Serviço"
+        uf_origem: "UF A"
+        origem: "Localidade A"
+        uf_destino: "UF B"
+        destino: "Localidade B"
+        popa: "POP A"
+        popb: "POP B"
+        resultado_vt: "Resposta"
+        justificativa_vt: "Justificativa"
+        data_resultado: "Data"
+        comentario: "Cometário"
+        created_at: "Criado em"
+      

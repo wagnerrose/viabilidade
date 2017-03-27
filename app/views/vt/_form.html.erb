@@ -23,11 +23,11 @@
     <%=f.error_span(:vt_numero) %>
   </div>
   <div class="form-group">
-    <%= f.label :id_cliente, :class => 'control-label col-lg-2' %>
+    <%= f.label :empresa_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :id_cliente, :class => 'form-control' %>
+      <%= f.collection_select(:empresa_id, Empresa.all, :id, :nome, include_blank: true) %>
     </div>
-    <%=f.error_span(:id_cliente) %>
+    <%=f.error_span(:empresa_id) %>
   </div>
   <div class="form-group">
     <%= f.label :data_solicitacao, :class => 'control-label col-lg-2' %>

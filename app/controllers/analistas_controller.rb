@@ -69,6 +69,6 @@ class AnalistasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def analista_params
-      params.require(:analista).permit(:nome, :email, :id_regional, :fone_contato, :funcao)
+      params.require(:analista).permit(:nome, :email, :regional_id, :fone_contato, :funcao)
     end
 end

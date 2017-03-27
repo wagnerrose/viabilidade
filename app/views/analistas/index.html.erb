@@ -5,26 +5,26 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:id_regional) %></th>
+      <th><%= model_class.human_attribute_name(:regional_id) %></th>
       <th><%= model_class.human_attribute_name(:fone_contato) %></th>
       <th><%= model_class.human_attribute_name(:funcao) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @analistas.each do |analista| %>
       <tr>
-        <td><%= link_to analista.id, analista_path(analista) %></td>
+        <!--<td><%= link_to analista.id, analista_path(analista) %></td>-->
         <td><%= analista.nome %></td>
         <td><%= analista.email %></td>
-        <td><%= analista.id_regional %></td>
+        <td><%= analista.regional_id %></td>
         <td><%= analista.fone_contato %></td>
         <td><%= analista.funcao %></td>
-        <td><%=l analista.created_at %></td>
+        <!--<td><%=l analista.created_at %></td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       analista_path(analista), :class => 'btn btn-default btn-xs' %>
