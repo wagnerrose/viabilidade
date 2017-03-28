@@ -2,7 +2,7 @@
   activerecord:
     models:
       servico: "Serviços"
-      pop: "Pontos de Presença-(POP)"
+      estacao: "Estação"
       vt: "Viabilidade"
     attributes:
       servico:
@@ -38,10 +38,9 @@
       justificativa:
         cod_justificativa: "Código"
         created_at: "Criado em"
-      pop:
-        uf: "UF"
+      estacao:
+        estacao: "Estação"
         designacao: "Designação"
-        cod_localidade: "Localidade"
         created_at: "Criado em"
       vt:
         vt_numero: "Número"

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PopTest < ActiveSupport::TestCase
+class EstacaoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,2 +1,0 @@
-class Pop < ApplicationRecord
-end

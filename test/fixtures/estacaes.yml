@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estacao: MyString
+  nome: MyString
+  cidade: MyString
+  status: MyString
+  cedente: MyString
+  tipo: MyString
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  estacao: MyString
+  nome: MyString
+  cidade: MyString
+  status: MyString
+  cedente: MyString
+  tipo: MyString
+  latitude: 1.5
+  longitude: 1.5

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :estacaes
   resources :vt
-  resources :pop
   resources :justificativas
   resources :localidades
   resources :servicos
