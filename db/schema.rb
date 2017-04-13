@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327174009) do
+ActiveRecord::Schema.define(version: 20170411193125) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,33 +48,49 @@ ActiveRecord::Schema.define(version: 20170327174009) do
     t.string   "email"
     t.string   "fone_contato"
     t.string   "funcao"
+    t.integer  "regional_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "regional_id"
     t.index ["regional_id"], name: "index_analistas_on_regional_id"
   end
 
   create_table "empresas", force: :cascade do |t|
+    t.string   "razao"
+    t.string   "nome_fantasia"
     t.string   "endereco"
     t.string   "cidade"
+    t.string   "cep"
     t.string   "uf"
     t.string   "nome_contato"
+    t.string   "fixo"
+    t.string   "celular"
+    t.string   "email"
     t.string   "cnpj"
+    t.string   "sap"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "nome_fantasia"
-    t.string   "email"
-    t.string   "sap"
-    t.string   "celular"
-    t.string   "fixo"
-    t.string   "cep"
-    t.string   "razao"
   end
 
-  create_table "estacaes", force: :cascade do |t|
+  create_table "equipamentos", force: :cascade do |t|
+    t.string   "designacao"
+    t.text     "descricao"
+    t.string   "tipo"
+    t.string   "enderecamento"
+    t.string   "firmware"
+    t.integer  "estacao_id"
+    t.string   "status"
+    t.string   "arco"
+    t.string   "cluster"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["estacao_id"], name: "index_equipamentos_on_estacao_id"
+  end
+
+  create_table "estacoes", force: :cascade do |t|
     t.string   "estacao"
     t.string   "nome"
     t.string   "cidade"
+    t.string   "uf"
     t.string   "status"
     t.string   "cedente"
     t.string   "tipo"
@@ -93,21 +109,15 @@ ActiveRecord::Schema.define(version: 20170327174009) do
   end
 
   create_table "localidades", force: :cascade do |t|
-    t.string   "nome"
     t.string   "uf"
-    t.string   "cod_localidade"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "pop", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "designacao"
-    t.string   "detentor"
-    t.string   "uf"
-    t.string   "cod_localidade"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "sigla_cnl"
+    t.string   "cod_cnl"
+    t.string   "localidade"
+    t.string   "municipio"
+    t.decimal  "latitude",   precision: 15, scale: 13
+    t.decimal  "longitude",  precision: 15, scale: 13
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "regionais", force: :cascade do |t|
@@ -117,11 +127,46 @@ ActiveRecord::Schema.define(version: 20170327174009) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "respostas", force: :cascade do |t|
+    t.integer  "solicitacao_id"
+    t.string   "tipo"
+    t.string   "estrutura"
+    t.text     "descricao"
+    t.integer  "prazo"
+    t.decimal  "capex",           precision: 10, scale: 2
+    t.decimal  "opex_instalacao", precision: 10, scale: 2
+    t.decimal  "opex_mensal",     precision: 10, scale: 2
+    t.string   "resultado_vt"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.index ["solicitacao_id"], name: "index_respostas_on_solicitacao_id"
+  end
+
   create_table "servicos", force: :cascade do |t|
     t.string   "nome"
+    t.string   "codigo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "codigo"
+  end
+
+  create_table "solicitacoes", force: :cascade do |t|
+    t.string   "numero_vt"
+    t.date     "data_solicitacao"
+    t.integer  "empresa_id"
+    t.string   "solicitante"
+    t.string   "analista"
+    t.string   "servico"
+    t.integer  "banda"
+    t.string   "endereco_a"
+    t.string   "localidade_a"
+    t.string   "uf_a"
+    t.string   "endereco_b"
+    t.string   "localidade_b"
+    t.string   "uf_b"
+    t.string   "resultado_vt"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["empresa_id"], name: "index_solicitacaes_on_empresa_id"
   end
 
   create_table "uf", force: :cascade do |t|
@@ -147,28 +192,6 @@ ActiveRecord::Schema.define(version: 20170327174009) do
     t.string   "nome"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
-  end
-
-  create_table "vt", force: :cascade do |t|
-    t.string   "vt_numero"
-    t.date     "data_solicitacao"
-    t.string   "solicitante"
-    t.string   "analista"
-    t.string   "servico"
-    t.string   "uf_origem"
-    t.string   "origem"
-    t.string   "uf_destino"
-    t.string   "destino"
-    t.string   "popa"
-    t.string   "popb"
-    t.string   "resultado_vt"
-    t.string   "justificativa_vt"
-    t.date     "data_resultado"
-    t.text     "comentario"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "empresa_id"
-    t.index ["empresa_id"], name: "index_vt_on_empresa_id"
   end
 
 end

@@ -1,0 +1,87 @@
+<%= form_for(solicitacao) do |f| %>
+  <% if solicitacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(solicitacao.errors.count, "error") %> prohibited this solicitacao from being saved:</h2>
+
+      <ul>
+      <% solicitacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numero_vt %>
+    <%= f.text_field :numero_vt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :empresa_id %>
+    <%= f.text_field :empresa_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_solicitacao %>
+    <%= f.date_select :data_solicitacao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :solicitante %>
+    <%= f.text_field :solicitante %>
+  </div>
+
+  <div class="field">
+    <%= f.label :analista %>
+    <%= f.text_field :analista %>
+  </div>
+
+  <div class="field">
+    <%= f.label :servico %>
+    <%= f.text_field :servico %>
+  </div>
+
+  <div class="field">
+    <%= f.label :banda %>
+    <%= f.number_field :banda %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco_a %>
+    <%= f.text_field :endereco_a %>
+  </div>
+
+  <div class="field">
+    <%= f.label :localidade_a %>
+    <%= f.text_field :localidade_a %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf_a %>
+    <%= f.text_field :uf_a %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco_b %>
+    <%= f.text_field :endereco_b %>
+  </div>
+
+  <div class="field">
+    <%= f.label :localidade_b %>
+    <%= f.text_field :localidade_b %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf_b %>
+    <%= f.text_field :uf_b %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resultado_vt %>
+    <%= f.text_field :resultado_vt %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

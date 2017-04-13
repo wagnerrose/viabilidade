@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designacao: MyString
+  descricao: MyText
+  tipo: MyString
+  enderecamento: MyString
+  firmware: MyString
+  estacao: one
+  status: MyString
+  arco: MyString
+  cluster: MyString
+
+two:
+  designacao: MyString
+  descricao: MyText
+  tipo: MyString
+  enderecamento: MyString
+  firmware: MyString
+  estacao: two
+  status: MyString
+  arco: MyString
+  cluster: MyString

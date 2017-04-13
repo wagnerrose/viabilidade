@@ -1,1 +1,0 @@
-json.partial! "vt/vt", vt: @vt

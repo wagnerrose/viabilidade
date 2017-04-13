@@ -6,9 +6,14 @@
   <thead>
     <tr>
       <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
-      <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:uf) %></th>
-      <th><%= model_class.human_attribute_name(:cod_localidade) %></th>
+      <th><%= model_class.human_attribute_name(:localidade) %></th>
+      <th><%= model_class.human_attribute_name(:municipio) %></th>
+      <th><%= model_class.human_attribute_name(:sigla_cnl) %></th>
+      <th><%= model_class.human_attribute_name(:cod_cnl) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      
       <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,9 +22,13 @@
     <% @localidades.each do |localidade| %>
       <tr>
         <!--<td><%= link_to localidade.id, localidade_path(localidade) %></td>-->
-        <td><%= localidade.nome %></td>
         <td><%= localidade.uf %></td>
-        <td><%= localidade.cod_localidade %></td>
+        <td><%= localidade.localidade %></td>
+        <td><%= localidade.municipio %></td>
+        <td><%= localidade.sigla_cnl %></td>
+        <td><%= localidade.cod_cnl %></td>
+        <td><%= number_with_precision(localidade.latitude,  precision: 10, separator: ',' , locale: 'pt-BR') %></td>
+        <td><%= number_with_precision(localidade.longitude, precision: 10, separator: ',' , locale: 'pt-BR' ) %></td>
         <!--<td><%=l localidade.created_at %></td>-->
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

@@ -1,10 +1,12 @@
 class UfController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_uf, only: [:show, :edit, :update, :destroy]
 
   # GET /uf
   # GET /uf.json
   def index
-    @uf = Uf.all
+    # @uf = Uf.all
+    @uf = Uf.order(sort_column + " " + sort_direction) # ordenando tabela
   end
 
   # GET /uf/1
@@ -68,7 +70,15 @@ class UfController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    
     def uf_params
       params.require(:uf).permit(:nome, :sigla)
+    end
+    
+    def sort_column
+      Uf.column_names.include?(params[:sort]) ? params[:sort] : "sigla"
+    end
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

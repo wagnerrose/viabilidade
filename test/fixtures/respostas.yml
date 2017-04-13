@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_vt_id: one
+  tipo: MyString
+  estrutura: MyString
+  descricao: MyText
+  prazo: 1
+  capex: 9.99
+  opex_instalacao: 9.99
+  opex_mensal: 9.99
+  resultado_vt: MyString
+
+two:
+  numero_vt_id: two
+  tipo: MyString
+  estrutura: MyString
+  descricao: MyText
+  prazo: 1
+  capex: 9.99
+  opex_instalacao: 9.99
+  opex_mensal: 9.99
+  resultado_vt: MyString

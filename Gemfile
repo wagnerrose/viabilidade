@@ -18,6 +18,8 @@ gem "therubyracer"
 # gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'sprockets-rails'
+gem 'glyphicons-rails'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri

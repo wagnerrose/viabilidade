@@ -159,7 +159,7 @@ pt-BR:
         unit: R$
     format:
       delimiter: "."
-      precision: 3
+      precision: 10
       separator: ","
       significant: false
       strip_insignificant_zeros: false

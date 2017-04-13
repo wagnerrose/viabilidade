@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Respostas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero vt</th>
+      <th>Tipo</th>
+      <th>Estrutura</th>
+      <th>Descricao</th>
+      <th>Prazo</th>
+      <th>Capex</th>
+      <th>Opex instalacao</th>
+      <th>Opex mensal</th>
+      <th>Resultado vt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @respostas.each do |resposta| %>
+      <tr>
+        <td><%= resposta.numero_vt_id %></td>
+        <td><%= resposta.tipo %></td>
+        <td><%= resposta.estrutura %></td>
+        <td><%= resposta.descricao %></td>
+        <td><%= resposta.prazo %></td>
+        <td><%= resposta.capex %></td>
+        <td><%= resposta.opex_instalacao %></td>
+        <td><%= resposta.opex_mensal %></td>
+        <td><%= resposta.resultado_vt %></td>
+        <td><%= link_to 'Show', resposta %></td>
+        <td><%= link_to 'Edit', edit_resposta_path(resposta) %></td>
+        <td><%= link_to 'Destroy', resposta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resposta', new_resposta_path %>

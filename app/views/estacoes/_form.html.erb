@@ -1,0 +1,93 @@
+<%= form_for @estacao, :html => { :class => "form-horizontal estacao" } do |f| %>
+
+  <% if @estacao.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@estacao.errors.count, "error") %> prohibited this estacao from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @estacao.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :estacao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= f.text_field :estacao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:estacao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cidade, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-3">
+      <%= f.text_field :cidade, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cidade) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <!--<%= f.text_field :status, :class => 'form-control' %>-->
+      <%= f.select :status, 
+                  ["Operação", "Implantação", "Planejamento"], 
+                  :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:status) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cedente, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-3">
+      <%= f.text_field :cedente, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cedente) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-5">
+      <!--<%= f.text_field :tipo, :class => 'form-control' %>-->
+      <%= f.select :tipo, 
+                  ["Terminal Cliente", "Ponto de Presença", "Ponto Metropolitano", "Estação de Atendimento Remoto", "Centro de Manutenção" ], 
+                  :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tipo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!--<%= f.number_field :latitude, :class => 'form-control' %>-->
+      <!--<%= f.text_field :latitude, :class => 'latitude', :value => number_with_precision(f.object.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %>-->
+      <%= f.number_field :latitude,  :value => number_with_precision(f.object.latitude.to_f, precision: 10, separator: ',' , locale: 'pt-BR'), step: :any %>
+    </div>
+    <%=f.error_span(:latitude) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!--<%= f.text_field :longitude, :class => 'form-control' %>-->
+      <!--<%= f.number_field :longitude, :value => number_with_precision(f.object.longitude.to_f, precision: 10, separator: ',' , locale: 'pt-BR'), :step => :any %>-->
+      <%= f.number_field :longitude, :value => number_with_precision(f.object.longitude.to_f, locale: 'pt-BR'), :step => :any %>
+    </div>
+    <%=f.error_span(:longitude) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                estacaes_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

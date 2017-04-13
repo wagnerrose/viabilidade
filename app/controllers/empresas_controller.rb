@@ -4,7 +4,8 @@ class EmpresasController < ApplicationController
   # GET /empresas
   # GET /empresas.json
   def index
-    @empresas = Empresa.all
+    # @empresas = Empresa.all
+    @empresas = Empresa.order(:razao)  
   end
 
   # GET /empresas/1

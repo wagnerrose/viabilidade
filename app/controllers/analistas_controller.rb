@@ -4,7 +4,8 @@ class AnalistasController < ApplicationController
   # GET /analistas
   # GET /analistas.json
   def index
-    @analistas = Analista.all
+    # @analistas = Analista.all    
+    @analistas = Analista.order(:nome)
   end
 
   # GET /analistas/1

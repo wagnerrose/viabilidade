@@ -16,27 +16,57 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :nome, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :nome, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:nome) %>
-  </div>
-  <div class="form-group">
     <%= f.label :uf, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-1">
       <%= f.text_field :uf, :class => 'form-control' %>
     </div>
     <%=f.error_span(:uf) %>
   </div>
   <div class="form-group">
-    <%= f.label :cod_localidade, :class => 'control-label col-lg-2' %>
+    <%= f.label :localidade, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cod_localidade, :class => 'form-control' %>
+      <%= f.text_field :localidade, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:cod_localidade) %>
+    <%=f.error_span(:localidade) %>
   </div>
-
+  <div class="form-group">
+    <%= f.label :municipio, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :municipio, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:municipio) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sigla_cnl, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-1">
+      <%= f.text_field :sigla_cnl, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sigla_cnl) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cod_cnl, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-1">
+      <%= f.text_field :cod_cnl, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cod_cnl) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!--<%= f.text_field :latitude, :class => 'form-control' %>-->
+      <%= f.number_field :latitude, :value => number_with_precision(f.object.latitude.to_f, locale: 'pt-BR'), :step => :any %>
+    </div>
+    <%=f.error_span(:latitude) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <!--<%= f.text_field :longitude, :class => 'form-control' %>-->
+      <%= f.number_field :longitude, :value => number_with_precision(f.object.longitude.to_f, locale: 'pt-BR'), :step => :any %>
+    </div>
+    <%=f.error_span(:longitude) %>
+  </div>
+  
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>

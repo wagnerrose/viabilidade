@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero vt:</strong>
+  <%= @resposta.numero_vt_id %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @resposta.tipo %>
+</p>
+
+<p>
+  <strong>Estrutura:</strong>
+  <%= @resposta.estrutura %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @resposta.descricao %>
+</p>
+
+<p>
+  <strong>Prazo:</strong>
+  <%= @resposta.prazo %>
+</p>
+
+<p>
+  <strong>Capex:</strong>
+  <%= @resposta.capex %>
+</p>
+
+<p>
+  <strong>Opex instalacao:</strong>
+  <%= @resposta.opex_instalacao %>
+</p>
+
+<p>
+  <strong>Opex mensal:</strong>
+  <%= @resposta.opex_mensal %>
+</p>
+
+<p>
+  <strong>Resultado vt:</strong>
+  <%= @resposta.resultado_vt %>
+</p>
+
+<%= link_to 'Edit', edit_resposta_path(@resposta) %> |
+<%= link_to 'Back', respostas_path %>

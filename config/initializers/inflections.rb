@@ -84,8 +84,10 @@ inflect.plural /^([a-zA-z]*)m$/i, '\1ns'
 #canhão - canhões
 #bidão - bidões
 #mão - mãos
-inflect.plural /^([a-zA-z]*)ao$/i, '\1oes'
-inflect.irregular 'cao', 'caes'
+#inflect.plural /^([a-zA-z]*)ao$/i, '\1oes'
+inflect.irregular 'estacao', 'estacoes'
+inflect.irregular 'solicitacao', 'solicitacoes'
+#inflect.irregular 'cao', 'caes'
 inflect.irregular 'pao', 'paes'
 inflect.irregular 'mao', 'maos'
 inflect.irregular 'alemao', 'alemaes'

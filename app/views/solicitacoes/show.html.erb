@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numerovt:</strong>
+  <%= @solicitacao.numerovt %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @solicitacao.cliente_id %>
+</p>
+
+<p>
+  <strong>Data solicitacao:</strong>
+  <%= @solicitacao.data_solicitacao %>
+</p>
+
+<p>
+  <strong>Solicitante:</strong>
+  <%= @solicitacao.solicitante %>
+</p>
+
+<p>
+  <strong>Analista:</strong>
+  <%= @solicitacao.analista %>
+</p>
+
+<p>
+  <strong>Servico:</strong>
+  <%= @solicitacao.servico %>
+</p>
+
+<p>
+  <strong>Banda:</strong>
+  <%= @solicitacao.banda %>
+</p>
+
+<p>
+  <strong>Endereco a:</strong>
+  <%= @solicitacao.endereco_a %>
+</p>
+
+<p>
+  <strong>Localidade a:</strong>
+  <%= @solicitacao.localidade_a %>
+</p>
+
+<p>
+  <strong>Uf a:</strong>
+  <%= @solicitacao.uf_a %>
+</p>
+
+<p>
+  <strong>Endereco b:</strong>
+  <%= @solicitacao.endereco_b %>
+</p>
+
+<p>
+  <strong>Localidade b:</strong>
+  <%= @solicitacao.localidade_b %>
+</p>
+
+<p>
+  <strong>Uf b:</strong>
+  <%= @solicitacao.uf_b %>
+</p>
+
+<p>
+  <strong>Resultado vt:</strong>
+  <%= @solicitacao.resultado_vt %>
+</p>
+
+<%= link_to 'Edit', edit_solicitacao_path(@solicitacao) %> |
+<%= link_to 'Back', solicitacaes_path %>

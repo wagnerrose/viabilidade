@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Designacao:</strong>
+  <%= @equipamento.designacao %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @equipamento.descricao %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @equipamento.tipo %>
+</p>
+
+<p>
+  <strong>Enderecamento:</strong>
+  <%= @equipamento.enderecamento %>
+</p>
+
+<p>
+  <strong>Firmware:</strong>
+  <%= @equipamento.firmware %>
+</p>
+
+<p>
+  <strong>Estacao:</strong>
+  <%= @equipamento.estacao %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @equipamento.status %>
+</p>
+
+<p>
+  <strong>Arco:</strong>
+  <%= @equipamento.arco %>
+</p>
+
+<p>
+  <strong>Cluster:</strong>
+  <%= @equipamento.cluster %>
+</p>
+
+<%= link_to 'Edit', edit_equipamento_path(@equipamento) %> |
+<%= link_to 'Back', equipamentos_path %>

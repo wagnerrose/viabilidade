@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numerovt: MyString
+  cliente_id: one
+  data_solicitacao: 2017-04-11
+  solicitante: MyString
+  analista: MyString
+  servico: MyString
+  banda: 1
+  endereco_a: MyString
+  localidade_a: MyString
+  uf_a: MyString
+  endereco_b: MyString
+  localidade_b: MyString
+  uf_b: MyString
+  resultado_vt: MyString
+
+two:
+  numerovt: MyString
+  cliente_id: two
+  data_solicitacao: 2017-04-11
+  solicitante: MyString
+  analista: MyString
+  servico: MyString
+  banda: 1
+  endereco_a: MyString
+  localidade_a: MyString
+  uf_a: MyString
+  endereco_b: MyString
+  localidade_b: MyString
+  uf_b: MyString
+  resultado_vt: MyString

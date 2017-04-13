@@ -3,7 +3,8 @@
     models:
       servico: "Serviços"
       estacao: "Estação"
-      vt: "Viabilidade"
+      solicitacao: "Solicitações"
+      uf: "UF"
     attributes:
       servico:
         id: "ID"
@@ -33,6 +34,11 @@
         created_at: "Criado em"
       localidade:
         uf: "UF"
+        cod_cnl: "Cod Localidade"
+        latitude: "Latitude"
+        longitude: "Logitude"
+        municipio: "Município"
+        sigla_cnl: "Sigla Localidade"
         created_at: "Criado em"
         cod_localidade: "Código"
       justificativa:
@@ -42,22 +48,19 @@
         estacao: "Estação"
         designacao: "Designação"
         created_at: "Criado em"
-      vt:
-        vt_numero: "Número"
+      solicitacao:
+        numero_vt: "Número"
+        empresa_id: "Empresa"
         data_solicitacao: "Solicitado"
-        data_resultado: "Resposta"
         solicitante: "Solicitante"
         analista: "Analista"
         servico: "Serviço"
-        uf_origem: "UF A"
-        origem: "Localidade A"
-        uf_destino: "UF B"
-        destino: "Localidade B"
-        popa: "POP A"
-        popb: "POP B"
-        resultado_vt: "Resposta"
-        justificativa_vt: "Justificativa"
-        data_resultado: "Data"
-        comentario: "Cometário"
+        banda: "Banda"
+        endereco_a: "Endereço A"
+        localidade_a: "Localidade A"
+        uf_a: "UF A" 
+        endereco_b: "Endereço B"
+        uf_b: "UF B"
+        localidade_b: "Localidade B"
         created_at: "Criado em"
       

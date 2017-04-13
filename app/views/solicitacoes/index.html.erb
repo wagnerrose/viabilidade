@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitações</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero_vt</th>
+      <th>Cliente</th>
+      <th>Data solicitacao</th>
+      <th>Solicitante</th>
+      <th>Analista</th>
+      <th>Servico</th>
+      <th>Banda</th>
+      <th>Endereco A</th>
+      <th>Localidade A</th>
+      <th>Uf A</th>
+      <th>Endereco B</th>
+      <th>Localidade b</th>
+      <th>UF B</th>
+      <th>Resultado vt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitacoes.each do |solicitacao| %>
+      <tr>
+        <td><%= solicitacao.numero_vt %></td>
+        <td><%= solicitacao.empresa_id %></td>
+        <td><%= solicitacao.data_solicitacao %></td>
+        <td><%= solicitacao.solicitante %></td>
+        <td><%= solicitacao.analista %></td>
+        <td><%= solicitacao.servico %></td>
+        <td><%= solicitacao.banda %></td>
+        <td><%= solicitacao.endereco_a %></td>
+        <td><%= solicitacao.localidade_a %></td>
+        <td><%= solicitacao.uf_a %></td>
+        <td><%= solicitacao.endereco_b %></td>
+        <td><%= solicitacao.localidade_b %></td>
+        <td><%= solicitacao.uf_b %></td>
+        <td><%= solicitacao.resultado_vt %></td>
+        <td><%= link_to 'Show', solicitacao %></td>
+        <td><%= link_to 'Edit', edit_solicitacao_path(solicitacao) %></td>
+        <td><%= link_to 'Destroy', solicitacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitacao', new_solicitacao_path %>

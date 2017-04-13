@@ -17,7 +17,7 @@ class AnalistasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create analista" do
     assert_difference('Analista.count') do
-      post analistas_url, params: { analista: { email: @analista.email, fone_contato: @analista.fone_contato, funcao: @analista.funcao, id_regional: @analista.id_regional, nome: @analista.nome } }
+      post analistas_url, params: { analista: { email: @analista.email, fone_contato: @analista.fone_contato, funcao: @analista.funcao, regional_id: @analista.regional_id, nome: @analista.nome } }
     end
 
     assert_redirected_to analista_url(Analista.last)
@@ -34,7 +34,7 @@ class AnalistasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update analista" do
-    patch analista_url(@analista), params: { analista: { email: @analista.email, fone_contato: @analista.fone_contato, funcao: @analista.funcao, id_regional: @analista.id_regional, nome: @analista.nome } }
+    patch analista_url(@analista), params: { analista: { email: @analista.email, fone_contato: @analista.fone_contato, funcao: @analista.funcao, regional_id: @analista.regional_id, nome: @analista.nome } }
     assert_redirected_to analista_url(@analista)
   end
 

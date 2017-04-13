@@ -1,2 +1,0 @@
-json.extract! vt, :id, :vt_numero, :id_cliente, :data_solicitacao, :solicitante, :analista, :servico, :uf_origem, :origem, :uf_destino, :destino, :popa, :popb, :resultado_vt, :justificativa_vt, :data_resultado, :comentario, :created_at, :updated_at
-json.url vt_url(vt, format: :json)

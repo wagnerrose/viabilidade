@@ -1,1 +1,0 @@
-json.array! @vt, partial: 'vt/vt', as: :vt
