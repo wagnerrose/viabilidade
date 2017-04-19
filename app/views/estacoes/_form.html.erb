@@ -10,61 +10,66 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :pop %>
-    <%= f.text_field :pop %>
+  
+<div class="container">
+  <div class="row">
+    <div class="field col-sm-3">
+      <%= f.label :pop %>
+      <%= f.text_field :pop %>
+    </div>
+  
+    <div class="field col-sm-9">
+      <%= f.label :nome %>
+      <%= f.text_field :nome %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :endereco %>
+      <%= f.text_field :endereco %>
+    </div>
+  
+    <div class="field col-sm-3">
+      <%= f.label :cidade %>
+      <%= f.text_field :cidade %>
+    </div>
+  
+    <div class="field col-sm-3">
+      <%= f.label :uf %>
+      <%= f.text_field :uf %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_field :endereco %>
+  <div class="row">
+    <div class="field col-sm-3">
+      <%= f.label :tipo %>
+      <!--<%= f.text_field :tipo %>-->
+      <%= f.select(:tipo, 
+            ["TELEBRAS", 
+            "Pop do Cliente", 
+            "Ponto Metropolitano",
+            "Centro de Manutenção",
+            "Interconexao Óptica",
+            "Outros"], 
+            {include_blank: false}) 
+      %>
+    </div>
+  
+    <div class="field col-sm-3">
+      <%= f.label :cedente %>
+      <%= f.text_field :cedente %>
+    </div>
+  
+    <div class="field col-sm-3">
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+    </div>
+  
+    <div class="field col-sm-3">
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :cidade %>
-    <%= f.text_field :cidade %>
-  </div>
-
-  <div class="field">
-    <%= f.label :uf %>
-    <%= f.text_field :uf %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tipo %>
-    <!--<%= f.text_field :tipo %>-->
-    <%= f.select(:tipo, 
-          ["TELEBRAS", 
-          "Pop do Cliente", 
-          "Ponto Metropolitano",
-          "Centro de Manutenção",
-          "Interconexao Óptica",
-          "Outros"], 
-          {include_blank: false}) 
-    %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cedente %>
-    <%= f.text_field :cedente %>
-  </div>
-
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
-  </div>
-
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
