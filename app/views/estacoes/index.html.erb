@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
-      <th><%= model_class.human_attribute_name(:estacao) %></th>
+      <th><%= model_class.human_attribute_name(:pop) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
       <th><%= model_class.human_attribute_name(:cidade) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
       <!--<th><%= model_class.human_attribute_name(:cedente) %></th>-->
@@ -22,8 +23,9 @@
     <% @estacoes.each do |estacao| %>
       <tr>
         <!--<td><%= link_to estacao.id, estacao_path(estacao) %></td>-->
-        <td><%= link_to estacao.estacao, estacao_path(estacao) %></td>
+        <td><%= link_to estacao.pop, estacao_path(estacao) %></td>
         <td><%= estacao.nome %></td>
+        <td><%= estacao.endereco %></td>        
         <td><%= estacao.cidade %></td>
         <td><%= estacao.status %></td>
         <!--<td><%= estacao.cedente %></td>-->

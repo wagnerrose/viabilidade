@@ -6,10 +6,10 @@ one:
   tipo: MyString
   enderecamento: MyString
   firmware: MyString
-  estacao: one
   status: MyString
   arco: MyString
   cluster: MyString
+  estacao: one
 
 two:
   designacao: MyString
@@ -17,7 +17,7 @@ two:
   tipo: MyString
   enderecamento: MyString
   firmware: MyString
-  estacao: two
   status: MyString
   arco: MyString
   cluster: MyString
+  estacao: two

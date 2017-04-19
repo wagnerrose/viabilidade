@@ -1,62 +1,90 @@
-<%= form_for(equipamento) do |f| %>
-  <% if equipamento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(equipamento.errors.count, "error") %> prohibited this equipamento from being saved:</h2>
+<%= form_for @equipamento, :html => { :class => "form-horizontal equipamento" } do |f| %>
 
-      <ul>
-      <% equipamento.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @equipamento.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@equipamento.errors.count, "error") %> prohibited this equipamento from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @equipamento.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :designacao %>
-    <%= f.text_field :designacao %>
+  <div class="form-group">
+    <%= f.label :designacao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :designacao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:designacao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :descricao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :descricao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:descricao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tipo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tipo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :enderecamento, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :enderecamento, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:enderecamento) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :firmware, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :firmware, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:firmware) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :status, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:status) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :arco, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :arco, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:arco) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cluster, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cluster, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cluster) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :estacao_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :estacao_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:estacao_id) %>
   </div>
 
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                equipamentos_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :tipo %>
-    <%= f.text_field :tipo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :enderecamento %>
-    <%= f.text_field :enderecamento %>
-  </div>
-
-  <div class="field">
-    <%= f.label :firmware %>
-    <%= f.text_field :firmware %>
-  </div>
-
-  <div class="field">
-    <%= f.label :estacao_id %>
-    <%= f.text_field :estacao_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :arco %>
-    <%= f.text_field :arco %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cluster %>
-    <%= f.text_field :cluster %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

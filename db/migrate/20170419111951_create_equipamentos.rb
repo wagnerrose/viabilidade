@@ -6,10 +6,10 @@ class CreateEquipamentos < ActiveRecord::Migration[5.0]
       t.string :tipo
       t.string :enderecamento
       t.string :firmware
-      t.references :estacao, foreign_key: true
       t.string :status
       t.string :arco
       t.string :cluster
+      t.references :estacao, foreign_key: true
 
       t.timestamps
     end

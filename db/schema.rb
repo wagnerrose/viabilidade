@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418193303) do
+ActiveRecord::Schema.define(version: 20170419120513) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 20170418193303) do
     t.string   "tipo"
     t.string   "enderecamento"
     t.string   "firmware"
-    t.integer  "estacao_id"
     t.string   "status"
     t.string   "arco"
     t.string   "cluster"
+    t.integer  "estacao_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["estacao_id"], name: "index_equipamentos_on_estacao_id"
@@ -89,15 +89,16 @@ ActiveRecord::Schema.define(version: 20170418193303) do
   create_table "estacoes", force: :cascade do |t|
     t.string   "pop"
     t.string   "nome"
+    t.string   "endereco"
     t.string   "cidade"
-    t.string   "status"
-    t.string   "cedente"
+    t.string   "uf"
     t.string   "tipo"
+    t.string   "cedente"
     t.decimal  "latitude",   precision: 15, scale: 13
     t.decimal  "longitude",  precision: 15, scale: 13
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.string   "uf"
+    t.string   "status"
   end
 
   create_table "justificativas", force: :cascade do |t|

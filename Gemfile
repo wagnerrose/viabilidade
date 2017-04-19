@@ -19,7 +19,7 @@ gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'sprockets-rails'
 gem 'glyphicons-rails'
-
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri

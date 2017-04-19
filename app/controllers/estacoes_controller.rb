@@ -1,28 +1,28 @@
 class EstacoesController < ApplicationController
   before_action :set_estacao, only: [:show, :edit, :update, :destroy]
 
-  # GET /estacaes
-  # GET /estacaes.json
+  # GET /estacoes
+  # GET /estacoes.json
   def index
     @estacoes = Estacao.all
   end
 
-  # GET /estacaes/1
-  # GET /estacaes/1.json
+  # GET /estacoes/1
+  # GET /estacoes/1.json
   def show
   end
 
-  # GET /estacaes/new
+  # GET /estacoes/new
   def new
     @estacao = Estacao.new
   end
 
-  # GET /estacaes/1/edit
+  # GET /estacoes/1/edit
   def edit
   end
 
-  # POST /estacaes
-  # POST /estacaes.json
+  # POST /estacoes
+  # POST /estacoes.json
   def create
     @estacao = Estacao.new(estacao_params)
 
@@ -37,8 +37,8 @@ class EstacoesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /estacaes/1
-  # PATCH/PUT /estacaes/1.json
+  # PATCH/PUT /estacoes/1
+  # PATCH/PUT /estacoes/1.json
   def update
     respond_to do |format|
       if @estacao.update(estacao_params)
@@ -51,12 +51,12 @@ class EstacoesController < ApplicationController
     end
   end
 
-  # DELETE /estacaes/1
-  # DELETE /estacaes/1.json
+  # DELETE /estacoes/1
+  # DELETE /estacoes/1.json
   def destroy
     @estacao.destroy
     respond_to do |format|
-      format.html { redirect_to estacaes_url, notice: 'Estacao was successfully destroyed.' }
+      format.html { redirect_to estacoes_url, notice: 'Estacao was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class EstacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estacao_params
-      params.require(:estacao).permit(:estacao, :nome, :cidade, :status, :cedente, :tipo, :latitude, :longitude)
+      params.require(:estacao).permit(:pop, :nome, :endereco, :cidade, :uf, :tipo, :cedente, :latitude, :longitude)
     end
 end

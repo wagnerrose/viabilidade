@@ -1,1 +1,1 @@
-json.extract! @estacao, :id, :estacao, :nome, :cidade, :status, :cedente, :tipo, :latitude, :longitude, :created_at, :updated_at
+json.extract! @estacao, :id, :pop, :nome, :endereco, :cidade, :uf, :tipo, :cedente, :latitude, :longitude, :created_at, :updated_at

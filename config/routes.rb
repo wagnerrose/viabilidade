@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :equipamentos
+  resources :estacoes
   resources :respostas
   resources :solicitacoes
-  resources :estacoes
   resources :justificativas
   resources :localidades
   resources :servicos

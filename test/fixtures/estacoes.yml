@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pop: MyString
+  nome: MyString
+  endereco: MyString
+  cidade: MyString
+  uf: MyString
+  tipo: MyString
+  cedente: MyString
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  pop: MyString
+  nome: MyString
+  endereco: MyString
+  cidade: MyString
+  uf: MyString
+  tipo: MyString
+  cedente: MyString
+  latitude: 9.99
+  longitude: 9.99

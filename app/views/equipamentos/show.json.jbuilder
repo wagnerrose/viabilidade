@@ -1,1 +1,1 @@
-json.extract! @equipamento, :id, :designacao, :descricao, :tipo, :enderecamento, :firmware, :estacao_id, :status, :arco, :cluster, :created_at, :updated_at
+json.extract! @equipamento, :id, :designacao, :descricao, :tipo, :enderecamento, :firmware, :status, :arco, :cluster, :estacao_id, :created_at, :updated_at
