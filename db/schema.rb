@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411193125) do
+ActiveRecord::Schema.define(version: 20170418193303) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,27 +48,27 @@ ActiveRecord::Schema.define(version: 20170411193125) do
     t.string   "email"
     t.string   "fone_contato"
     t.string   "funcao"
-    t.integer  "regional_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "regional_id"
     t.index ["regional_id"], name: "index_analistas_on_regional_id"
   end
 
   create_table "empresas", force: :cascade do |t|
-    t.string   "razao"
-    t.string   "nome_fantasia"
     t.string   "endereco"
     t.string   "cidade"
-    t.string   "cep"
     t.string   "uf"
     t.string   "nome_contato"
-    t.string   "fixo"
-    t.string   "celular"
-    t.string   "email"
     t.string   "cnpj"
-    t.string   "sap"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "nome_fantasia"
+    t.string   "email"
+    t.string   "sap"
+    t.string   "celular"
+    t.string   "fixo"
+    t.string   "cep"
+    t.string   "razao"
   end
 
   create_table "equipamentos", force: :cascade do |t|
@@ -87,10 +87,9 @@ ActiveRecord::Schema.define(version: 20170411193125) do
   end
 
   create_table "estacoes", force: :cascade do |t|
-    t.string   "estacao"
+    t.string   "pop"
     t.string   "nome"
     t.string   "cidade"
-    t.string   "uf"
     t.string   "status"
     t.string   "cedente"
     t.string   "tipo"
@@ -98,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170411193125) do
     t.decimal  "longitude",  precision: 15, scale: 13
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "uf"
   end
 
   create_table "justificativas", force: :cascade do |t|
@@ -128,7 +128,6 @@ ActiveRecord::Schema.define(version: 20170411193125) do
   end
 
   create_table "respostas", force: :cascade do |t|
-    t.integer  "solicitacao_id"
     t.string   "tipo"
     t.string   "estrutura"
     t.text     "descricao"
@@ -139,20 +138,20 @@ ActiveRecord::Schema.define(version: 20170411193125) do
     t.string   "resultado_vt"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.integer  "solicitacao_id"
     t.index ["solicitacao_id"], name: "index_respostas_on_solicitacao_id"
   end
 
   create_table "servicos", force: :cascade do |t|
     t.string   "nome"
-    t.string   "codigo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "codigo"
   end
 
   create_table "solicitacoes", force: :cascade do |t|
     t.string   "numero_vt"
     t.date     "data_solicitacao"
-    t.integer  "empresa_id"
     t.string   "solicitante"
     t.string   "analista"
     t.string   "servico"
@@ -166,6 +165,7 @@ ActiveRecord::Schema.define(version: 20170411193125) do
     t.string   "resultado_vt"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "empresa_id"
     t.index ["empresa_id"], name: "index_solicitacaes_on_empresa_id"
   end
 
