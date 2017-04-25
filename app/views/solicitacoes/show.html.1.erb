@@ -1,4 +1,5 @@
 <%- model_class = Solicitacao -%>
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></h1>
 </div>
@@ -63,16 +64,15 @@
 </div>
 <div>
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              solicitacoes_path, :class => 'btn btn-default'  %>
+              solicitacao_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_solicitacao_path(@solicitacao), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              solicitacao_path(@solicitacao),
+              estacao_path(@solicitacao),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
-</div>
-
+</div><!--/link_to-->
 <div class="container">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#Acesso" data-toggle="tab">Acesso</a></li>

@@ -1,6 +1,5 @@
-<h1>Editing Estacao</h1>
-
-<%= render 'form', estacao: @estacao %>
-
-<%= link_to 'Show', @estacao %> |
-<%= link_to 'Back', estacoes_path %>
+<%- model_class = Estacao -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

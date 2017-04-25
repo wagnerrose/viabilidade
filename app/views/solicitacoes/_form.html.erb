@@ -1,87 +1,34 @@
-<%= form_for(solicitacao) do |f| %>
-  <% if solicitacao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(solicitacao.errors.count, "error") %> prohibited this solicitacao from being saved:</h2>
+<%= simple_form_for @solicitacao, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :numero_vt %>
+  <%= error_span(@solicitacao[:numero_vt]) %>
+  <%= f.input :data_solicitacao %>
+  <%= error_span(@solicitacao[:data_solicitacao]) %>
+  <%= f.input :solicitante %>
+  <%= error_span(@solicitacao[:solicitante]) %>
+  <%= f.input :analista %>
+  <%= error_span(@solicitacao[:analista]) %>
+  <%= f.input :servico %>
+  <%= error_span(@solicitacao[:servico]) %>
+  <%= f.input :banda %>
+  <%= error_span(@solicitacao[:banda]) %>
+  <%= f.input :endereco_a %>
+  <%= error_span(@solicitacao[:endereco_a]) %>
+  <%= f.input :localidade_a %>
+  <%= error_span(@solicitacao[:localidade_a]) %>
+  <%= f.input :uf_a %>
+  <%= error_span(@solicitacao[:uf_a]) %>
+  <%= f.input :endereco_b %>
+  <%= error_span(@solicitacao[:endereco_b]) %>
+  <%= f.input :localidade_b %>
+  <%= error_span(@solicitacao[:localidade_b]) %>
+  <%= f.input :uf_b %>
+  <%= error_span(@solicitacao[:uf_b]) %>
+  <%= f.input :resultado_vt %>
+  <%= error_span(@solicitacao[:resultado_vt]) %>
+  <%= f.input :empresa_id %>
+  <%= error_span(@solicitacao[:empresa_id]) %>
 
-      <ul>
-      <% solicitacao.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :numero_vt %>
-    <%= f.text_field :numero_vt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :empresa_id %>
-    <%= f.text_field :empresa_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :data_solicitacao %>
-    <%= f.date_select :data_solicitacao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :solicitante %>
-    <%= f.text_field :solicitante %>
-  </div>
-
-  <div class="field">
-    <%= f.label :analista %>
-    <%= f.text_field :analista %>
-  </div>
-
-  <div class="field">
-    <%= f.label :servico %>
-    <%= f.text_field :servico %>
-  </div>
-
-  <div class="field">
-    <%= f.label :banda %>
-    <%= f.number_field :banda %>
-  </div>
-
-  <div class="field">
-    <%= f.label :endereco_a %>
-    <%= f.text_field :endereco_a %>
-  </div>
-
-  <div class="field">
-    <%= f.label :localidade_a %>
-    <%= f.text_field :localidade_a %>
-  </div>
-
-  <div class="field">
-    <%= f.label :uf_a %>
-    <%= f.text_field :uf_a %>
-  </div>
-
-  <div class="field">
-    <%= f.label :endereco_b %>
-    <%= f.text_field :endereco_b %>
-  </div>
-
-  <div class="field">
-    <%= f.label :localidade_b %>
-    <%= f.text_field :localidade_b %>
-  </div>
-
-  <div class="field">
-    <%= f.label :uf_b %>
-    <%= f.text_field :uf_b %>
-  </div>
-
-  <div class="field">
-    <%= f.label :resultado_vt %>
-    <%= f.text_field :resultado_vt %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                solicitacoes_path, :class => 'btn btn-default' %>
 <% end %>

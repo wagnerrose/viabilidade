@@ -4,7 +4,7 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos
   # GET /equipamentos.json
   def index
-    @equipamentos = Equipamento.all
+    @equipamentos = Equipamento.all.order(:estacao_id)
   end
 
   # GET /equipamentos/1

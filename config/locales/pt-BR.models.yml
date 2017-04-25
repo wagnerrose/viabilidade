@@ -47,11 +47,19 @@
       estacao:
         estacao: "Estação"
         designacao: "Designação"
+        endereco: "Endereço"
+        uf: "UF"
         created_at: "Criado em"
+      equipamento:
+        designacao: "Designação"
+        descricao: "Descrição"
+        enderecamento: "Endereçamento"
+        estacao_id: "Estação"
+        
       solicitacao:
         numero_vt: "Número"
         empresa_id: "Empresa"
-        data_solicitacao: "Solicitado"
+        data_solicitacao: "Solicitado em"
         solicitante: "Solicitante"
         analista: "Analista"
         servico: "Serviço"

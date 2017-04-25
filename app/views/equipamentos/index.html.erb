@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:designacao) %></th>
       <th><%= model_class.human_attribute_name(:descricao) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
@@ -15,14 +14,12 @@
       <th><%= model_class.human_attribute_name(:arco) %></th>
       <th><%= model_class.human_attribute_name(:cluster) %></th>
       <th><%= model_class.human_attribute_name(:estacao_id) %></th>
-      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @equipamentos.each do |equipamento| %>
       <tr>
-        <!--<td><%= link_to equipamento.id, equipamento_path(equipamento) %></td>-->
         <td><%= equipamento.designacao %></td>
         <td><%= equipamento.descricao %></td>
         <td><%= equipamento.tipo %></td>
@@ -31,8 +28,7 @@
         <td><%= equipamento.status %></td>
         <td><%= equipamento.arco %></td>
         <td><%= equipamento.cluster %></td>
-        <td><%= equipamento.estacao_id %></td>
-        <!--<td><%=l equipamento.created_at %></td>-->
+        <td><%= equipamento.estacao.pop %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       equipamento_path(equipamento), :class => 'btn btn-default btn-xs' %>

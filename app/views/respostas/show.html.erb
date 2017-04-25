@@ -1,49 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Resposta -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Numero vt:</strong>
-  <%= @resposta.numero_vt_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
+  <dd><%= @resposta.tipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estrutura) %>:</strong></dt>
+  <dd><%= @resposta.estrutura %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descricao) %>:</strong></dt>
+  <dd><%= @resposta.descricao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prazo) %>:</strong></dt>
+  <dd><%= @resposta.prazo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:capex) %>:</strong></dt>
+  <dd><%= @resposta.capex %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:opex_instalacao) %>:</strong></dt>
+  <dd><%= @resposta.opex_instalacao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:opex_mensal) %>:</strong></dt>
+  <dd><%= @resposta.opex_mensal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:resultado_vt) %>:</strong></dt>
+  <dd><%= @resposta.resultado_vt %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:solicitacao_id) %>:</strong></dt>
+  <dd><%= @resposta.solicitacao_id %></dd>
+</dl>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @resposta.tipo %>
-</p>
-
-<p>
-  <strong>Estrutura:</strong>
-  <%= @resposta.estrutura %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @resposta.descricao %>
-</p>
-
-<p>
-  <strong>Prazo:</strong>
-  <%= @resposta.prazo %>
-</p>
-
-<p>
-  <strong>Capex:</strong>
-  <%= @resposta.capex %>
-</p>
-
-<p>
-  <strong>Opex instalacao:</strong>
-  <%= @resposta.opex_instalacao %>
-</p>
-
-<p>
-  <strong>Opex mensal:</strong>
-  <%= @resposta.opex_mensal %>
-</p>
-
-<p>
-  <strong>Resultado vt:</strong>
-  <%= @resposta.resultado_vt %>
-</p>
-
-<%= link_to 'Edit', edit_resposta_path(@resposta) %> |
-<%= link_to 'Back', respostas_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              respostas_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_resposta_path(@resposta), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              resposta_path(@resposta),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

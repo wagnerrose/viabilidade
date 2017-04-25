@@ -1,62 +1,24 @@
-<%= form_for(resposta) do |f| %>
-  <% if resposta.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(resposta.errors.count, "error") %> prohibited this resposta from being saved:</h2>
+<%= simple_form_for @resposta, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :tipo %>
+  <%= error_span(@resposta[:tipo]) %>
+  <%= f.input :estrutura %>
+  <%= error_span(@resposta[:estrutura]) %>
+  <%= f.input :descricao %>
+  <%= error_span(@resposta[:descricao]) %>
+  <%= f.input :prazo %>
+  <%= error_span(@resposta[:prazo]) %>
+  <%= f.input :capex %>
+  <%= error_span(@resposta[:capex]) %>
+  <%= f.input :opex_instalacao %>
+  <%= error_span(@resposta[:opex_instalacao]) %>
+  <%= f.input :opex_mensal %>
+  <%= error_span(@resposta[:opex_mensal]) %>
+  <%= f.input :resultado_vt %>
+  <%= error_span(@resposta[:resultado_vt]) %>
+  <%= f.input :solicitacao_id %>
+  <%= error_span(@resposta[:solicitacao_id]) %>
 
-      <ul>
-      <% resposta.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :numero_vt_id_id %>
-    <%= f.text_field :numero_vt_id_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tipo %>
-    <%= f.text_field :tipo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :estrutura %>
-    <%= f.text_field :estrutura %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :prazo %>
-    <%= f.number_field :prazo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :capex %>
-    <%= f.text_field :capex %>
-  </div>
-
-  <div class="field">
-    <%= f.label :opex_instalacao %>
-    <%= f.text_field :opex_instalacao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :opex_mensal %>
-    <%= f.text_field :opex_mensal %>
-  </div>
-
-  <div class="field">
-    <%= f.label :resultado_vt %>
-    <%= f.text_field :resultado_vt %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                respostas_path, :class => 'btn btn-default' %>
 <% end %>

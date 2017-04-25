@@ -16,7 +16,7 @@
   <tbody>
     <% @justificativas.each do |justificativa| %>
       <tr>
-        <!--<td><%= link_to justificativa.id, justificativa_path(justificativa) %></td>-->
+        <!--<td><%= link_to justificativa.id, justificativa_path(justificativa) , :title => "Selecione para editar." %></td>-->
         <td><%= justificativa.nome %></td>
         <td><%= justificativa.cod_justificativa %></td>
         <td><%= justificativa.tipo %></td>

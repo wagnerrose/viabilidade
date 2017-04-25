@@ -5,34 +5,23 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:pop) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:endereco) %></th>
       <th><%= model_class.human_attribute_name(:cidade) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <!--<th><%= model_class.human_attribute_name(:cedente) %></th>-->
       <th><%= model_class.human_attribute_name(:tipo) %></th>
-      <!--<th><%= model_class.human_attribute_name(:latitude) %></th>-->
-      <!--<th><%= model_class.human_attribute_name(:longitude) %></th>-->
-      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
-      <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
   </thead>
   <tbody>
     <% @estacoes.each do |estacao| %>
       <tr>
-        <!--<td><%= link_to estacao.id, estacao_path(estacao) %></td>-->
-        <td><%= link_to estacao.pop, estacao_path(estacao) %></td>
+        <td><%= link_to estacao.pop, estacao_path(estacao), :title => "Detalhar" %></td>
         <td><%= estacao.nome %></td>
         <td><%= estacao.endereco %></td>        
         <td><%= estacao.cidade %></td>
         <td><%= estacao.status %></td>
-        <!--<td><%= estacao.cedente %></td>-->
         <td><%= estacao.tipo %></td>
-        <!--<td><%= number_with_precision(estacao.latitude,  precision: 10, separator: ',' , locale: 'pt-BR') %></td>-->
-        <!--<td><%= number_with_precision(estacao.longitude, precision: 10, separator: ',' , locale: 'pt-BR' ) %></td>-->
-        <!--<td><%=l estacao.created_at %></td>-->
       </tr>
     <% end %>
   </tbody>

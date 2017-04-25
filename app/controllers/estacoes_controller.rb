@@ -10,6 +10,7 @@ class EstacoesController < ApplicationController
   # GET /estacoes/1
   # GET /estacoes/1.json
   def show
+    @equipamentos = @estacao.equipamentos
   end
 
   # GET /estacoes/new
@@ -69,6 +70,6 @@ class EstacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estacao_params
-      params.require(:estacao).permit(:pop, :nome, :endereco, :cidade, :uf, :tipo, :cedente, :latitude, :longitude)
+      params.require(:estacao).permit(:pop, :nome, :endereco, :cidade, :uf, :tipo, :cedente, :latitude, :longitude, :status)
     end
 end
