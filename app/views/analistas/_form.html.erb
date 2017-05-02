@@ -32,7 +32,6 @@
   <div class="form-group">
     <%= f.label :regional_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <!--<%= f.text_field :regional_id, :class => 'form-control' %>-->
       <%= f.collection_select(:regional_id, Regional.all, :id, :nome, include_blank: true) %>
     </div>
     <%=f.error_span(:regional_id) %>
@@ -47,7 +46,7 @@
   <div class="form-group">
     <%= f.label :funcao, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.select(:funcao, ['Eng. Comerical','Gerente de Contas'], {include_blank: false}) %>
+      <%= f.select(:funcao, ['Eng. Comercial','Gerente de Contas'], {include_blank: false}) %>
     </div>
     <%=f.error_span(:funcao) %>
   </div>

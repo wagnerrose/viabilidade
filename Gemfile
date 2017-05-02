@@ -7,6 +7,11 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.1'
+
+# Hirb provides a mini view framework for console applications 
+# gem and uses it to improve ripl(irb)'s default inspect output.
+gem 'hirb'
+
 gem 'puma', '3.4.0'
 gem 'sass-rails', '>= 5.0.6'
 gem 'uglifier', '3.0.0'
@@ -20,6 +25,9 @@ gem "twitter-bootstrap-rails"
 gem 'sprockets-rails'
 gem 'glyphicons-rails'
 gem 'simple_form'
+
+#Paperclip is intended as an easy file attachment library for ActiveRecord. 
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'byebug', platform: :mri

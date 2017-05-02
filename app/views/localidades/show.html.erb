@@ -4,14 +4,22 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
-  <dd><%= @localidade.nome %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:uf) %>:</strong></dt>
-  <dd><%= @localidade.uf %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cod_localidade) %>:</strong></dt>
-  <dd><%= @localidade.cod_localidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uf_id) %>:</strong></dt>
+  <dd><%= @localidade.uf.sigla %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:localidade) %>:</strong></dt>
+  <dd><%= @localidade.localidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:municipio) %>:</strong></dt>
+  <dd><%= @localidade.municipio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sigla_cnl) %>:</strong></dt>
+  <dd><%= @localidade.sigla_cnl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cod_cnl) %>:</strong></dt>
+  <dd><%= @localidade.cod_cnl %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @localidade.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @localidade.longitude %></dd>
 </dl>
-
+  
 <%= link_to t('.back', :default => t("helpers.links.back")),
               localidades_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

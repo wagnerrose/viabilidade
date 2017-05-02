@@ -1,0 +1,32 @@
+<%- model_class = Estacao -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:pop) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:cidade) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:tipo) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @estacoes.each do |estacao| %>
+      <tr>
+        <td><%= link_to estacao.pop, estacao_path(estacao), :title => "Detalhar" %></td>
+        <td><%= estacao.nome %></td>
+        <td><%= estacao.endereco %></td>        
+        <td><%= estacao.cidade %></td>
+        <td><%= estacao.status %></td>
+        <td><%= estacao.tipo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_estacao_path,
+            :class => 'btn btn-primary' %>

@@ -1,4 +1,5 @@
 class Uf < ApplicationRecord
+  has_many :localidades
   
   validates :nome, presence: { message: 'O nome da UF deve ser preenchida.' },  
         length: { maximum: 30, message: 'O nome da UF deve ser de até 30 caracteres.' }

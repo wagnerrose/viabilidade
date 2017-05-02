@@ -1,34 +1,173 @@
-<%= simple_form_for @solicitacao, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :numero_vt %>
-  <%= error_span(@solicitacao[:numero_vt]) %>
-  <%= f.input :data_solicitacao %>
-  <%= error_span(@solicitacao[:data_solicitacao]) %>
-  <%= f.input :solicitante %>
-  <%= error_span(@solicitacao[:solicitante]) %>
-  <%= f.input :analista %>
-  <%= error_span(@solicitacao[:analista]) %>
-  <%= f.input :servico %>
-  <%= error_span(@solicitacao[:servico]) %>
-  <%= f.input :banda %>
-  <%= error_span(@solicitacao[:banda]) %>
-  <%= f.input :endereco_a %>
-  <%= error_span(@solicitacao[:endereco_a]) %>
-  <%= f.input :localidade_a %>
-  <%= error_span(@solicitacao[:localidade_a]) %>
-  <%= f.input :uf_a %>
-  <%= error_span(@solicitacao[:uf_a]) %>
-  <%= f.input :endereco_b %>
-  <%= error_span(@solicitacao[:endereco_b]) %>
-  <%= f.input :localidade_b %>
-  <%= error_span(@solicitacao[:localidade_b]) %>
-  <%= f.input :uf_b %>
-  <%= error_span(@solicitacao[:uf_b]) %>
-  <%= f.input :resultado_vt %>
-  <%= error_span(@solicitacao[:resultado_vt]) %>
-  <%= f.input :empresa_id %>
-  <%= error_span(@solicitacao[:empresa_id]) %>
+<% opcao_status = ["Em Analise", "Viável", "Inviável", "Analise Eletrosul"] %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                solicitacoes_path, :class => 'btn btn-default' %>
+<%= form_for @solicitacao, :html => { :class => "form-horizontal solicitacao" } do |f| %>
+  <% if @solicitacao.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@solicitacao.errors.count, "error") %> prohibited this equipamento from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @solicitacao.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :numero_vt, :class => 'control-label col-sm-1'%>
+        <div class="input-sm col-sm-2">
+          <%= f.text_field :numero_vt, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:numero_vt) %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :empresa_id, :class => 'control-label col-sm-1' %>
+        <div class="input-sm col-sm-6">
+          <%= f.collection_select(:empresa_id, Empresa.all, 
+                                  :id, :razao, 
+                                  {include_blank: true}, 
+                                  :class => 'form-control') %>
+        </div>
+        <%=f.error_span(:empresa_id) %>
+      </div><!--/form-group-->
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :data_solicitacao, :class => 'control-label col-sm-1'%>
+        <div class="input-sm col-lg-2">
+          <%= f.date_field :data_solicitacao, :class => 'form-control' %>
+        </div>
+      <%=f.error_span(:data_solicitacao) %>
+
+        <%= f.label :solicitante, :class => 'control-label col-sm-1' %>
+        <div class="input-sm col-sm-2">
+          <%= f.collection_select(:solicitante, 
+                  Analista.all.order(:nome), 
+                  :nome, :nome, 
+                  {include_blank: true}, 
+                  :class => 'form-control') %>
+        </div>
+        <%=f.error_span(:solicitante) %>
+
+        <%= f.label :analista, :class => 'control-label col-lg-1'%>
+        <div class="input-sm col-lg-2">
+          <%= f.collection_select(:analista, 
+                    Analista.where(funcao: "Eng. Comercial").order(:nome), 
+                    :nome, :nome, 
+                    {include_blank: false}, 
+                    :class => 'form-control') %>
+        </div>
+      </div><!--/form-group-->
+      <%=f.error_span(:analista) %>
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :servico, :class => 'control-label col-sm-1'%>
+        <div class="input-sm col-sm-2">
+          <%= f.collection_select(:servico, 
+                  Servico.order(:nome), 
+                  :nome, :nome, 
+                  {include_blank: true}, 
+                  :class => 'form-control') %>
+        </div>
+        <%=f.error_span(:servico) %>
+
+        <%= f.label :banda, :class => 'control-label col-lg-1'%>
+        <div class="input-sm col-lg-2">
+          <%= f.number_field :banda, :class => 'form-control' %>
+        </div>
+      </div>
+      <%=f.error_span(:banda) %>
+    </div><!--/banda-->
+    
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :endereco_a, :class => 'control-label col-lg-1' %>
+        <div class="input-sm col-lg-6">
+          <%= f.text_field :endereco_a, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:endereco_a) %>
+
+        <%= f.label :uf_a, :class => 'control-label col-lg-1' %>
+        <div class="input-sm col-lg-1">
+          <%= f.collection_select(:uf_a, 
+                    Uf.order(:sigla), 
+                    :sigla, :sigla, 
+                    {include_blank: true}, 
+                    :class => 'form-control') %>
+        </div>
+        <%=f.error_span(:uf_a) %>
+
+          <%= f.label :localidade_a, :class => 'control-label col-lg-1'  %>
+          <div class="input-sm col-lg-2">
+            <%= f.collection_select(:localidade_a, 
+                    Localidade.select(:municipio).order(:municipio).distinct, 
+                    :id, :municipio, 
+                    {include_blank: true}, 
+                    :class => 'form-control') %>
+          </div>
+          <%=f.error_span(:localidade_a) %>
+    </div><!--/row-->  
+  
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :endereco_b, :class => 'control-label col-lg-1'  %>
+        <div class="input-sm col-lg-6">
+          <%= f.text_field :endereco_b, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:endereco_b) %>
+  
+        <%= f.label :uf_b, :class => 'control-label col-lg-1'  %>
+        <div class="input-sm col-lg-1">
+          <%= f.collection_select(:uf_b, 
+                    Uf.order(:sigla), 
+                    :sigla, :sigla, 
+                    {include_blank: true}, 
+                      :class => 'form-control') %>
+         </div>
+        <%=f.error_span(:uf_b) %>
+  
+        <%= f.label :localidade_b, :class => 'control-label col-lg-1' %>
+        <div class="input-sm col-lg-2">
+          <%= f.collection_select :localidade_b, 
+                    Localidade.select(:municipio).order(:municipio).distinct, 
+                    :id, :municipio, 
+                    {include_blank: true},
+                    :class => 'form-control' %>
+        </div><!--/localidade_b-->
+        <%=f.error_span(:localidade_b) %>    
+      </div><!--/form-control-->
+    </div><!--/row-->
+
+    <div class="row">      
+      <div class="form-group">
+        <%= f.label :resultado_vt, :class => 'control-label col-lg-1'%>
+        <div class="input-sm col-lg-2">      
+          <%= f.select(:resultado_vt, 
+                        opcao_status, 
+                        {include_blank: false}, 
+                        :class => 'form-control') %>
+        </div>
+        <%=f.error_span(:resultado_vt) %>      
+      </div><!--/resultado_vt-->
+    </div><!--/row-->
+  </div><!--/container-->
+  
+  <div class="row">
+  <div class="form-group">
+    <div class="col-lg-offset-1 col-sm-6">
+        <%= f.button :submit, :class => 'btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                      solicitacoes_path, :class => 'btn btn-default' %>
+      </div>
+    </div>
+  </div><!--/row-->
 <% end %>

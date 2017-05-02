@@ -5,31 +5,15 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:cod_regional) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
-      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @regionais.each do |regional| %>
       <tr>
-        <!--<td><%= link_to regional.id, regional_path(regional) %></td>-->
         <td><%= regional.cod_regional %></td>
         <td><%= regional.nome %></td>
-        <!--<td><%=l regional.created_at %></td>-->
-        <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      regional_path(regional), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_regional_path(regional), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      regional_path(regional),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>

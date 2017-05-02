@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419120513) do
+ActiveRecord::Schema.define(version: 20170427132529) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(version: 20170419120513) do
   end
 
   create_table "localidades", force: :cascade do |t|
-    t.string   "uf"
     t.string   "sigla_cnl"
     t.string   "cod_cnl"
     t.string   "localidade"
@@ -119,6 +118,8 @@ ActiveRecord::Schema.define(version: 20170419120513) do
     t.decimal  "longitude",  precision: 15, scale: 13
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.integer  "uf_id"
+    t.index ["uf_id"], name: "index_localidades_on_uf_id"
   end
 
   create_table "regionais", force: :cascade do |t|

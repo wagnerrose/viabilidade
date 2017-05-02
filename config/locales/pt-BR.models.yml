@@ -59,7 +59,7 @@
       solicitacao:
         numero_vt: "Número"
         empresa_id: "Empresa"
-        data_solicitacao: "Solicitado em"
+        data_solicitacao: "Solicitado"
         solicitante: "Solicitante"
         analista: "Analista"
         servico: "Serviço"

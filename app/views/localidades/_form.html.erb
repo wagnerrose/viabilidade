@@ -16,11 +16,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :uf, :class => 'control-label col-lg-2' %>
+    <%= f.label :uf_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-1">
-      <%= f.text_field :uf, :class => 'form-control' %>
+      <%= f.collection_select(:uf_id, Uf.all, :id, :sigla, include_blank: true) %>
     </div>
-    <%=f.error_span(:uf) %>
+    <%=f.error_span(:uf_id) %>
   </div>
   <div class="form-group">
     <%= f.label :localidade, :class => 'control-label col-lg-2' %>
@@ -53,16 +53,16 @@
   <div class="form-group">
     <%= f.label :latitude, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <!--<%= f.text_field :latitude, :class => 'form-control' %>-->
-      <%= f.number_field :latitude, :value => number_with_precision(f.object.latitude.to_f, locale: 'pt-BR'), :step => :any %>
+      <%= f.number_field :latitude, :class => 'form-control' %>
+      <!--<%= f.number_field :latitude, :value => number_with_precision(f.object.latitude.to_f, locale: 'pt-BR'), :step => :any %>-->
     </div>
     <%=f.error_span(:latitude) %>
   </div>
   <div class="form-group">
     <%= f.label :longitude, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <!--<%= f.text_field :longitude, :class => 'form-control' %>-->
-      <%= f.number_field :longitude, :value => number_with_precision(f.object.longitude.to_f, locale: 'pt-BR'), :step => :any %>
+      <%= f.number_field :longitude, :class => 'form-control' %>
+      <!--<%= f.number_field :longitude, :value => number_with_precision(f.object.longitude.to_f, locale: 'pt-BR'), :step => :any %>-->
     </div>
     <%=f.error_span(:longitude) %>
   </div>
