@@ -1,8 +1,18 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
 <%- model_class = Analista -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+  </h1>
 </div>
-<table class="table table-striped">
+
+<table class="table table-striped" id="analistas">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:nome) %></th>
@@ -15,7 +25,7 @@
   <tbody>
     <% @analistas.each do |analista| %>
       <tr>
-        <td><%= analista.nome %></td>
+        <td><%= link_to analista.nome, analista_path(analista) %></td>
         <td><%= analista.email %></td>
         <td><%= analista.regional.nome %></td>
         <td><%= analista.fone_contato %></td>

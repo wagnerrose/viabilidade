@@ -1,3 +1,4 @@
 class Resposta < ApplicationRecord
-  belongs_to :numero_vt_id
+  belongs_to :solicitacao
+  
 end

@@ -1,8 +1,19 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
+
 <%- model_class = Equipamento -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+  </h1>
 </div>
-<table class="table table-striped">
+
+<div>
+<table class="table table-striped small" id="equipamentos">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:designacao) %></th>
@@ -11,8 +22,8 @@
       <th><%= model_class.human_attribute_name(:enderecamento) %></th>
       <th><%= model_class.human_attribute_name(:firmware) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:arco) %></th>
-      <th><%= model_class.human_attribute_name(:cluster) %></th>
+      <!--<th><%= model_class.human_attribute_name(:arco) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:cluster) %></th>-->
       <th><%= model_class.human_attribute_name(:estacao_id) %></th>
       <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
@@ -20,20 +31,25 @@
   <tbody>
     <% @equipamentos.each do |equipamento| %>
       <tr>
-        <td><%= equipamento.designacao %></td>
+        <td><%= link_to equipamento.designacao, equipamento_path(equipamento) %></td>
         <td><%= equipamento.descricao %></td>
         <td><%= equipamento.tipo %></td>
         <td><%= equipamento.enderecamento %></td>
         <td><%= equipamento.firmware %></td>
         <td><%= equipamento.status %></td>
-        <td><%= equipamento.arco %></td>
-        <td><%= equipamento.cluster %></td>
+        <!--<td><%= equipamento.arco %></td>-->
+        <!--<td><%= equipamento.cluster %></td>-->
         <td><%= equipamento.estacao.pop %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_equipamento_path,
-            :class => 'btn btn-primary' %>
+</div>
+<div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3">
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_equipamento_path,
+                :class => 'btn btn-primary' %>
+  </div>
+</div>

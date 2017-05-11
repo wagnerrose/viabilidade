@@ -1,24 +1,44 @@
-<%- model_class = Servico -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:codigo) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @servicos.each do |servico| %>
-      <tr>
-        <td><%= servico.nome %></td>
-        <td><%= servico.codigo %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_servico_path,
-            :class => 'btn btn-primary' %>
+<%- model_class = Servico -%>
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+  </h1>
+</div>
+
+<div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <table class="table table-striped" id="servicos">
+      <thead>
+        <tr>
+          <th><%= model_class.human_attribute_name(:nome) %></th>
+          <th><%= model_class.human_attribute_name(:codigo) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @servicos.each do |servico| %>
+          <tr>
+            <td><%= link_to servico.nome, servico_path(servico) %></td>
+            <td><%= servico.codigo %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-3"></div>
+</div> <!-- div conteiner-->
+
+<div>
+  <div class="col-sm-3"></div>  
+  <div class="col-sm-3">
+      <%= link_to t('.new', :default => t("helpers.links.new")),
+                  new_servico_path,
+                  :class => 'btn btn-primary' %>
+  </div><!-- div botao new -->
+</div><!-- agrupamento botao -->

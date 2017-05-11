@@ -1,32 +1,49 @@
-<%- model_class = Estacao -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:pop) %></th>
-      <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:endereco) %></th>
-      <th><%= model_class.human_attribute_name(:cidade) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:tipo) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @estacoes.each do |estacao| %>
-      <tr>
-        <td><%= link_to estacao.pop, estacao_path(estacao), :title => "Detalhar" %></td>
-        <td><%= estacao.nome %></td>
-        <td><%= estacao.endereco %></td>        
-        <td><%= estacao.cidade %></td>
-        <td><%= estacao.status %></td>
-        <td><%= estacao.tipo %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_estacao_path,
-            :class => 'btn btn-primary' %>
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
+
+<%- model_class = Estacao -%>
+
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+  </h1>
+</div>
+
+<div class="row">
+  <table class="table table-striped" id="estacoes">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:pop) %></th>
+        <th><%= model_class.human_attribute_name(:nome) %></th>
+        <th><%= model_class.human_attribute_name(:endereco) %></th>
+        <th><%= model_class.human_attribute_name(:cidade) %></th>
+        <th><%= model_class.human_attribute_name(:status) %></th>
+        <th><%= model_class.human_attribute_name(:tipo) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @estacoes.each do |estacao| %>
+        <tr>
+          <td><%= link_to estacao.pop, estacao_path(estacao), :title => "Detalhar" %></td>
+          <td><%= estacao.nome %></td>
+          <td><%= estacao.endereco %></td>        
+          <td><%= estacao.cidade %></td>
+          <td><%= estacao.status %></td>
+          <td><%= estacao.tipo %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- /div row -->
+<div>
+  <div class="col-sm-3">
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_estacao_path,
+                :class => 'btn btn-primary' %>
+  </div>
+</div><!-- /div botao -->

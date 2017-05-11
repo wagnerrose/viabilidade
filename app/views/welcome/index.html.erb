@@ -1,3 +1,10 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+
+<% content_for :head do %>
+  <%= javascript_include_tag 'welcome' %>
+  <%= stylesheet_link_tag 'welcome' %>
+<% end %>
+
 <h1><center>Análise de Viabilidade Técnica</center></h1>
 <div><center>
   <table>

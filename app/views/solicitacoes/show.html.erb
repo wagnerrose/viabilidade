@@ -1,7 +1,8 @@
 <%- model_class = Solicitacao -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></h1>
-</div>
+<div class="list-group"></div>
+  <h1 class="list-group-item-heading list-group-item-info"><center><%=t '.title', :default => model_class.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></center></h1>
+<div class="container">
+
 <div id="sombrarredondada">
   <table class="table table-condensed">
     <thead>
@@ -14,8 +15,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= @solicitacao.nome %></td>
-        <td><%= @solicitacao.endereco %></td>
+        <td><%= @solicitacao.numero_vt %></td>
+        <td><%= @solicitacao.empresa.razao %></td>
         <td><%= @solicitacao.data_solicitacao %></td>
         <td><%= @solicitacao.solicitante %></td>
       </tr>
@@ -73,28 +74,31 @@
               :class => 'btn btn-danger' %>
 </div>
 
+<div class="list-group"></div>
+    <h1 class="list-group-item-heading list-group-item-success"><center>Análise Viabilidade</center></h1>
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#Acesso" data-toggle="tab">Acesso</a></li>
-    <li class="active"><a href="#Backbone" data-toggle="tab">Backbone</a></li>
-    <li class="active"><a href="#Interconexao" data-toggle="tab">Interconexão</a></li>
-    <li class="active"><a href="#Anexos" data-toggle="tab">Anexos</a></li>
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="#Acesso" data-toggle="tab"><strong>Acesso</strong></a></li>
+    <li ><a href="#Backbone" data-toggle="tab"><strong>Backbone</strong></a></li>
+    <li ><a href="#Interconexao" data-toggle="tab"><strong>Interconexão</strong></a></li>
+    <li ><a href="#Anexos" data-toggle="tab"><strong>Anexos</strong></a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane" id="Acesso">
-      <p><h1>Acesso</h1></p>
-    </div><!--/tab-pane--> 
-    <div class="tab-pane" id="Backbone">
+    <div class="tab-pane fade in active" id="Acesso">
+        <p><h1>Acesso</h1></p>
+    </div><!--/tab-pane Acesso --> 
+
+    <div class="tab-pane fade" id="Backbone">
       <p><h1>Backbone</h1></p>
-    </div><!--/tab-pane--> 
-    <div class="tab-pane" id="Interconexao">
+    </div><!--/tab-pane Backbone --> 
+
+    <div class="tab-pane fade" id="Interconexao">
       <p><h1>Interconexao</h1></p>
-    </div><!--/tab-pane-->  
-    <div class="tab-pane" id="Anexos">
+    </div><!--/tab-pane Interconexao -->  
+
+    <div class="tab-pane fade" id="Anexos">
       <p><h1>Anexos</h1></p>
-    </div><!--/tab-pane--> 
-    <div class="tab-pane" id="Acesso">
-      <p><h1>Acesso</h1></p>
-    </div><!--/tab-pane-->  
+    </div><!--/tab-pan Anexo --> 
+
   </div><!--/tab-content-->
 </div><!--/container-->

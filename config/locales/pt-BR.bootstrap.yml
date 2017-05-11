@@ -16,7 +16,8 @@ pt-BR:
       destroy: "Apaga"
       new: "Novo"
       edit: "Edita"
-      show: "Mostrar"
+      show: "Mostra"
+      submit: "Salva"
     titles:
       edit: "Edita %{model}"
       save: "Salva %{model}"

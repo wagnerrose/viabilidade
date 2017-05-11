@@ -1,24 +1,44 @@
-<%- model_class = Uf -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped ">
-  <thead>
-    <tr>
-      <th class="text-center"> <%= sortable "sigla" %></th>
-      <th class="text-center"> <%= sortable "nome" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @uf.each do |uf| %>
-      <tr>
-        <td class="text-center"><%= uf.sigla %></td>
-        <td class="text-center"><%= uf.nome %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag params[:controller] %>
+<% end %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_uf_path,
-            :class => 'btn btn-primary' %>
+<%- model_class = Uf -%>
+
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize.upcase %></center>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <table  class="table table-striped" id="uf">
+      <thead>
+        <tr>
+          <th class="text-center"> <%=  model_class.human_attribute_name (:sigla) %></th>
+          <th class="text-center"> <%=  model_class.human_attribute_name (:nome) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @uf.each do |uf| %>
+          <tr>
+            <td class="text-center"><%= link_to uf.sigla, uf_path(uf) %></td>
+            <td class="text-center"><%= uf.nome %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> <!-- Tabela -->
+  </div><!-- row Tabela -->
+  <div class="col-sm-3"></div>
+</div>
+<div class = "row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3">
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_uf_path,
+                :class => 'btn btn-primary' %>
+  </div>
+</div> <!-- row -->

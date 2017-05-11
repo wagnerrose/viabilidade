@@ -1,3 +1,13 @@
 // Place all the styles related to the Solicitacaes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.control-label {
+    color: black;
+    float: left;
+}
+.form-control {
+    color: black;
+    float: left;
+    width: 95%;
+}

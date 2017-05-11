@@ -1,24 +1,45 @@
-<%- model_class = Regional -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:cod_regional) %></th>
-      <th><%= model_class.human_attribute_name(:nome) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @regionais.each do |regional| %>
-      <tr>
-        <td><%= regional.cod_regional %></td>
-        <td><%= regional.nome %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_regional_path,
-            :class => 'btn btn-primary' %>
+<%- model_class = Regional -%>
+
+<div class="list-group">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <table class="table table-striped" id="regionais">
+      <thead>
+        <tr>
+          <th><center><%= model_class.human_attribute_name(:cod_regional) %></center></th>
+          <th><%= model_class.human_attribute_name(:nome) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @regionais.each do |regional| %>
+          <tr>
+            <td><center><%= link_to regional.cod_regional, regional_path(regional) %></center></td>
+            <td><%= regional.nome %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><!-- div tabela -->
+  <div class="col-sm-3"></div>
+</div><!-- div row -->
+
+<div class="row">
+  <div class="col-sm-3"></div>  
+  <div>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_regional_path,
+                :class => 'btn btn-primary' %>
+  </div>
+</div>
