@@ -24,11 +24,13 @@ gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
 gem 'turbolinks', '5.0.1'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '2.4.1'
 gem "therubyracer"
 # gem "less-rails"
 gem "twitter-bootstrap-rails"
-gem 'sprockets-rails'
+# gem 'sprockets-rails'
+gem 'bootstrap-sass', '3.3.6'
 gem 'glyphicons-rails'
 gem 'simple_form'
 

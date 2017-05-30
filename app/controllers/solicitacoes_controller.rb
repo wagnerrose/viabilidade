@@ -15,10 +15,20 @@ class SolicitacoesController < ApplicationController
   # GET /solicitacaes/new
   def new
     @solicitacao = Solicitacao.new
+    empresa_options_for_select
+    solicitante_options_for_select
+    analista_options_for_select
+    servico_options_for_select
+    uf_options_for_select
   end
 
   # GET /solicitacaes/1/edit
   def edit
+    empresa_options_for_select
+    solicitante_options_for_select
+    analista_options_for_select
+    servico_options_for_select
+    uf_options_for_select 
   end
 
   # POST /solicitacaes
@@ -70,5 +80,25 @@ class SolicitacoesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def solicitacao_params
       params.require(:solicitacao).permit(:numero_vt, :empresa_id, :data_solicitacao, :solicitante, :analista, :servico, :banda, :endereco_a, :localidade_a, :uf_a, :endereco_b, :localidade_b, :uf_b, :resultado_vt)
+    end
+    # pesquisa das empresas para o select
+    def empresa_options_for_select
+      @empresa_options_for_select = Empresa.all
+    end
+    # pesquisa dos solicitantes de Viabilidades para o select
+    def solicitante_options_for_select
+      @solicitante_options_for_select = Analista.all.order(:nome)
+    end
+    # pesquisa de analistas de Viabilidades para o select
+    def analista_options_for_select
+      @analista_options_for_select = Analista.where(funcao: "Eng. Comercial").order(:nome)      
+    end
+    # pesquisa dos Tipos de Serviços para o select    
+    def servico_options_for_select 
+      @servico_options_for_select = Servico.order(:nome)
+    end
+    # pesquisa das UFs disponiveis para o select
+    def uf_options_for_select
+      @uf_options_for_select = Uf.order(:sigla)
     end
 end

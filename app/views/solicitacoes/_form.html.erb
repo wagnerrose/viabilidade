@@ -32,7 +32,7 @@
     
     <div class="form-group col-sm-9">
       <%= f.label :empresa_id, :class => 'control-label' %>
-      <%= f.collection_select(:empresa_id, Empresa.all, 
+      <%= f.collection_select(:empresa_id, @empresa_options_for_select, 
                               :id, :razao, 
                               {include_blank: true}, 
                               :class => 'form-control input-sm') %>
@@ -50,7 +50,7 @@
     <div class="form-group col-sm-4">
       <%= f.label :solicitante, :class => 'control-label'  %>
       <%= f.collection_select(:solicitante, 
-                Analista.all.order(:nome), 
+                @solicitante_options_for_select, 
                 :nome, :nome, 
                 {include_blank: true},
                 :class => 'form-control input-sm') %>
@@ -60,7 +60,7 @@
     <div class="form-group col-sm-4">
       <%= f.label :analista, :class => 'control-label'  %>
       <%= f.collection_select(:analista, 
-                  Analista.where(funcao: "Eng. Comercial").order(:nome), 
+                  @analista_options_for_select, 
                   :nome, :nome, 
                   {include_blank: false},
                   :class => 'form-control input-sm') %>
@@ -73,7 +73,7 @@
       <div class="form-group col-sm-3">
         <%= f.label :servico, :class => 'control-label'  %>
         <%= f.collection_select(:servico, 
-                Servico.order(:nome), 
+                @servico_options_for_select, 
                 :nome, :nome, 
                 {include_blank: true},
                 :class => 'form-control input-sm') %>
@@ -98,7 +98,7 @@
     <div class="form-group col-sm-1">    
       <%= f.label :uf_a, :class => 'control-label'  %>
       <%= f.collection_select(:uf_a, 
-                Uf.order(:sigla), 
+                @uf_options_for_select, 
                 :sigla, :sigla, 
                 {include_blank: true},
                 :class => 'form-control input-sm') %>
@@ -108,8 +108,8 @@
     <div class="form-group col-sm-3">
         <%= f.label :localidade_a, :class => 'control-label'  %>
         <%= f.grouped_collection_select(:localidade_a, 
-                Uf.order(:sigla), 
-                :localidades, :sigla, :id, :municipio,
+                @uf_options_for_select, 
+                :localidades, :sigla, :municipio, :municipio,
                 {include_blank: true},
                 :class => 'form-control input-sm') %>
     </div>
@@ -126,7 +126,7 @@
     <div class="form-group col-sm-1">
       <%= f.label :uf_b, :class => 'control-label'  %>
       <%= f.collection_select(:uf_b, 
-                  Uf.order(:sigla), 
+                  @uf_options_for_select, 
                   :sigla, :sigla, 
                   {include_blank: true},
                   :class => 'form-control input-sm') %>
@@ -136,8 +136,8 @@
       <div class="form-group  col-sm-3">   
        <%= f.label :localidade_b, :class => 'control-label'  %>
        <%= f.grouped_collection_select(:localidade_b, 
-                  Uf.order(:sigla), 
-                  :localidades, :sigla, :id, :municipio,
+                  @uf_options_for_select, 
+                  :localidades, :sigla, :municipio, :municipio,
                   {include_blank: true},
                   :class => 'form-control input-sm') %>
                   

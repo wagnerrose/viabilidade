@@ -13,17 +13,19 @@
   </h1>
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped" id="solicitacao">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:numero_vt) %></th>
+      <th><%= model_class.human_attribute_name(:resultado_vt) %></th>
       <th><%= model_class.human_attribute_name(:data_solicitacao) %></th>
+      <th><%= model_class.human_attribute_name(:empresa_id) %></th>
       <th><%= model_class.human_attribute_name(:solicitante) %></th>
       <th><%= model_class.human_attribute_name(:servico) %></th>
       <th><%= model_class.human_attribute_name(:banda) %></th>
-      <th><%= model_class.human_attribute_name(:localidade_a) %></th>
+      <th> Pta A </th>
       <th><%= model_class.human_attribute_name(:uf_a) %></th>
-      <th><%= model_class.human_attribute_name(:localidade_b) %></th>
+      <th>Pta B</th>
       <th><%= model_class.human_attribute_name(:uf_b) %></th>
       <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
@@ -32,14 +34,16 @@
     <% @solicitacoes.each do |solicitacao| %>
       <tr>
         <td><%= link_to solicitacao.numero_vt, solicitacao_path(solicitacao), :title => "Detalhar" %></td>
+        <td><%= solicitacao.resultado_vt %></center></td>
         <td><%= solicitacao.data_solicitacao %></td>
+        <td><%= solicitacao.empresa.razao %></td>
         <td><%= solicitacao.solicitante %></td>
         <td><%= solicitacao.servico %></td>
         <td><%= solicitacao.banda %></td>
-        <td><%= solicitacao.localidade_a %></td>
-        <td><%= solicitacao.uf_a %></td>
-        <td><%= solicitacao.localidade_b %></td>
-        <td><%= solicitacao.uf_b %></td>
+        <td><center><%= solicitacao.localidade_a %></center></td>
+        <td><center><%= solicitacao.uf_a %></center></td>
+        <td><center><%= solicitacao.localidade_b %></center></td>
+        <td><center><%= solicitacao.uf_b %></center></td>
        </tr>
     <% end %>
   </tbody>

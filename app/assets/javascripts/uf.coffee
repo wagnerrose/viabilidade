@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#uf').dataTable
+ $('#uf').dataTable
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",
@@ -26,4 +26,5 @@ jQuery ->
           "sortAscending":  ": ative para ordenamento ascendente",
           "sortDescending": ": ative para ordenamento descendente"
       }
-  }
+  };
+

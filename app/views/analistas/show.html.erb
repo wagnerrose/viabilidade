@@ -1,29 +1,31 @@
-<%- model_class = Analista -%>
-<div class="list-group">
-  <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
-  </h1>
-</div> <!-- list-group-->
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
-  <dd><%= @analista.nome %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @analista.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:regional_id) %>:</strong></dt>
-  <dd><%= @analista.regional.nome %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:fone_contato) %>:</strong></dt>
-  <dd><%= @analista.fone_contato %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:funcao) %>:</strong></dt>
-  <dd><%= @analista.funcao %></dd>
-</dl>
-
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              analistas_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_analista_path(@analista), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              analista_path(@analista),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<div class="elegant-aero">
+  <%- model_class = Analista -%>
+  <div class="list-group">
+    <h1 class="list-group-item-heading list-group-item-info">
+          <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
+    </h1>
+  </div> <!-- list-group-->
+  
+  <dl class="dl-horizontal">
+    <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+    <dd><%= @analista.nome %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+    <dd><%= @analista.email %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:regional_id) %>:</strong></dt>
+    <dd><%= @analista.regional.nome %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:fone_contato) %>:</strong></dt>
+    <dd><%= @analista.fone_contato %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:funcao) %>:</strong></dt>
+    <dd><%= @analista.funcao %></dd>
+  </dl>
+  
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+                analistas_path, :class => 'button'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_analista_path(@analista), :class => 'button' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                analista_path(@analista),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'buttonApaga' %>
+</div>

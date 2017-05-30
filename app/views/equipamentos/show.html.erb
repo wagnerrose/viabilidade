@@ -1,4 +1,5 @@
 <%- model_class = Equipamento -%>
+<div class="elegant-aero">
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
         <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
@@ -27,11 +28,12 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              equipamentos_path, :class => 'btn btn-default'  %>
+              equipamentos_path, :class => 'button'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_equipamento_path(@equipamento), :class => 'btn btn-default' %>
+              edit_equipamento_path(@equipamento), :class => 'button' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               equipamento_path(@equipamento),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => 'buttonApaga' %>
+</div>
