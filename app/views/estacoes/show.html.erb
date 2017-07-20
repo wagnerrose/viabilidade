@@ -46,16 +46,18 @@
     </tbody>
   </table>
 </div>
-<div>
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              estacoes_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_estacao_path(@estacao), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              estacao_path(@estacao),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<div class="elegant-aero">
+  <center>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                  estacoes_path, :class => 'button'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_estacao_path(@estacao), :class => 'button' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  estacao_path(@estacao),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'buttonDelete' %>
+  </center>
 </div>
 
 <%- model_class_eqto = Equipamento -%>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  analise: MyString
+  dataStatus: 2017-05-31
+  solicitacao: 
+
+two:
+  analise: MyString
+  dataStatus: 2017-05-31
+  solicitacao: 

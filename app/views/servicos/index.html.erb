@@ -7,13 +7,13 @@
 <%- model_class = Servico -%>
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @servicos.count).titleize %></center>
   </h1>
 </div>
 
-<div>
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
     <table class="table table-striped" id="servicos">
       <thead>
         <tr>
@@ -24,21 +24,17 @@
       <tbody>
         <% @servicos.each do |servico| %>
           <tr>
-            <td><%= link_to servico.nome, servico_path(servico) %></td>
+            <td><%= link_to servico.nome, servico_path(servico), :title => "Detalhar/Editar" %></td>
             <td><%= servico.codigo %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  <div class="col-sm-3"></div>
-</div> <!-- div conteiner-->
-
-<div>
-  <div class="col-sm-3"></div>  
-  <div class="col-sm-3">
+  <div class="col-md-3"></div>
+</div> <!-- div row-->
+<center>
       <%= link_to t('.new', :default => t("helpers.links.new")),
                   new_servico_path,
-                  :class => 'btn btn-primary' %>
-  </div><!-- div botao new -->
-</div><!-- agrupamento botao -->
+                  :class => 'btn btn-info btn-md' %>
+</center>

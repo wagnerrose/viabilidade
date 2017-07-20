@@ -8,7 +8,7 @@
 
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @localidades.count).titleize %></center>
   </h1>
 </div>
 
@@ -28,7 +28,7 @@
     <% @localidades.each do |localidade| %>
       <tr>
         <td><%= localidade.uf.sigla %></td>
-        <td><%= link_to localidade.localidade, localidade_path(localidade) %></td>
+        <td><%= link_to localidade.localidade, localidade_path(localidade), :title => "Detalhar/Editar" %></td>
         <td><%= localidade.municipio %></td>
         <td><center><%= localidade.sigla_cnl %></center></td>
         <td><center><%= localidade.cod_cnl %></center></td>
@@ -38,7 +38,8 @@
     <% end %>
   </tbody>
 </table>
-
+<center>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_localidade_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-info btn-md' %>
+</center>

@@ -40,6 +40,7 @@ jQuery ->
        
  jQuery ->
   $('#solicitacao').dataTable
+    destroy: true, 
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",
@@ -64,6 +65,5 @@ jQuery ->
           "sortDescending": ": ative para ordenamento descendente"
       }
     }
-
 
 

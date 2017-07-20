@@ -2,13 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.control-label {
-    color: black;
-    float: left;
+.campoTipo {
+  text-align: center;
+  padding: 0px;
+  border: none;
+  float: left;  
 }
-.form-control {
-    color: black;
-    float: left;
-    width: 95%;
+.campoEstrutura {
+  padding: 0px;
+  text-align: center;
+  float: left;    
 }
-// teste de alteraçao do bootstrap
+.campoDescricao {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  float: left;  
+}
+.campoPrazo {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  float: left;  
+}
+.campoCapex {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.campoOpexInstalacao {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.campoOpexMensal {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.campoResultadoVt {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.campoEmpresa {
+  padding: 0px;
+  width: 680px;
+  text-align: center;
+  float: left;  
+}
+.campoEstado {
+  width: 70px;
+  text-align: center;
+}
+.campoBanda {
+  width: 70px;
+  padding: 0px;
+  text-align: center;
+}
+.campoAnalista {
+  width: 200px;
+  text-align: center;
+}
+.campoAcesso{
+  width: 50px;
+  border: none;
+  margin:0;
+  padding:0;
+}

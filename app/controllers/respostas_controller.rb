@@ -10,6 +10,7 @@ class RespostasController < ApplicationController
   # GET /respostas/1
   # GET /respostas/1.json
   def show
+  
   end
 
   # GET /respostas/new

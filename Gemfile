@@ -32,7 +32,13 @@ gem "twitter-bootstrap-rails"
 # gem 'sprockets-rails'
 gem 'bootstrap-sass', '3.3.6'
 gem 'glyphicons-rails'
+# Simple Form aims to be as flexible as possible while helping you with 
+# powerful components to create your form
 gem 'simple_form'
+# Dynamic nested forms using jQuery made easy
+gem 'cocoon'
+# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic
+gem 'slim'
 
 #Paperclip is intended as an easy file attachment library for ActiveRecord. 
 gem "paperclip", "~> 5.0.0"
@@ -40,6 +46,8 @@ gem "paperclip", "~> 5.0.0"
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3', '1.3.12'
+  #Rails >= 3 pry initializer
+  gem 'pry-rails'
 end
 
 group :development do

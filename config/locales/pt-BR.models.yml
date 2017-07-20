@@ -1,69 +1,66 @@
 "pt-BR":
   activerecord:
     models:
-      servico: "Serviços"
-      estacao: "Estação"
-      solicitacao: "Solicitação"
-      uf: "UF"
+      servico: 
+        one: "Serviço"
+        other: "Serviços"
+      uf:
+        one: "UF"
+        other: "UF's"
+      estacao: 
+        one: "Estação"
+        other: "Estações"
+      regional:
+        one: "Regional"
+        other: "Regionais"
+      localidade: 
+        one: "Localidade"
+        other: "Localidades"
+      solicitacao: 
+        one: "Solicitação"
+        other: "Solicitações"
+      analise: 
+        one: "Análise"
+        other: "Análises"
+      analista: 
+        one: "Analista"
+        other: "Analistas"
+      empresa: 
+        one: "Empresa"
+        other: "Empresas"
+      equipamento: 
+        one: "Equipamento"
+        other: "Equipamentos"
+      justificativa: 
+        one: "Justificativa"
+        other: "Justificativas"
+
     attributes:
+      uf:
+        uf: "UF"
+        created_at: "Criado em"
       servico:
         id: "ID"
         nome: "Nome"
         codigo: "Código"
         created_at: "Criado em"
-        
-      analista:
-        email: "E-mail"
-        funcao: "Função"
-        created_at: "Criado em"
-        
       regional:
         cod_regional: "Código"
-        
-      empresa:
-        razao: "Razão"
-        nome_fantasia: "Nome Fantasia"
-        cnpj: "CNPJ"
-        sap: "SAP"
-        endereco: "Endereço"
-        cep: "CEP"
-        uf: "UF"
-        nome_contato: "Contato"
-        fixo: "Fixo"
-        celular: "Celular"
-        email: "E-mail"
-        created_at: "Criado em"
-        
-      uf:
-        uf: "UF"
-        created_at: "Criado em"
-        
-      localidade:
-        uf: "UF"
-        cod_cnl: "Cod Localidade"
-        latitude: "Latitude"
-        longitude: "Logitude"
-        municipio: "Município"
-        sigla_cnl: "Sigla Localidade"
-        created_at: "Criado em"
-        cod_localidade: "Código"
-      justificativa:
-        cod_justificativa: "Código"
-        created_at: "Criado em"
-        
       estacao:
         estacao: "Estação"
         designacao: "Designação"
         endereco: "Endereço"
         uf: "UF"
         created_at: "Criado em"
-        
-      equipamento:
-        designacao: "Designação"
-        descricao: "Descrição"
-        enderecamento: "Endereçamento"
-        estacao_id: "Estação"
-        
+      localidade:
+        uf: "UF"
+        cod_cnl: "Cod. Localidade"
+        latitude: "Latitude"
+        longitude: "Logitude"
+        municipio: "Município"
+        sigla_cnl: "Sigla Localidade"
+        created_at: "Criado em "
+        cod_localidade: "Código"
       solicitacao:
         numero_vt: "Número"
         empresa_id: "Empresa"
@@ -79,4 +76,28 @@
         uf_b: "UF B"
         localidade_b: "Localidade B"
         created_at: "Criado em"
-      
+      analista:
+        email: "E-mail"
+        funcao: "Função"
+        created_at: "Criado em"
+      empresa:
+        razao: "Razão"
+        nome_fantasia: "Nome Fantasia"
+        cnpj: "CNPJ"
+        sap: "SAP"
+        endereco: "Endereço"
+        cep: "CEP"
+        uf: "UF"
+        nome_contato: "Contato"
+        fixo: "Fixo"
+        celular: "Celular"
+        email: "E-mail"
+        created_at: "Criado em"
+      equipamento:
+        designacao: "Designação"
+        descricao: "Descrição"
+        enderecamento: "Endereçamento"
+        estacao_id: "Estação"
+      justificativa:
+        cod_justificativa: "Código"
+        created_at: "Criado em "

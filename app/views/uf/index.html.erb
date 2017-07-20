@@ -9,7 +9,7 @@
 
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize.upcase %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @uf.count).titleize.upcase %></center>
   </h1>
 </div>
 
@@ -26,7 +26,7 @@
       <tbody>
         <% @uf.each do |uf| %>
           <tr>
-            <td class="text-center"><%= link_to uf.sigla, uf_path(uf) %></td>
+            <td class="text-center"><%= link_to uf.sigla, uf_path(uf), :title => "Detalhar/Editar" %></td>
             <td class="text-center"><%= uf.nome %></td>
           </tr>
         <% end %>
@@ -35,11 +35,8 @@
   </div><!-- row Tabela -->
   <div class="col-sm-3"></div>
 </div>
-<div class = "row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-3">
+<center>
     <%= link_to t('.new', :default => t("helpers.links.new")),
                 new_uf_path,
-                :class => 'btn btn-primary' %>
-  </div>
-</div> <!-- row -->
+                :class => 'btn btn-info btn-md' %>
+</center>

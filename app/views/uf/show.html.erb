@@ -1,5 +1,5 @@
 <%- model_class = Uf -%>
-<div class="elegant-aero">
+<div class="elegant-aero" style="max-width: 500px; background: #C0E1FF; border-style: ridge;">
   <div class="list-group">
     <h1 class="list-group-item-heading list-group-item-info">
           <center><%=t '.title', :default => model_class.model_name.human.titleize.upcase %></center>
@@ -12,7 +12,10 @@
     <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
     <dd><%= @uf.nome %></dd>
   </dl>
-  <div class="dl-horizontal">
+</div>
+<div>
+  <div class="dl-horizontal elegant-aero">
+    <center>
     <%= link_to t('.back', :default => t("helpers.links.back")),
                   uf_index_path, :class => 'button'  %>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -21,7 +24,7 @@
                   uf_path(@uf),
                   :method => 'delete',
                   :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                  :class => 'buttonApaga' %>
+                  :class => 'buttonDelete' %>
+    </center>
   </div>
-              
 </div>

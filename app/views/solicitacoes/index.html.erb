@@ -9,7 +9,7 @@
 
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @solicitacoes.count).titleize %></center>
   </h1>
 </div>
 
@@ -33,7 +33,7 @@
   <tbody>
     <% @solicitacoes.each do |solicitacao| %>
       <tr>
-        <td><%= link_to solicitacao.numero_vt, solicitacao_path(solicitacao), :title => "Detalhar" %></td>
+        <td><%= link_to solicitacao.numero_vt, edit_solicitacao_path(solicitacao), :title => "Detalhar/Editar" %></td>
         <td><%= solicitacao.resultado_vt %></center></td>
         <td><%= solicitacao.data_solicitacao %></td>
         <td><%= solicitacao.empresa.razao %></td>
@@ -48,7 +48,11 @@
     <% end %>
   </tbody>
 </table>
+<div>
+  <center>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                  new_solicitacao_path,
+                  :class => 'btn botao btn-sm' %>
+  </center>
+</div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_solicitacao_path,
-            :class => 'btn btn-primary' %>

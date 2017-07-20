@@ -17,57 +17,57 @@
   
 <div class="container">
   <div class="row">
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :pop %>
       <%= f.text_field :pop, :class => 'form-control' %>
     </div>
   
-    <div class="field col-sm-6">
+    <div class="field col-md-6">
       <%= f.label :nome %>
       <%= f.text_field :nome, :class => 'form-control' %>
     </div>
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :status %>
       <!--<%= f.text_field :status %>-->
       <%= f.select(:status, status_estacao, {include_blank: true}, :class => 'form-control') %>
     </div>
   </div>
   <div class="row">
-    <div class="field col-sm-8">
+    <div class="field col-md-8">
       <%= f.label :endereco %>
       <%= f.text_field :endereco, :class => 'form-control' %>
     </div>
   
-    <div class="field col-sm-1">
+    <div class="field col-md-1">
       <%= f.label :uf %>
       <!--<%= f.text_field :uf %>-->
       <%= f.collection_select(:uf, Uf.all, :sigla, :sigla, {include_blank: true}, :class => 'form-control') %>
     </div>
     
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :cidade %>
       <%= f.text_field :cidade, :class => 'form-control' %>
     </div>
 
   </div>
   <div class="row">
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :tipo %>
       <!--<%= f.text_field :tipo %>-->
       <%= f.select(:tipo, tipos, {include_blank: true}, :class => 'form-control') %>
     </div>
   
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :cedente %>
       <%= f.text_field :cedente, :class => 'form-control' %>
     </div>
   
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :latitude %>
       <%= f.text_field :latitude, :class => 'form-control' %>
     </div>
   
-    <div class="field col-sm-3">
+    <div class="field col-md-3">
       <%= f.label :longitude %>
       <%= f.text_field :longitude, :class => 'form-control' %>
     </div>
@@ -77,7 +77,7 @@
   <!--</div>-->
   <div class="row">
     <div class="form-group">
-      <div class="col-lg-10">
+      <div class="col-md-10">
         <%= f.submit nil, :class => 'btn btn-primary' %>
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   estacoes_path, :class => 'btn btn-default' %>

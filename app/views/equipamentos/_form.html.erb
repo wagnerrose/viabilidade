@@ -21,8 +21,8 @@
 <div class= "container">
   <div class= "row">
     <div class="form-group">
-      <%= f.label :designacao, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-2">
+      <%= f.label :designacao, :class => 'control-label col-md-2' %>
+      <div class="col-md-2">
         <%= f.text_field :designacao, :class => 'form-control' %>
       </div>
     </div>
@@ -31,8 +31,8 @@
   
   <div class= "row">
     <div class="form-group">
-      <%= f.label :descricao, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-6">
+      <%= f.label :descricao, :class => 'control-label col-md-2' %>
+      <div class="col-md-6">
         <%= f.text_field :descricao, :class => 'form-control' %>
       </div>
     </div>
@@ -41,8 +41,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :tipo, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-3">
+      <%= f.label :tipo, :class => 'control-label col-md-2' %>
+      <div class="col-md-3">
         <%= f.select(:tipo, tipo_equipamento, {include_blank: false}, :class => 'form-control') %>
       </div>
       <%=f.error_span(:tipo) %>
@@ -51,8 +51,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :enderecamento, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-3">
+      <%= f.label :enderecamento, :class => 'control-label col-md-2' %>
+      <div class="col-md-3">
         <%= f.text_field :enderecamento, :class => 'form-control' %>
       </div>
       <%=f.error_span(:enderecamento) %>
@@ -61,8 +61,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :firmware, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-2">
+      <%= f.label :firmware, :class => 'control-label col-md-2' %>
+      <div class="col-md-2">
         <%= f.text_field :firmware, :class => 'form-control' %>
       </div>
       <%=f.error_span(:firmware) %>
@@ -71,8 +71,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :status, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-3">
+      <%= f.label :status, :class => 'control-label col-md-2' %>
+      <div class="col-md-3">
         <%= f.select(:status, status_equipamento, {include_blank: false}, :class => 'form-control') %>
       </div>
       <%=f.error_span(:status) %>
@@ -81,8 +81,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :arco, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-2">
+      <%= f.label :arco, :class => 'control-label col-md-2' %>
+      <div class="col-md-2">
         <%= f.text_field :arco, :class => 'form-control' %>
       </div>
       <%=f.error_span(:arco) %>
@@ -91,8 +91,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :cluster, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-2">
+      <%= f.label :cluster, :class => 'control-label col-md-2' %>
+      <div class="col-md-2">
         <%= f.text_field :cluster, :class => 'form-control' %>
       </div>
       <%=f.error_span(:cluster) %>
@@ -101,8 +101,8 @@
   
   <div class="row">
     <div class="form-group">
-      <%= f.label :estacao_id, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-3">
+      <%= f.label :estacao_id, :class => 'control-label col-md-2' %>
+      <div class="col-md-3">
         <!--<%= f.text_field :estacao_id, :class => 'form-control' %>-->
         <%= f.collection_select(:estacao_id, Estacao.all, :id, :pop, {include_blank: true},  :class => 'form-control') %>
       </div>
@@ -113,12 +113,11 @@
 
 <div class="row">
   <div class="form-group">
-    <div class="col-lg-offset-1 col-lg-10">
+    <div class="col-md-offset-1 col-md-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 equipamentos_path, :class => 'btn btn-default' %>
     </div>
   </div>
 </div><!--/row-->
-
 <% end %>

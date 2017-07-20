@@ -10,11 +10,14 @@ class SolicitacoesController < ApplicationController
   # GET /solicitacaes/1
   # GET /solicitacaes/1.json
   def show
+#   @respostas = @solicitacoes.respostas
   end
 
   # GET /solicitacaes/new
   def new
     @solicitacao = Solicitacao.new
+    solicitacao.numero_vt = geraNumeroVt
+    solicitacao.resultado_vt = "Em Análise"
     empresa_options_for_select
     solicitante_options_for_select
     analista_options_for_select
@@ -79,7 +82,11 @@ class SolicitacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def solicitacao_params
-      params.require(:solicitacao).permit(:numero_vt, :empresa_id, :data_solicitacao, :solicitante, :analista, :servico, :banda, :endereco_a, :localidade_a, :uf_a, :endereco_b, :localidade_b, :uf_b, :resultado_vt)
+      params.require(:solicitacao).permit(:numero_vt, :empresa_id, :data_solicitacao, :solicitante, 
+          :analista, :servico, :banda, :endereco_a, :localidade_a, :uf_a, :endereco_b, :localidade_b, 
+          :uf_b, :resultado_vt,
+          respostas_attributes: [:id, :tipo, :estrutura, :descricao, :prazo, :capex, :opex_instalacao,
+              :opex_mensal, :resultado_vt, :_destroy ])
     end
     # pesquisa das empresas para o select
     def empresa_options_for_select
@@ -100,5 +107,13 @@ class SolicitacoesController < ApplicationController
     # pesquisa das UFs disponiveis para o select
     def uf_options_for_select
       @uf_options_for_select = Uf.order(:sigla)
+    end
+    def geraNumeroVt
+      agora = Time.new
+      vt = agora.strftime("%Y%m%d")
+      # acha o numero da ultima vt
+      vt_atual = Solicitacao.select(:numero_vt).where("numero_vt > #{vt}").order(:numero_vt).last
+      # verifica se existe vt para o dia atual (caso retorne nil), incrementa e formata "000x"  
+      numero_vt = vt + ("%04d" % (vt_atual ? vt_atual[:numero_vt][-4..-1].to_i + 1  : 1)) 
     end
 end

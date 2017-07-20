@@ -1,4 +1,4 @@
 class Resposta < ApplicationRecord
-  belongs_to :solicitacao
+  has_many :solicitacoes
   
 end

@@ -1,0 +1,158 @@
+<%- model_class = Solicitacao -%>
+
+<div class="row">
+  <div class="elegant-aero col-sm-1"> <!-- coluna 1-->
+    <center>
+      <div  style="margin-top: 50px">
+        <%= link_to t('.back', :default => t("helpers.links.back")),
+                      solicitacoes_path, :class => 'button'  %>
+      </div><!-- div botao back -->
+      <div  style="margin-top: 30px">
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_solicitacao_path(@solicitacao), :class => 'button' %>
+      </div><!-- div botao edit -->
+      <div style="margin-top: 30px">
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      solicitacao_path(@solicitacao),
+                      :method => 'delete',
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'buttonDelete' %>
+      </div><!-- div botao destroy -->
+    </center>
+  </div> <!-- div sidebar -->
+    
+  <div class="col-sm-11"> <!-- coluna 2 -->
+      <h1 class="list-group-item-info"><center><%=t '.title', :default => model_class.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></center></h1>
+      <div>
+        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+            <div class="col-sm-2" style="font-weight: bold"><center><%= model_class.human_attribute_name(:numero_vt) %></center></div>        
+            <div class="col-sm-10" style="font-weight: bold"><%= model_class.human_attribute_name(:empresa_id) %></div> 
+        </div>
+        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <div class="col-sm-2" style="color: red; font-weight: bold"><center><%= @solicitacao.numero_vt %></center></div>        
+          <div class="col-sm-10"><%= @solicitacao.empresa.razao %></td></div> 
+        </div>
+        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+            <div class="col-sm-2" style="font-weight: bold"><center><%= model_class.human_attribute_name(:data_solicitacao) %></center></div>        
+            <div class="col-sm-4" style="font-weight: bold"><%= model_class.human_attribute_name(:solicitante) %></div> 
+            <div class="col-sm-3" style="font-weight: bold"><%= model_class.human_attribute_name(:servico) %></div>        
+            <div class="col-sm-3" style="font-weight: bold"><%= model_class.human_attribute_name(:banda) %></div> 
+        </div>
+        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <div class="col-sm-2"><center><%= @solicitacao.data_solicitacao %></center></div>        
+          <div class="col-sm-4"><%= @solicitacao.solicitante %></div> 
+          <div class="col-sm-3"><%= @solicitacao.servico %></div>        
+          <div class="col-sm-3"><%= @solicitacao.banda %></div> 
+        </div>
+        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <b>
+            <div class="col-sm-6"><%= model_class.human_attribute_name(:endereco_a) %></div>        
+            <div class="col-sm-3"><%= model_class.human_attribute_name(:localidade_a) %></div> 
+            <div class="col-sm-3"><%= model_class.human_attribute_name(:uf_a) %></div>        
+          </b>
+        </div>
+        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <div class="col-sm-6"><%= @solicitacao.endereco_a %></div>        
+          <div class="col-sm-3"><%= @solicitacao.localidade_a %></div> 
+          <div class="col-sm-3"><%= @solicitacao.uf_a %></div>        
+        </div>
+        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <b>
+            <div class="col-sm-6"><%= model_class.human_attribute_name(:endereco_b) %></div>        
+            <div class="col-sm-3"><%= model_class.human_attribute_name(:localidade_b) %></div> 
+            <div class="col-sm-3"><%= model_class.human_attribute_name(:uf_b) %></div>        
+          </b>
+        </div>
+        <hr style="color: black; background-color:#000; height:1px; margin-top: 0px; margin-bottom: 2px">
+        <div class="row">
+          <div class="col-sm-6"><%= @solicitacao.endereco_b %></div>        
+          <div class="col-sm-3"><%= @solicitacao.localidade_b %></div> 
+          <div class="col-sm-3"><%= @solicitacao.uf_b %></div>        
+        </div>
+        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
+    </div> <!-- div tabelas -->
+  </div><!-- coluna 2 -->
+</div><!-- row -->
+
+<div>
+    <h1 class="list-group-item-success"><center>Análise Viabilidade</center></h1>
+
+  <div class="tabs-container">
+    <ul class="nav nav-tabs">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <strong>Acesso</strong><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a data-toggle="tab" href="#AcessoA"><strong>Acesso A</strong></a></li>
+          <li><a data-toggle="tab" href="#AcessoB"><strong>Acesso B</strong></a></li>
+          <li><a data-toggle="tab" href="#Backbone"><strong>Backbone</strong></a></li>
+          <li><a data-toggle="tab" href="#Interconexao"><strong>Interconexão</strong></a></li>
+        </ul>
+        <li><a data-toggle="tab" href="#Equipamentos" ><strong>Equipamentos</strong></a></li>        
+        <li><a data-toggle="tab" href="#Anexos" ><strong>Anexos</strong></a></li>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="AcessoA" class="tab-pane fade in active">
+        <%= render partial: "tabs"%>
+        <div class="respostas">
+          <% @solicitacao.respostas.each do |respostas_fields| %>
+            <% if respostas_fields.tipo == "acesso_a" %>
+              <%= render partial: "resposta_fields", locals: { f: respostas_fields, texto: "Acesso A" } %>
+            <% end %>
+          <% end %>
+        </div> <!-- respostas -->
+      </div><!--/tab-pane Acesso A-->
+      
+      <div id="AcessoB" class="tab-pane fade in" >
+        <%= render partial: "tabs"%>
+        <% @solicitacao.respostas.each do |respostas_fields| %>
+          <% if respostas_fields.tipo == "acesso_b" %>
+            <%= render partial: "resposta_fields", locals: { f: respostas_fields, texto: "Acesso B" } %>
+          <% end %>
+        <% end %>
+      </div><!--/tab-pane Acesso B-->
+      
+      <div id="Backbone" class="tab-pane fade in" >
+        <%= render partial: "tabs"%>
+        <%@solicitacao.respostas.each do |respostas_fields| %>
+          <% if respostas_fields.tipo == "backbone" %>
+            <%= render partial: "resposta_fields", locals: { f: respostas_fields, texto: "Backbone" } %>
+          <% end %>
+        <% end %>
+      </div><!--/tab-pane Backbone --> 
+  
+      <div id="Interconexao" class="tab-pane fade in" >
+        <%= render partial: "tabs"%>
+        <% @solicitacao.respostas.each do |respostas_fields| %>
+          <% if respostas_fields.tipo == "backbone" %>
+            <%= render partial: "resposta_fields", locals: { f: respostas_fields, texto: "Inteconexão" } %>
+          <% end %>
+        <% end %>
+      </div><!--/tab-pane Interconexao -->
+      
+      <div id="Equipamentos" class="tab-pane fade in" >
+        <h1>Equipamentos</h1>
+        <p>teste 4</p>
+      </div><!--/tab-pane Equipamentos --> 
+      
+      <div id="Anexos" class="tab-pane fade in" >
+        <h1>Anexos</h1>
+        <p>teste 4</p>
+      </div><!--/tab-pan Anexo --> 
+    </div><!--/tab-content-->
+</div><!--/container-->
+</div>
+<div class="elegant-aero">
+  <center>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_resposta_path,
+                :class => 'button' %>
+  </center>
+</div>

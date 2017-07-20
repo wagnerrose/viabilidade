@@ -1,5 +1,6 @@
-<div class="elegant-aero">
-  <%- model_class = Analista -%>
+
+<%- model_class = Analista -%>
+<div class="elegant-aero" style="max-width: 500px ; background: #C0E1FF; border-style: ridge;">
   <div class="list-group">
     <h1 class="list-group-item-heading list-group-item-info">
           <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
@@ -18,14 +19,17 @@
     <dt><strong><%= model_class.human_attribute_name(:funcao) %>:</strong></dt>
     <dd><%= @analista.funcao %></dd>
   </dl>
-  
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-                analistas_path, :class => 'button'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                edit_analista_path(@analista), :class => 'button' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                analista_path(@analista),
-                :method => 'delete',
-                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                :class => 'buttonApaga' %>
+</div>
+<div class="elegant-aero">
+  <center>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                  analistas_path, :class => 'button'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_analista_path(@analista), :class => 'button' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  analista_path(@analista),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'buttonDelete' %>
+  </center>
 </div>

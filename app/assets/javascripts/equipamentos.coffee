@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('#equipamentos').dataTable
+    destroy: true, 
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

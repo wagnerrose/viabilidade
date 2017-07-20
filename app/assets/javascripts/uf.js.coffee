@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
  $('#uf').dataTable
+    destroy: true,
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",
@@ -25,6 +26,9 @@ jQuery ->
       "aria": {
           "sortAscending":  ": ative para ordenamento ascendente",
           "sortDescending": ": ative para ordenamento descendente"
-      }
-  };
+      },
+    searching: false,
+    paging: false
+    }
+
 

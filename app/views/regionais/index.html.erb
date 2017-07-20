@@ -5,16 +5,15 @@
 <% end %>
 
 <%- model_class = Regional -%>
-
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @regionais.count).titleize %></center>
   </h1>
 </div>
 
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
     <table class="table table-striped" id="regionais">
       <thead>
         <tr>
@@ -25,21 +24,18 @@
       <tbody>
         <% @regionais.each do |regional| %>
           <tr>
-            <td><center><%= link_to regional.cod_regional, regional_path(regional) %></center></td>
+            <td><center><%= link_to regional.cod_regional, regional_path(regional), :title => "Detalhar/Editar" %></center></td>
             <td><%= regional.nome %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div><!-- div tabela -->
-  <div class="col-sm-3"></div>
+  <div class="col-md-3"></div>
 </div><!-- div row -->
 
-<div class="row">
-  <div class="col-sm-3"></div>  
-  <div>
+<center>
     <%= link_to t('.new', :default => t("helpers.links.new")),
                 new_regional_path,
-                :class => 'btn btn-primary' %>
-  </div>
-</div>
+                :class => 'btn btn-info btn-md' %>
+</center>

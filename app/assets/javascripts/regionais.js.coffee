@@ -1,8 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('#regionais').dataTable
+    destroy: true, 
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",
@@ -21,9 +19,10 @@ jQuery ->
           "last":       "Último",
           "next":       "Próximo",
           "previous":   "Anterior"
-      },
+          }
       "aria": {
           "sortAscending":  ": ative para ordenamento ascendente",
           "sortDescending": ": ative para ordenamento descendente"
-      }
-  }
+          }
+    }
+    

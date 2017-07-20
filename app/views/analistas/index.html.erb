@@ -8,7 +8,7 @@
 
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @analistas.count).titleize %></center>
   </h1>
 </div>
 
@@ -25,7 +25,7 @@
   <tbody>
     <% @analistas.each do |analista| %>
       <tr>
-        <td><%= link_to analista.nome, analista_path(analista) %></td>
+        <td><%= link_to analista.nome, analista_path(analista), :title => "Detalhar/Editar" %></td>
         <td><%= analista.email %></td>
         <td><%= analista.regional.nome %></td>
         <td><%= analista.fone_contato %></td>
@@ -35,7 +35,8 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_analista_path,
-            :class => 'btn btn-primary' %>
+<center>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_analista_path,
+              :class => 'btn btn-info btn-md' %>
+</center>

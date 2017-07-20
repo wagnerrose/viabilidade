@@ -16,22 +16,22 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :sigla, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :sigla, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
       <%= f.text_field :sigla, :class => 'form-control' %>
     </div>
     <%=f.error_span(:sigla) %>
   </div>
   <div class="form-group">
-    <%= f.label :nome, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :nome, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
       <%= f.text_field :nome, :class => 'form-control' %>
     </div>
     <%=f.error_span(:nome) %>
   </div>
 
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
+    <div class="col-md-offset-2 col-md-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 uf_index_path, :class => 'btn btn-default' %>

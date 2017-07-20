@@ -3,7 +3,7 @@
 
 <div class="list-group">
   <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></center>
+        <center><%=t '.title', :default => model_class.model_name.human(count: @empresas.count).titleize %></center>
   </h1>
 </div>
 <div class="row">
@@ -27,7 +27,7 @@
     <tbody>
       <% @empresas.each do |empresa| %>
         <tr>
-          <td><%=link_to empresa.razao, empresa_path(empresa) %></td>
+          <td><%=link_to empresa.razao, empresa_path(empresa), :title => "Detalhar/Editar" %></td>
           <td><%= empresa.nome_fantasia %></td>
           <td><%= empresa.cnpj %></td>
           <td><%= empresa.sap %></td>
@@ -44,8 +44,8 @@
     </tbody>
   </table>
 </div><!-- /div row -->
-<div class="row">
+<center>
   <%= link_to t('.new', :default => t("helpers.links.new")),
               new_empresa_path,
-              :class => 'btn btn-primary' %>
-</div>
+              :class => 'btn btn-info btn-md' %>
+</center>
