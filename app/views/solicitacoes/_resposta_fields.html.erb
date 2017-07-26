@@ -1,50 +1,21 @@
 <div class="nested-fields">
-  <div class="row" style:"margin: 100px">
-    <div class="col-sm-1 campoTipo" >
-      <%= f.input :tipo ,
-          label: false%>
+  <div class="row " style='margin: 0px;'>
+    <div class='col-sm-1 campoTipo efeito' style='padding: 0px;'><%= f.text_field :tipo %></center></div>        
+    <div class='col-sm-1 campoEstrutura ' style='padding: 0px;'><%= f.text_field :estrutura %></div> 
+    <div class='col-sm-4 campoDescricao ' style='padding: 0px;'><%= f.text_area :descricao %></div>
+    <div class='col-sm-1 campoPrazo ' style='padding: 0px;'><%= f.number_field :prazo %></div> 
+    <div class='col-sm-1 campoCapex ' style='padding: 0px;'><%= f.number_field :capex %></div> 
+    <div class='col-sm-1 campoOpexInstalacao' style='padding: 0px;'><%= f.number_field :opex_instalacao %></div> 
+    <div class='col-sm-1 campoOpexMensal' style='padding: 0px;'><%= f.number_field :opex_mensal %></div> 
+    <div class='col-sm-1 campoResultadoVt marcador' style='padding: 0px;'><%= f.select :resultado_vt, 
+                                                                      opcao, 
+                                                                      {include_blank: true} %> 
     </div>
-    
-    <div class="col-sm-1 campoEstrutura">
-      <%= f.input :estrutura, 
-          label: false  %>
-    </div>
-    
-    <div class="col-sm-4 campoDescricao" >
-      <%= f.input :descricao, 
-          label: false  %>
-    </div>
-    
-    <div class="col-sm-1 campoPrazo">
-      <%= f.input :prazo, 
-          label: false %>
-    </div>
-    
-    <div class="col-sm-1 campoCapex">
-      <%= f.input :capex, 
-          label: false %>
-    </div>
-    
-    <div class="col-sm-1 campoOpexInstalacao">
-      <%= f.input :opex_instalacao, 
-          label: false %>
-    </div>
-    
-    <div class="col-sm-1 campoOpexMensal">
-      <%= f.input :opex_mensal, 
-          label: false %>
-    </div>
-    
-    <div class="col-sm-1 campoResultadoVt" >
-      <%= f.input :resultado_vt, 
-          label: false,
-          input_html: {value: f.object.resultado_vt ||"Em análise"} %>
-      </div>
-          
-    <div class="col-sm-1">
+    <div class='col-sm-1 campoApaga '>
       <%= link_to "#" do %>
-         <i class="glyphicon glyphicon-trash" style="color: red; padding-top: 10px" title="Remover"></i>
+         <i class="glyphicon glyphicon-trash" style="color: red; margin: 4px;" title="Remover"></i>
       <% end %>
-    </div>
-  </div><!-- row -->
+    </div><!-- botao edita -->
+  </div> <!-- row -->
+  <hr class="linha">
 </div><!-- nested-fields -->

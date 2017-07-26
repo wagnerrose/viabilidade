@@ -83,22 +83,17 @@
 //
 // Quadro de recursos
 //
-.efeito {
-  box-sizing: border-box;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+*:focus {
   outline: none;
 }
-.efeito:focus{
-   border: 3px solid #555;
-}
-
 .campoTipo input {
+  width: 100px;
   text-align: left;
   border: 0px solid transparent;
   float: left;
 }
-.campoEstrutura input[type=text] {
+.campoEstrutura input {
+  width: 100px;
   text-align: left;
   border: 0px solid transparent;
   float: left;
@@ -111,37 +106,47 @@
     border: 3px solid #555;
 }
 .campoDescricao textarea {
+  width: 380px;
+  height: 40px;
+  box-sizing: border-box;
+  overflow-y: scroll;
   text-align: left;
   border: 0px solid transparent;
   float: left;
 }
 
 .campoPrazo input {
+  max-width: 800px;
   text-align: center;
   border: 0px solid transparent;
   float: left;  
 }
 .campoCapex input {
+  max-width: 100px;
   text-align: center;
   border: 0px solid transparent;
   float: left;  
 }
 .campoOpexInstalacao input {
+  max-width: 50px;
   text-align: center;
   border: 0px solid transparent;
   float: left;  
 }
 .campoOpexMensal input {
+  max-width: 50px;  
   text-align: center;
   border: 0px solid transparent;
   float: left;  
 }
 .campoResultadoVt input {
+  max-width: 100px;  
   text-align: center;
   border: 0px solid transparent;
   float: left;  
 }
 .campoApaga {
+  max-width: 50px;
   text-align: center;
   float: left;  
 }

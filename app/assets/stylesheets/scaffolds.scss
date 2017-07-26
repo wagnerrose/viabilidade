@@ -7,27 +7,9 @@ body {
   line-height: 18px;
   margin: 10px;
 }
-div {
-  &.field, &.actions {
-    margin-bottom: 5px;
-  }
- }
- 
+
  #notice {
   color: green;
-}
-
-/* simple form */
-.simple_form div.input {
-  margin-bottom: 10px;
-  border: none;
-  clear: both; /* Required for Webkit, but not for Gecko */
-}
-
-.form-group {
-  margin-bottom: 5px;
-  padding: 0px;
-  clear: both; /* Required for Webkit, but not for Gecko */
 }
 
 /* usado para debug */
@@ -44,33 +26,35 @@ div {
 }
 
 .botao{
-    width: 80px;
-    padding: 5px;
-    background: #66C1E4;
-    border: none;
-    color: white;
-    box-shadow: 1px 1px 1px #4C6E91;
-    -webkit-box-shadow: 1px 1px 1px #4C6E91;
-    -moz-box-shadow: 1px 1px 1px #4C6E91;
-    text-shadow: 1px 1px 1px #5079A3;
-    cursor: pointer;
-    
+  margin: 10px;
+  width: 80px;
+  padding: 5px;
+  background: #66C1E4;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 1px #4C6E91;
+  -webkit-box-shadow: 1px 1px 1px #4C6E91;
+  -moz-box-shadow: 1px 1px 1px #4C6E91;
+  text-shadow: 1px 1px 1px #5079A3;
+  cursor: pointer;
+  
 }
 .botao:hover{
     background: #3EB1DD;
 }
 
 .botaoApaga{
-    width: 80px;
-    padding: 5px;
-    background: #ff0000;
-    border: none;
-    color: #fff;
-    box-shadow: 1px 1px 1px #4C6E91;
-    -webkit-box-shadow: 1px 1px 1px #4C6E91;
-    -moz-box-shadow: 1px 1px 1px #4C6E91;
-    text-shadow: 1px 1px 1px #5079A3;
-    
+  margin: 10px;
+  width: 80px;
+  padding: 5px;
+  background: #ff0000;
+  border: none;
+  color: #fff;
+  box-shadow: 1px 1px 1px #4C6E91;
+  -webkit-box-shadow: 1px 1px 1px #4C6E91;
+  -moz-box-shadow: 1px 1px 1px #4C6E91;
+  text-shadow: 1px 1px 1px #5079A3;
+  
 }
 .botaoApaga:hover{
     background: #cc0000;
