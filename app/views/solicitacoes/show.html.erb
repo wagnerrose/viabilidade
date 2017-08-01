@@ -1,116 +1,80 @@
-<%- model_class = Solicitacao -%>
+<%- model_class_solicitacao = Solicitacao -%>
+<% @opcao_status = ["Em Análise", "Viável", "Inviável", "Análise Eletrosul"] %>
 
-<div class="row">
-  <div class="elegant-aero col-sm-1"> <!-- coluna 1-->
-    <center>
-      <div  style="margin-top: 50px">
-        <%= link_to t('.back', :default => t("helpers.links.back")),
-                      solicitacoes_path, :class => 'button'  %>
-      </div><!-- div botao back -->
-      <div  style="margin-top: 30px">
-        <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_solicitacao_path(@solicitacao), :class => 'button' %>
-      </div><!-- div botao edit -->
-      <div style="margin-top: 30px">
-        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      solicitacao_path(@solicitacao),
-                      :method => 'delete',
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'buttonDelete' %>
-      </div><!-- div botao destroy -->
-    </center>
-  </div> <!-- div sidebar -->
+<div class="list-group ">
+  <h1 class="list-group-item-heading list-group-item-info">
+        <center><%=t '.title', :default => model_class_solicitacao.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></center>
+  </h1>
+</div> <!-- list-group-->
+<div class="container">
+  <div class="row col-sm-2">
+    <div><%= link_to t('.back', :default => t("helpers.links.back")),
+                    solicitacoes_path, :class => 'btn botao btn-sm btn-block'  %>
+    </div><!-- div botao back -->
+    <div><%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_solicitacao_path(@solicitacao), :class => 'btn botao btn-sm btn-block' %>
+    </div><!-- div botao edit -->
+    <div><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    solicitacao_path(@solicitacao),
+                    :method => 'delete',
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn botaoApaga btn-sm btn-block' %>
+    </div>
+  </div> <!-- div quadrobotoes -->
     
-  <div class="col-sm-11"> <!-- coluna 2 -->
-      <h1 class="list-group-item-info"><center><%=t '.title', :default => model_class.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></center></h1>
-      <div>
-        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-            <div class="col-sm-2" style="font-weight: bold"><center><%= model_class.human_attribute_name(:numero_vt) %></center></div>        
-            <div class="col-sm-10" style="font-weight: bold"><%= model_class.human_attribute_name(:empresa_id) %></div> 
-        </div>
-        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <div class="col-sm-2" style="color: red; font-weight: bold"><center><%= @solicitacao.numero_vt %></center></div>        
-          <div class="col-sm-10"><%= @solicitacao.empresa.razao %></td></div> 
-        </div>
-        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-            <div class="col-sm-2" style="font-weight: bold"><center><%= model_class.human_attribute_name(:data_solicitacao) %></center></div>        
-            <div class="col-sm-4" style="font-weight: bold"><%= model_class.human_attribute_name(:solicitante) %></div> 
-            <div class="col-sm-3" style="font-weight: bold"><%= model_class.human_attribute_name(:servico) %></div>        
-            <div class="col-sm-3" style="font-weight: bold"><%= model_class.human_attribute_name(:banda) %></div> 
-        </div>
-        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <div class="col-sm-2"><center><%= @solicitacao.data_solicitacao %></center></div>        
-          <div class="col-sm-4"><%= @solicitacao.solicitante %></div> 
-          <div class="col-sm-3"><%= @solicitacao.servico %></div>        
-          <div class="col-sm-3"><%= @solicitacao.banda %></div> 
-        </div>
-        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <b>
-            <div class="col-sm-6"><%= model_class.human_attribute_name(:endereco_a) %></div>        
-            <div class="col-sm-3"><%= model_class.human_attribute_name(:localidade_a) %></div> 
-            <div class="col-sm-3"><%= model_class.human_attribute_name(:uf_a) %></div>        
-          </b>
-        </div>
-        <hr style="color: black; background-color: #bfbfbf; height:1px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <div class="col-sm-6"><%= @solicitacao.endereco_a %></div>        
-          <div class="col-sm-3"><%= @solicitacao.localidade_a %></div> 
-          <div class="col-sm-3"><%= @solicitacao.uf_a %></div>        
-        </div>
-        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <b>
-            <div class="col-sm-6"><%= model_class.human_attribute_name(:endereco_b) %></div>        
-            <div class="col-sm-3"><%= model_class.human_attribute_name(:localidade_b) %></div> 
-            <div class="col-sm-3"><%= model_class.human_attribute_name(:uf_b) %></div>        
-          </b>
-        </div>
-        <hr style="color: black; background-color:#000; height:1px; margin-top: 0px; margin-bottom: 2px">
-        <div class="row">
-          <div class="col-sm-6"><%= @solicitacao.endereco_b %></div>        
-          <div class="col-sm-3"><%= @solicitacao.localidade_b %></div> 
-          <div class="col-sm-3"><%= @solicitacao.uf_b %></div>        
-        </div>
-        <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-    </div> <!-- div tabelas -->
-  </div><!-- coluna 2 -->
-</div><!-- row -->
-
-<div>
-    <h1 class="list-group-item-success"><center>Análise Viabilidade</center></h1>
-
-  <div class="container">
+  <div class="row box-show col-sm-10">
+    <dl class="dl-horizontal">
+      <dt><%= model_class_solicitacao.human_attribute_name(:empresa_id) %></dt>
+      <dd><%= @solicitacao.empresa.razao %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:data_solicitacao)%></dt>
+      <dd><%= @solicitacao.data_solicitacao %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:solicitante)%></dt>     
+      <dd><%= @solicitacao.solicitante %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:analista)%></dt>      
+      <dd><%= @solicitacao.analista %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:servico)%></dt>      
+      <dd><%= @solicitacao.servico %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:banda)%></dt>    
+      <dd><%= @solicitacao.banda %></dd>  
+      <dt><%= model_class_solicitacao.human_attribute_name(:endereco_a) %></dt>      
+      <dd><%= @solicitacao.endereco_a %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:uf_a) %></dt>
+      <dd><%= @solicitacao.uf_a %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:localidade_a) %></dt>      
+      <dd><%= @solicitacao.localidade_a %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:endereco_b) %></dt>
+      <dd><%= @solicitacao.endereco_b %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:uf_b) %></dt>
+      <dd><%= @solicitacao.uf_b %></dd>
+      <dt><%= model_class_solicitacao.human_attribute_name(:localidade_b) %></dt>     
+      <dd><%= @solicitacao.localidade_b %></dd>
+    </dl>
+  </div><!-- div quadroDados -->
+</div><!-- quadro tudo -->
+<div class="quadroRespostas">
+  <div><h1 class="list-group-item-success" sytle="clear: both;"><center>Análise Viabilidade</center></h1></div>
+  <div class='container ' style='padding: 0px;' >
     <div class="row">
-        <div align="center" class="col-lg-1" style="font-weight: bold"><center>Tipo</center></div>        
-        <div align="center" class="col-lg-1" style="font-weight: bold">Estrutura</div> 
-        <div align="center" class="col-lg-3" style="font-weight: bold">Descrição</div>        
-        <div align="center" class="col-lg-1" style="font-weight: bold">Prazo</div>
-        <div align="center" class="col-lg-1" style="font-weight: bold">Capex</div> 
-        <div align="center" class="col-lg-1" style="font-weight: bold">Opex Inst</div> 
-        <div align="center" class="col-lg-1" style="font-weight: bold">Opex Mês</div>
-        <div align="center" class="col-lg-1" style="font-weight: bold">Resultado</div>             
-        <div align="center" class="col-sm-1" style="font-weight: bold">Ação</div>
+      <strong>
+        <div class='col-sm-1 campoTipo' >Tipo</div>        
+        <div class='col-sm-1 campoEstrutura'>Estrutura</div> 
+        <div class='col-sm-4 campoDescricao'>Descrição</div>        
+        <div class='col-sm-1 campoPrazo'>Prazo</div>
+        <div class='col-sm-1 campoCapex'>Capex</div> 
+        <div class='col-sm-1 campoOpexInstalacao'>Opex Inst</div> 
+        <div class='col-sm-1 campoOpexMensal'>Opex Mês</div>
+        <div class='col-sm-1 campoVt'>Resultado</div>             
+        <div class='col-sm-1 campoApaga'>Ação</div>
+      </strong>
     </div><!-- row -->
-    <hr style="color: black; background-color:#000; height:2px; margin-top: 0px; margin-bottom: 2px">
-      <div id="respostas">
-        <%= form_for @solicitacao do |f| %>
-          <%= link_to_add_association('[Adicionar item]', f, :respostas) %>
-          <%= f.fields_for :respostas do |respostas_fields| %>
-            <%= render partial: "resposta_fields", locals: { f: respostas_fields } %>
-          <% end %>
-        <% end %>
-      </div><!-- respostas -->
+    <hr class="linha ">
+    <div id="respostas">
+      <% @solicitacao.respostas.each  do |respostas_fields| %>
+        <%= render partial: "resposta_fields", locals: { r: respostas_fields } %>
+      <% end %>
+      <center>
+      </center>
+    </div><!-- respostas -->
   </div><!--/container-->
-</div>
-<div class="elegant-aero">
-  <center>
-    <%= link_to t('.new', :default => t("helpers.links.new")),
-                new_resposta_path,
-                :class => 'button' %>
-  </center>
-</div>
+</div> <!-- quadro respostas -->
+

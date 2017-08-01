@@ -6,9 +6,8 @@
         <center><%=t '.title', :default => model_class_estacao.model_name.human.titleize %> - <%= @estacao.pop %></center>
   </h1>
 </div> <!-- list-group-->
-<div>
-<div class="container">
-  <div class="row col-sm-2">
+<div class="row">
+  <div class="quadroBotoes">
     <div>
         <%= link_to t('.back', :default => t("helpers.links.back")),
                       estacoes_path, :class => 'btn botao btn-sm btn-block'  %>
@@ -25,34 +24,40 @@
                       :class => 'btn botaoApaga btn-sm btn-block' %>
     </div>
   </div><!-- quadroBotoes -->
-  <div class="row box-show col-sm-10">
-    <dl class="dl-horizontal">
-      <dt ><%= model_class_estacao.human_attribute_name(:nome) %>: </dt>
-      <dd ><%= @estacao.nome %></dd>
-      <dt ><%= model_class_estacao.human_attribute_name(:endereco) %>: </dt>
-      <dd ><%=  @estacao.endereco %></dd>
 
-      <dt ><%= model_class_estacao.human_attribute_name(:uf) %>:</dt>
-      <dd><%= @estacao.uf %></dd>
-      <dt ><%= model_class_estacao.human_attribute_name(:cidade) %>: </dt>
-      <dd ><%= @estacao.cidade %></dd>
+  <div class="quadroDados">
+    <div class="row" style="margin: 10px 0px;">
+        <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:nome) %>: </div>
+        <div class="campoDados"><%= @estacao.nome %></div>
+        <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:endereco) %>: </div>
+        <div class="campoDados" sytle="width: 600px"><%=  @estacao.endereco %></div>
+      </div>
+      <div class="row" style="margin: 10px 0px;">
+        <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:uf) %>:</div>
+        <div class="campoDados"><%= @estacao.uf %></div>
+        <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:cidade) %>: </div>
+        <div class="campoDados"><%= @estacao.cidade %></div>
+    </div>
 
+    <div class="row" style="margin: 10px 0px;">
+      <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:status) %>: </div>
+      <div class="campoDados"><%= @estacao.status %></div>
+      <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:cedente) %>: </div>
+      <div class="campoDados"><%= @estacao.cedente %></div>        
+      <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:tipo) %>: </div>
+      <div class="campoDados"><%= @estacao.tipo %></div>
+    </div> <!-- row -->
+    <div class="row" style="margin: 10px 0px;">
+      <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:latitude) %>: </div>
+      <div class="campoDados"><%= number_with_precision(@estacao.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %></div>        
+      <div class="campoRotulo"><%= model_class_estacao.human_attribute_name(:longitude) %>: </div>
+      <div class="campoDados"><%= number_with_precision(@estacao.longitude, precision: 10, separator: ',' , locale: 'pt-BR') %></div>
+    </div> <!-- row -->
 
-      <dt><%= model_class_estacao.human_attribute_name(:status) %>: </dt>
-      <dd><%= @estacao.status %></dd>
-      <dt><%= model_class_estacao.human_attribute_name(:cedente) %>: </dt>
-      <dd><%= @estacao.cedente %></dd>        
-      <dt><%= model_class_estacao.human_attribute_name(:tipo) %>: </dt>
-      <dd><%= @estacao.tipo %></dd>
-
-      <dt><%= model_class_estacao.human_attribute_name(:latitude) %>: </dt>
-      <dd><%= number_with_precision(@estacao.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>        
-      <dt><%= model_class_estacao.human_attribute_name(:longitude) %>: </dt>
-      <dd><%= number_with_precision(@estacao.longitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>
-    </dl> <!-- quadro dados -->
-  </div>
+  </div> <!-- quadro dados -->
 </div> <!-- div quadro superior -->
-<div class="list-group">
+
+  <div class="list-group">
     <h1 class="list-group-item-heading list-group-item-success">
           <center><%=t '.title', :default => model_class_eqto.model_name.human.pluralize.titleize %></center>
     </h1>

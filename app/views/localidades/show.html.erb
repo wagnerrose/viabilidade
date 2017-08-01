@@ -1,5 +1,5 @@
 <%- model_class = Localidade -%>
-<div class="elegant-aero" style="max-width: 500px; background: #C0E1FF; border-style: ridge;">
+<div class="box-show" >
   <div class="list-group">
     <h1 class="list-group-item-heading list-group-item-info">
           <center><%=t '.title', :default => model_class.model_name.human.titleize %></center></h1>
@@ -22,16 +22,16 @@
     <dd><%= @localidade.longitude %></dd>
   </dl>
 </div><!-- div show -->
-<div class="elegant-aero">
+<div class="box-show " >
   <center>  
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-                localidades_path, :class => 'button'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                edit_localidade_path(@localidade), :class => 'button' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                localidade_path(@localidade),
-                :method => 'delete',
-                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                :class => 'buttonDelete' %>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                  localidades_path, :class => 'btn botao btn-sm'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_localidade_path(@localidade), :class => 'btn botao btn-sm' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  localidade_path(@localidade),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn botaoApaga btn-sm' %>
   </center>
 </div><!-- div botoes -->

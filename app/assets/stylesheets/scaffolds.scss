@@ -11,23 +11,63 @@ body {
  #notice {
   color: green;
 }
-
+.tudo{
+  display: table;
+}
+.clear {
+  clear: both;
+}
+.centro {
+  margin: auto;
+}
+.quadroBotoes {
+  width: 15%;
+  float: left;
+}
+.quadroDados{
+ margin: auto;
+ }
+.box-show {
+  margin: 10px auto;
+  padding: 0px;
+  max-width: 500px ; 
+  background: #C0E1FF; 
+  border-style: ridge;
+}
 /* usado para debug */
 .marcador {
   background:#fe9d9d;
   border: 1px solid #f94646 ;
 }
+.campoRotulo {
+  font-weight: bold;
+  margin: 3px 5px;
+  float: left; 
+}
+.campoDados {
+  font-weight: normal;
+  margin: 3px 5px;
+  float: left; 
+}
+.campoEntrada {
+  margin: 5px 5px;
+  padding: 0px;
+  float: left;
+  box-sizing: border-box;
+}
+
 .linha {
    color: black; 
    background-color:#000; 
-   height:2px; 
+   height:1px; 
    margin-top: 0px; 
    margin-bottom: 2px;
 }
 
 .botao{
-  margin: 10px;
-  width: 80px;
+  max-width: 80px;
+  margin: 5%;
+  width: 90%;
   padding: 5px;
   background: #66C1E4;
   border: none;
@@ -44,9 +84,10 @@ body {
 }
 
 .botaoApaga{
-  margin: 10px;
-  width: 80px;
+  margin: 5%;
+  max-width: 80px;
   padding: 5px;
+  width: 90%;
   background: #ff0000;
   border: none;
   color: #fff;
@@ -59,4 +100,5 @@ body {
 .botaoApaga:hover{
     background: #cc0000;
 }
+
 

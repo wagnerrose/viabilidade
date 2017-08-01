@@ -33,7 +33,7 @@
   <tbody>
     <% @solicitacoes.each do |solicitacao| %>
       <tr>
-        <td><%= link_to solicitacao.numero_vt, edit_solicitacao_path(solicitacao), :title => "Detalhar/Editar" %></td>
+        <td><%= link_to solicitacao.numero_vt, solicitacao_path(solicitacao), :title => "Detalhar/Editar" %></td>
         <td><%= solicitacao.resultado_vt %></center></td>
         <td><%= solicitacao.data_solicitacao %></td>
         <td><%= solicitacao.empresa.razao %></td>
