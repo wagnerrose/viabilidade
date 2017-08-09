@@ -1,9 +1,9 @@
 <%- model_class_solicitacao = Solicitacao -%>
 <% @opcao_status = ["Em Análise", "Viável", "Inviável", "Análise Eletrosul"] %>
 
-<div class="list-group ">
-  <h1 class="list-group-item-heading list-group-item-info">
-        <center><%=t '.title', :default => model_class_solicitacao.model_name.human.titleize %> - <%= @solicitacao.numero_vt %></center>
+<div class="list-group">
+  <h1 class='list-group-item-heading list-group-item-info' style='text-align: center;'>
+    <%=t '.title', :default => model_class_solicitacao.model_name.human.titleize %> - <%= @solicitacao.numero_vt %>
   </h1>
 </div> <!-- list-group-->
 <div class="container">
@@ -22,39 +22,82 @@
     </div>
   </div> <!-- div quadrobotoes -->
     
-  <div class="row box-show col-sm-10">
-    <dl class="dl-horizontal">
-      <dt><%= model_class_solicitacao.human_attribute_name(:empresa_id) %></dt>
-      <dd><%= @solicitacao.empresa.razao %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:data_solicitacao)%></dt>
-      <dd><%= @solicitacao.data_solicitacao %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:solicitante)%></dt>     
-      <dd><%= @solicitacao.solicitante %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:analista)%></dt>      
-      <dd><%= @solicitacao.analista %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:servico)%></dt>      
-      <dd><%= @solicitacao.servico %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:banda)%></dt>    
-      <dd><%= @solicitacao.banda %></dd>  
-      <dt><%= model_class_solicitacao.human_attribute_name(:endereco_a) %></dt>      
-      <dd><%= @solicitacao.endereco_a %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:uf_a) %></dt>
-      <dd><%= @solicitacao.uf_a %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:localidade_a) %></dt>      
-      <dd><%= @solicitacao.localidade_a %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:endereco_b) %></dt>
-      <dd><%= @solicitacao.endereco_b %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:uf_b) %></dt>
-      <dd><%= @solicitacao.uf_b %></dd>
-      <dt><%= model_class_solicitacao.human_attribute_name(:localidade_b) %></dt>     
-      <dd><%= @solicitacao.localidade_b %></dd>
-    </dl>
+  <div class="row col-sm-10">
+    <div>
+      <div class='col-sm-9'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:empresa_id) %>: </strong>
+        <%= @solicitacao.empresa.razao %>
+      </div>
+      <div class='col-sm-3'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:data_solicitacao)%>: </strong>
+        <%= @solicitacao.data_solicitacao %>
+      </div>
+    </div>
+
+    <div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:solicitante)%>: </strong>
+        <%= @solicitacao.solicitante %>
+      </div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:analista)%>: </strong>      
+        <%= @solicitacao.analista %>
+      </div>
+
+    </div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:servico)%>: </strong>      
+        <%= @solicitacao.servico %>
+      </div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:banda)%>: </strong>    
+        <%= @solicitacao.banda %>
+      </div>
+    <div>
+      
+    </div>
+    
+    <div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:endereco_a)%>: </strong>      
+        <%= @solicitacao.endereco_a %>
+      </div>
+      <div class='col-sm-4'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_a) %>: </strong>      
+        <%= @solicitacao.localidade_a %>
+      </div>
+      <div class='col-sm-2'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:uf_a) %>: </strong>
+        <%= @solicitacao.uf_a %>
+      </div>
+    </div>
+
+    <div>
+      <div class='col-sm-6'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:endereco_b) %>: </strong>
+        <%= @solicitacao.endereco_b %>
+      </div>
+      <div class='col-sm-4'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_b) %>: </strong>     
+        <%= @solicitacao.localidade_b %>
+      </div>
+      <div class='col-sm-2'>
+        <strong><%= model_class_solicitacao.human_attribute_name(:uf_b) %>: </strong>
+        <%= @solicitacao.uf_b %>
+      </div>
+    </div>
   </div><!-- div quadroDados -->
 </div><!-- quadro tudo -->
-<div class="quadroRespostas">
-  <div><h1 class="list-group-item-success" sytle="clear: both;"><center>Análise Viabilidade</center></h1></div>
-  <div class='container ' style='padding: 0px;' >
+<div class="quadroRespostas ">
+  <div style="text-align: center;"><h1 class="list-group-item-success" sytle='clear: both;'>Análise Viabilidade</h1></div>
+
+  <div style='text-align: center; padding: 15px;'>
+        <%= link_to new_resposta_path, :class => ' botao bt-sm', :title => 'Incluir novo Recurso' do  %>
+           <%= content_tag(:i, " Novo Recurso",:class=>' glyphicon glyphicon-tag') %>
+        <% end %>
+  </div>
     <div class="row">
+      <hr class='linha'>
       <strong>
         <div class='col-sm-1 campoTipo' >Tipo</div>        
         <div class='col-sm-1 campoEstrutura'>Estrutura</div> 
@@ -64,7 +107,6 @@
         <div class='col-sm-1 campoOpexInstalacao'>Opex Inst</div> 
         <div class='col-sm-1 campoOpexMensal'>Opex Mês</div>
         <div class='col-sm-1 campoVt'>Resultado</div>             
-        <div class='col-sm-1 campoApaga'>Ação</div>
       </strong>
     </div><!-- row -->
     <hr class="linha ">
@@ -72,8 +114,6 @@
       <% @solicitacao.respostas.each  do |respostas_fields| %>
         <%= render partial: "resposta_fields", locals: { r: respostas_fields } %>
       <% end %>
-      <center>
-      </center>
     </div><!-- respostas -->
   </div><!--/container-->
 </div> <!-- quadro respostas -->

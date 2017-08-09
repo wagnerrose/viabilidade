@@ -30,7 +30,7 @@ class UfController < ApplicationController
 
     respond_to do |format|
       if @uf.save
-        format.html { redirect_to @uf, notice: 'Uf was successfully created.' }
+        format.html { redirect_to @uf, notice: I18n.t('messages.created')  }
         format.json { render :show, status: :created, location: @uf }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class UfController < ApplicationController
   def update
     respond_to do |format|
       if @uf.update(uf_params)
-        format.html { redirect_to @uf, notice: 'Uf was successfully updated.' }
+        format.html { redirect_to @uf, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @uf }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class UfController < ApplicationController
   def destroy
     @uf.destroy
     respond_to do |format|
-      format.html { redirect_to uf_index_url, notice: 'Uf was successfully destroyed.' }
+      format.html { redirect_to uf_index_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

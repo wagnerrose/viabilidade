@@ -15,6 +15,7 @@
 // require jquery.turbolinks
 // require turbolinks
 //= require twitter/bootstrap
-//= require dataTables/jquery.dataTables
+//= require DataTables
 //= require cocoon
+//= require notifyjs/dist/notify
 //= require_tree .

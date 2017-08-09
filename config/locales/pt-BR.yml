@@ -102,6 +102,13 @@
       month: Mês
       second: Segundo
       year: Ano
+  messages:
+    confirm: Tem certeza?
+    listing: Listando
+    errors: Erros ocorreram...
+    created: Item criado com sucesso!
+    updated: Item atualizado com sucesso!
+    destroyed: Item excluido com sucesso!
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -146,7 +153,7 @@
     submit:
       create: Criar %{model}
       submit: Salvar %{model}
-      update: Atualizar %{model}
+      update: Atualizar
   number:
     currency:
       format:

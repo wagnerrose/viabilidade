@@ -70,6 +70,6 @@ class RespostasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resposta_params
-      params.require(:resposta).permit(:numero_vt_id_id, :tipo, :estrutura, :descricao, :prazo, :capex, :opex_instalacao, :opex_mensal, :resultado_vt)
+      params.require(:resposta).permit(:solicitacao_id, :tipo, :estrutura, :descricao, :prazo, :capex, :opex_instalacao, :opex_mensal, :resultado_vt)
     end
 end

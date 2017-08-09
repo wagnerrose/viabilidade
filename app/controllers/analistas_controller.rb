@@ -29,7 +29,7 @@ class AnalistasController < ApplicationController
 
     respond_to do |format|
       if @analista.save
-        format.html { redirect_to @analista, notice: 'Analista was successfully created.' }
+        format.html { redirect_to @analista, notice: I18n.('messages.created')  }
         format.json { render :show, status: :created, location: @analista }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AnalistasController < ApplicationController
   def update
     respond_to do |format|
       if @analista.update(analista_params)
-        format.html { redirect_to @analista, notice: 'Analista was successfully updated.' }
+        format.html { redirect_to @analista, notice: I18n.('messages.updated')  }
         format.json { render :show, status: :ok, location: @analista }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AnalistasController < ApplicationController
   def destroy
     @analista.destroy
     respond_to do |format|
-      format.html { redirect_to analistas_url, notice: 'Analista was successfully destroyed.' }
+      format.html { redirect_to analistas_url, notice: I18n.('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

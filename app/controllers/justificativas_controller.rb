@@ -28,7 +28,7 @@ class JustificativasController < ApplicationController
 
     respond_to do |format|
       if @justificativa.save
-        format.html { redirect_to @justificativa, notice: 'Justificativa was successfully created.' }
+        format.html { redirect_to @justificativa, notice: I18n.t('messages.created') }
         format.json { render :show, status: :created, location: @justificativa }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class JustificativasController < ApplicationController
   def update
     respond_to do |format|
       if @justificativa.update(justificativa_params)
-        format.html { redirect_to @justificativa, notice: 'Justificativa was successfully updated.' }
+        format.html { redirect_to @justificativa, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @justificativa }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class JustificativasController < ApplicationController
   def destroy
     @justificativa.destroy
     respond_to do |format|
-      format.html { redirect_to justificativas_url, notice: 'Justificativa was successfully destroyed.' }
+      format.html { redirect_to justificativas_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

@@ -28,7 +28,7 @@ class RegionaisController < ApplicationController
 
     respond_to do |format|
       if @regional.save
-        format.html { redirect_to @regional, notice: 'Regional was successfully created.' }
+        format.html { redirect_to @regional, notice: I18n.t('messages.created') }
         format.json { render :show, status: :created, location: @regional }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RegionaisController < ApplicationController
   def update
     respond_to do |format|
       if @regional.update(regional_params)
-        format.html { redirect_to @regional, notice: 'Regional was successfully updated.' }
+        format.html { redirect_to @regional, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @regional }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RegionaisController < ApplicationController
   def destroy
     @regional.destroy
     respond_to do |format|
-      format.html { redirect_to regionais_url, notice: 'Regional was successfully destroyed.' }
+      format.html { redirect_to regionais_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

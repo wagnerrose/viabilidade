@@ -1,6 +1,12 @@
 class SolicitacoesController < ApplicationController
   before_action :set_solicitacao, only: [:show, :edit, :update, :destroy]
-
+  before_action :empresa_options_for_select, only: [:new, :edit]
+  before_action :solicitante_options_for_select, only: [:new, :edit]
+  before_action :analista_options_for_select, only: [:new, :edit]
+  before_action :servico_options_for_select, only: [:new, :edit]
+  before_action :uf_options_for_select, only: [:new, :edit]  
+  before_action :geraNumeroVt, only: [:new]
+  
   # GET /solicitacaes
   # GET /solicitacaes.json
   def index
@@ -16,22 +22,12 @@ class SolicitacoesController < ApplicationController
   # GET /solicitacaes/new
   def new
     @solicitacao = Solicitacao.new
-    solicitacao.numero_vt = geraNumeroVt
-    solicitacao.resultado_vt = "Em Análise"
-    empresa_options_for_select
-    solicitante_options_for_select
-    analista_options_for_select
-    servico_options_for_select
-    uf_options_for_select
+    @solicitacao.resultado_vt = "Em Análise"
   end
-
+ 
   # GET /solicitacaes/1/edit
   def edit
-    empresa_options_for_select
-    solicitante_options_for_select
-    analista_options_for_select
-    servico_options_for_select
-    uf_options_for_select 
+
   end
 
   # POST /solicitacaes
@@ -41,7 +37,7 @@ class SolicitacoesController < ApplicationController
 
     respond_to do |format|
       if @solicitacao.save
-        format.html { redirect_to @solicitacao, notice: 'Solicitacao was successfully created.' }
+        format.html { redirect_to @solicitacao, notice: I18n.t('messages.created') }
         format.json { render :show, status: :created, location: @solicitacao }
       else
         format.html { render :new }
@@ -55,7 +51,7 @@ class SolicitacoesController < ApplicationController
   def update
     respond_to do |format|
       if @solicitacao.update(solicitacao_params)
-        format.html { redirect_to @solicitacao, notice: 'Solicitacao was successfully updated.' }
+        format.html { redirect_to @solicitacao, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @solicitacao }
       else
         format.html { render :edit }
@@ -69,7 +65,7 @@ class SolicitacoesController < ApplicationController
   def destroy
     @solicitacao.destroy
     respond_to do |format|
-      format.html { redirect_to solicitacoes_url, notice: 'Solicitacao was successfully destroyed.' }
+      format.html { redirect_to solicitacoes_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end
@@ -114,6 +110,6 @@ class SolicitacoesController < ApplicationController
       # acha o numero da ultima vt
       vt_atual = Solicitacao.select(:numero_vt).where("numero_vt > #{vt}").order(:numero_vt).last
       # verifica se existe vt para o dia atual (caso retorne nil), incrementa e formata "000x"  
-      numero_vt = vt + ("%04d" % (vt_atual ? vt_atual[:numero_vt][-4..-1].to_i + 1  : 1)) 
+      @solicitcao.numero_vt = vt + ("%04d" % (vt_atual ? vt_atual[:numero_vt][-4..-1].to_i + 1  : 1)) 
     end
 end

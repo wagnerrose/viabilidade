@@ -5,8 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bundler', '>=1.8.4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.1'
+gem 'bower-rails', '~>0.10.0'
 
 # Hirb provides a mini view framework for console applications 
 # gem and uses it to improve ripl(irb)'s default inspect output.
@@ -37,8 +40,16 @@ gem 'glyphicons-rails'
 gem 'simple_form'
 # Dynamic nested forms using jQuery made easy
 gem 'cocoon'
+
 # Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic
 gem 'slim'
+
+#A simple, versatile notification library
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+# datatables
+gem 'rails-assets-DataTables', source: 'https://rails-assets.org'
+# datatables-i18n
+gem 'rails-assets-datatables-i18n', source: 'https://rails-assets.org'
 
 #Paperclip is intended as an easy file attachment library for ActiveRecord. 
 gem "paperclip", "~> 5.0.0"

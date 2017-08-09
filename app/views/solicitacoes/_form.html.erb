@@ -1,15 +1,17 @@
 <%- model_class = Solicitacao -%>
 <% @opcao_status = ["Em Análise", "Viável", "Inviável", "Análise Eletrosul"] %>
-<div class="tudo">
-  <div class="quadroBotoes marcador">
+<br>
+
+<div class='tudo'>
+  <div class="quadroBotoes row col-sm-2">
     <div>
       <%= link_to t('.back', :default => t("helpers.links.back")),
-                    solicitacoes_path, :class => 'btn botao btn-sm btn-block'  %>
+                    solicitacao_path(@solicitacao), :class => 'btn botao btn-sm btn-block'  %>
     </div><!-- div botao back -->
     <div>
-      <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                    edit_solicitacao_path(@solicitacao), :class => 'btn botao btn-sm btn-block' %>
-    </div><!-- div botao edit -->
+     <%= f.submit nil, :class => 'btn botao btn-sm btn-block' %>
+   </div><!-- div botao edit -->
+
     <div>
       <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                     solicitacao_path(@solicitacao),
@@ -18,8 +20,8 @@
                     :class => 'btn botaoApaga btn-sm btn-block' %>
     </div>
   </div> <!-- div quadrobotoes -->
-    
-  <div class="quadroDados marcador">
+  <div class='container'>  
+  <div class='col-sm-10 '>
     <%= form_for @solicitacao do |f| %>
       <% if @solicitacao.errors.any? %>
         <div id="error_expl" class="panel panel-danger">
@@ -35,157 +37,133 @@
         </div><!-- error -->
       <% end %>
       
-      <div class="row">
-        <div class='campoEntrada'>
-          <%= f.label :numero_vt, class: 'campoRotulo' %>
-          <%= f.text_field :numero_vt,
-              class: 'campoVt',
+      <div class='form-inline campoInline'>
+        <div class='form-group campoVt'>
+          <%= f.label :numero_vt %>
+          <%= f.text_field :numero_vt, size: 12,
+              class: 'form-control input-sm',
               disabled: true %>
         </div>
         <%= f.error_span(:numero_vt) %>
         
-        <div class="campoEntrada ">
-          <%= f.label :empresa_id, class: 'campoRotulo'%>
+        <div class='form-group campoEmpresa'>
+          <%= f.label :empresa_id %>
           <%= f.collection_select :empresa_id, @empresa_options_for_select, 
                                   :id, :razao,
                                   { include_blank: true },
-                                  { class: 'campoEmpresa'} %>
+                                  { class: 'form-control input-sm'} %>
+          </div>
+          <%= f.error_span(:empresa_id) %>
         </div>
-        <%= f.error_span(:empresa_id) %>
-        
-        <div class="campoEntrada">
-          <%= f.label :data_solicitacao, class: 'campoRotulo' %>
-          <%= f.text_field :data_solicitacao,
-              {  class: 'campoDataSolicitacao'} %>
-        </div>
-        <%= f.error_span(:data_solicitacao) %>      
-      </div><!--/row-->
-    
-      <div class="row">
-        <div class="campoEntrada">
-          <%= f.label :solicitante, class: 'campoRotulo' %>
-          <%= f.collection_select :solicitante, 
-                    @solicitante_options_for_select, 
-                    :nome, :nome, 
-                    { include_blank: true},
-                    { class: 'campoSolicitante'} %>
-        </div>    
-        <%=f.error_span(:solicitante) %>
-        
-        <div class="campoEntrada">
-          <%= f.label :analista, class: 'campoRotulo'  %>
-          <%= f.collection_select :analista, 
-                      @analista_options_for_select, 
-                      :nome, :nome,
-                      { include_blank: false },
-                      { class: 'campoAnalista'} %>
-        </div>
-        <%= f.error_span(:analista) %>
+      
+        <div class='form-inline campoInline '>
+          <div class='form-group campoDados' >
+            <%= f.label :data_solicitacao %>
+            <%= f.text_field :data_solicitacao, :value => date_mdY(@solicitacao.data_solicitacao),
+                size: 12,
+                class: 'form-control input-sm input-sm' %>
+          </div>
+          <%= f.error_span(:data_solicitacao) %>      
   
-          <div class="campoEntrada">
-            <%= f.label :servico, class: 'campoRotulo'  %>
+  
+          <div class='form-group campoDados'>
+            <%= f.label :solicitante %>
+            <%= f.collection_select :solicitante, 
+                      @solicitante_options_for_select, 
+                      :nome, :nome, 
+                      { include_blank: true},
+                      { class: 'form-control input-sm'} %>
+          </div>    
+          <%=f.error_span(:solicitante) %>
+          
+          <div class='form-group campoDados'>
+            <%= f.label :analista %>
+            <%= f.collection_select :analista, 
+                        @analista_options_for_select, 
+                        :nome, :nome,
+                        { include_blank: false },
+                        { class: 'form-control input-sm'} %>
+          </div>
+          <%= f.error_span(:analista) %>
+        </div>
+        
+        <div class='form-inline campoInline'>  
+          <div class="form-group campoDados">
+            <%= f.label :servico %>
             <%= f.collection_select :servico, 
                     @servico_options_for_select, 
                     :nome, :nome, 
                     { include_blank: true},
-                    { class: 'campoServico'} %>
+                    { class: 'form-control input-sm'} %>
           </div>
           <%=f.error_span(:servico) %>
             
-          <div class="campoEntrada">
-            <%= f.label :banda, class: 'campoRotulo' %>
-            <%= f.number_field :banda,
-                  { class: 'campoBanda'} %>
+          <div class="form-group campoDados ">
+            <%= f.label :banda %>
+            <%= f.number_field :banda, min: 1, max: 100000, 
+                  class: 'form-control input-sm' %>
           </div>
           <%= f.error_span(:banda) %>
-          
-      </div><!-- row -->
-      
-      <div class="row">
-        <div class="campoEntrada">
-          <%= f.label :endereco_a, class: 'campoRotulo'  %>
-          <%= f.text_field :endereco_a,
-                     { class: 'campoEndereco'}%>
         </div>
-        <%= f.error_span(:endereco_a) %>
         
-        <div class="campoEntrada">    
-          <%= f.label :uf_a, class: 'campoRotulo'  %>
-          <%= f.collection_select :uf_a, 
+        <div class='form-inline campoInline'>
+          <div class='form-group campoDados'>
+            <%= f.label :endereco_a %>
+            <%= f.text_field :endereco_a, size: 50,
+                       class: 'form-control input-sm'%>
+          </div>
+          <%= f.error_span(:endereco_a) %>
+          
+          <div class='form-group campoDados'>    
+            <%= f.label :uf_a %>
+            <%= f.collection_select :uf_a, 
+                  @uf_options_for_select, 
+                  :sigla, :sigla,
+                  { include_blank: true },
+                  { class: 'form-control input-sm'}  %>
+          </div>
+          <%=f.error_span(:uf_a) %>
+      
+          <div class='form-group campoDados'>
+            <%= f.label :localidade_a %>
+            <%= f.grouped_collection_select :localidade_a, 
                 @uf_options_for_select, 
-                :sigla, :sigla,
+                :localidades, :sigla, :municipio, :municipio,
                 { include_blank: true },
-                { class: 'campoEstado'}  %>
+                { class: 'form-control input-sm'} %>
+          </div>
+          <%= f.error_span(:localidade_a) %>
         </div>
-        <%=f.error_span(:uf_a) %>
-    
-        <div class="campoEntrada">
-          <%= f.label :localidade_a, class: 'campoRotulo' %>
-          <%= f.grouped_collection_select :localidade_a, 
-              @uf_options_for_select, 
-              :localidades, :sigla, :municipio, :municipio,
-              { include_blank: true },
-              { class: 'campoLocalidade'} %>
-        </div>
-        <%= f.error_span(:localidade_a) %>
-      </div><!--/row-->  
-    
-      <div class="row">
-        <div class="campoEntrada">
-          <%= f.label :endereco_b, class: 'campoRotulo'  %>
-          <%= f.text_field :endereco_b,
-                 { class: 'campoEndereco'} %>
+
+      <div class='form-inline campoInline'>
+        <div class="form-group campoDados ">
+          <%= f.label :endereco_b %>
+          <%= f.text_field :endereco_b, size: 50,
+                 class: 'form-control input-sm ' %>
         </div>
         <%= f.error_span(:endereco_b) %>
         
-        <div class="campoEntrada">
-          <%= f.label :uf_b, class: 'campoRotulo'  %>
+        <div class="form-group campoDados">
+          <%= f.label :uf_b %>
           <%= f.collection_select :uf_b, 
                       @uf_options_for_select, 
                       :sigla, :sigla, 
                       { include_blank: true }, 
-                      { class: 'campoEstado'} %>
+                      { class: 'form-control input-sm '} %>
          </div>
         <%= f.error_span(:uf_b) %>
     
-        <div class="campoEntrada">   
-          <%= f.label :localidade_b, class: 'campoRotulo'  %>
+        <div class="form-group campoDados">   
+          <%= f.label :localidade_b  %>
           <%= f.grouped_collection_select :localidade_b, 
                     @uf_options_for_select, 
                     :localidades, :sigla, :municipio, :municipio,
                     { include_blank: true },
-                    {class: 'campoLocalidade'} %>
+                    {class: 'form-control input-sm '} %>
         </div><!--/localidade_b-->
-        <%= f.error_span(:localidade_b) %> 
-      </div><!--/row-->
+        <%= f.error_span(:localidade_b) %>
+      </div><!-- endereco b uf b localidade b -->  
       <% end %>
     </div><!-- div quadro solicitacao -->
+    </div> <!-- container -->
 </div><!-- quadro tudo -->
-<div class="clear"></div>
-  <div class="quadroRespostas">
-    <div><h1 class="list-group-item-success" sytle="clear: both;"><center>Análise Viabilidade</center></h1></div>
-    <div class='container ' style='padding: 0px;' >
-      <div class="row">
-        <strong>
-          <div class='col-sm-1 campoTipo' >Tipo</div>        
-          <div class='col-sm-1 campoEstrutura'>Estrutura</div> 
-          <div class='col-sm-4 campoDescricao'>Descrição</div>        
-          <div class='col-sm-1 campoPrazo'>Prazo</div>
-          <div class='col-sm-1 campoCapex'>Capex</div> 
-          <div class='col-sm-1 campoOpexInstalacao marcador'>Opex Inst</div> 
-          <div class='col-sm-1 campoOpexMensal'>Opex Mês</div>
-          <div class='col-sm-1 campoVt'>Resultado</div>             
-          <div class='col-sm-1 campoApaga'>Ação</div>
-        </strong>
-      </div><!-- row -->
-      <hr class="linha ">
-      <div id="respostas">
-        <% @solicitacao.respostas.each  do |respostas_fields| %>
-          <%= render partial: "resposta_fields", locals: { r: respostas_fields } %>
-        <% end %>
-        <center>
-        </center>
-      </div><!-- respostas -->
-    </div><!--/container-->
-  </div> <!-- quadro respostas -->
-

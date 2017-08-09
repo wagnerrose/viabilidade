@@ -9,10 +9,17 @@
     <div class='col-sm-1 campoOpexMensal'><%= r.opex_mensal %></div> 
     <div class='col-sm-1 campoResultadoVt'><%= r.resultado_vt %></div>
     <div class='col-sm-1 campoApaga'>
-      <%= link_to "#" do %>
-         <i class="glyphicon glyphicon-trash" style="color: red; margin: 4px;" title="Remover"></i>
-      <% end %>
+      <%= link_to ('<i class="glyphicon glyphicon-edit" style="color: blue;" title="Editar"></i>').html_safe,
+                    edit_resposta_path(r) %>
+      <%= link_to ('<i class="glyphicon glyphicon-trash" style="color: red;"></i>').html_safe,
+                  resposta_path(r.id), 
+                  method: 'delete',
+                  data: { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
     </div><!-- botao edita -->
   </div> <!-- row -->
   <hr class="linha">
-</div><!-- nested-fields -->
+</div><!-- nested-fields --> 
+
+
+
+

@@ -29,7 +29,7 @@ class ServicosController < ApplicationController
 
     respond_to do |format|
       if @servico.save
-        format.html { redirect_to @servico, notice: 'Servico was successfully created.' }
+        format.html { redirect_to @servico, notice: I18n.t('messages.created')  }
         format.json { render :show, status: :created, location: @servico }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ServicosController < ApplicationController
   def update
     respond_to do |format|
       if @servico.update(servico_params)
-        format.html { redirect_to @servico, notice: 'Servico was successfully updated.' }
+        format.html { redirect_to @servico, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @servico }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ServicosController < ApplicationController
   def destroy
     @servico.destroy
     respond_to do |format|
-      format.html { redirect_to servicos_url, notice: 'Servico was successfully destroyed.' }
+      format.html { redirect_to servicos_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

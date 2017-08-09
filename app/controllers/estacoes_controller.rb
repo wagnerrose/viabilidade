@@ -29,7 +29,7 @@ class EstacoesController < ApplicationController
 
     respond_to do |format|
       if @estacao.save
-        format.html { redirect_to @estacao, notice: 'Estacao was successfully created.' }
+        format.html { redirect_to @estacao, notice: I18n.t('messages.created')  }
         format.json { render :show, status: :created, location: @estacao }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EstacoesController < ApplicationController
   def update
     respond_to do |format|
       if @estacao.update(estacao_params)
-        format.html { redirect_to @estacao, notice: 'Estacao was successfully updated.' }
+        format.html { redirect_to @estacao, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @estacao }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EstacoesController < ApplicationController
   def destroy
     @estacao.destroy
     respond_to do |format|
-      format.html { redirect_to estacoes_url, notice: 'Estacao was successfully destroyed.' }
+      format.html { redirect_to estacoes_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

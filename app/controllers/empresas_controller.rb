@@ -29,7 +29,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
+        format.html { redirect_to @empresa, notice: I18n.t('messages.created')  }
         format.json { render :show, status: :created, location: @empresa }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EmpresasController < ApplicationController
   def update
     respond_to do |format|
       if @empresa.update(empresa_params)
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
+        format.html { redirect_to @empresa, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @empresa }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EmpresasController < ApplicationController
   def destroy
     @empresa.destroy
     respond_to do |format|
-      format.html { redirect_to empresas_url, notice: 'Empresa was successfully destroyed.' }
+      format.html { redirect_to empresas_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

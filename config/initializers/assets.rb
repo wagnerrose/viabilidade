@@ -48,4 +48,6 @@ Rails.application.config.assets.precompile += %w( uf.js
                                                   uf.coffee
                                                   uf.scss)
 
+
+
                                                   

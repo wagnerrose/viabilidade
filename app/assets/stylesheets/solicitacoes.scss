@@ -15,50 +15,62 @@
 //
 
 .campoVt {
-  width: 120px;
+  width: auto;
+  margin: 3px 5px;  
   float: left;  
 }
 .campoEmpresa {
-  width: 400px;
+  width: auto;
+  margin: 3px 5px;  
   text-align: left;
   vertical-align: top;
   float: left;
 }
 .campoDataSolicitacao {
-  width: 100px;
+  width: auto;
+  margin: 3px 5px;
   text-align: center;
   float: left;  
 }
 .campoSolicitante {
   width: auto;
+  margin: 3px 5px;
   text-align: center;
   float: left;  
 }
 .campoAnalista {
   width: auto;
+  margin: 3px 5px;
   text-align: center;
+  float: left;
 }
-.campoEndereco{
-  max-width: 600;
+.campoServico{
   width: auto;
-  margin: auto;
-  padding: 0px 10px;
-  float: left;  
+  margin: 3px 5px;
+  padding: 0px;
+  float: left;
+}
+.campoEndereco {
+  width: 300px;
 }
 .campoEstado {
-  width: 50px;
+  width: auto;
+  margin: 3px 5px;
   float: left;  
 }
 .campoLocalidade{
-  width: 120px;
+  width: auto;
+  margin: 3px 5px;  
   float: left;  
 }
 .campoEstado {
-  width: 50px;
+  width: auto;
+  margin: 3px 5px;  
   float: left;  
 }
 .campoBanda {
-  width: 70px;
+  width: auto;
+  margin: 3px 5px;  
   padding: 0px;
 }
 //

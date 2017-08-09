@@ -28,7 +28,7 @@ class LocalidadesController < ApplicationController
 
     respond_to do |format|
       if @localidade.save
-        format.html { redirect_to @localidade, notice: 'Localidade was successfully created.' }
+        format.html { redirect_to @localidade, notice: I18n.t('messages.created')  }
         format.json { render :show, status: :created, location: @localidade }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LocalidadesController < ApplicationController
   def update
     respond_to do |format|
       if @localidade.update(localidade_params)
-        format.html { redirect_to @localidade, notice: 'Localidade was successfully updated.' }
+        format.html { redirect_to @localidade, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @localidade }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class LocalidadesController < ApplicationController
   def destroy
     @localidade.destroy
     respond_to do |format|
-      format.html { redirect_to localidades_url, notice: 'Localidade was successfully destroyed.' }
+      format.html { redirect_to localidades_url, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end
