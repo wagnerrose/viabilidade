@@ -1,3 +1,8 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
 
 <%- model_class = Empresa -%>
 <div class= "box-show">
@@ -6,7 +11,7 @@
           <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
     </h1>
   </div> <!-- list-group-->
-  
+
   <dl class="dl-horizontal">
     <dt class="campoRotulo"><%= model_class.human_attribute_name(:razao) %>:</dt>
     <dd><%= @empresa.razao %></dd>

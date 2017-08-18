@@ -1,3 +1,9 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
 <%- model_class_estacao = Estacao -%>
 <%- model_class_eqto = Equipamento -%>
 
@@ -41,12 +47,12 @@
       <dt><%= model_class_estacao.human_attribute_name(:status) %>: </dt>
       <dd><%= @estacao.status %></dd>
       <dt><%= model_class_estacao.human_attribute_name(:cedente) %>: </dt>
-      <dd><%= @estacao.cedente %></dd>        
+      <dd><%= @estacao.cedente %></dd>
       <dt><%= model_class_estacao.human_attribute_name(:tipo) %>: </dt>
       <dd><%= @estacao.tipo %></dd>
 
       <dt><%= model_class_estacao.human_attribute_name(:latitude) %>: </dt>
-      <dd><%= number_with_precision(@estacao.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>        
+      <dd><%= number_with_precision(@estacao.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>
       <dt><%= model_class_estacao.human_attribute_name(:longitude) %>: </dt>
       <dd><%= number_with_precision(@estacao.longitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>
     </dl> <!-- quadro dados -->

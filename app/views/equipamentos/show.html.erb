@@ -1,3 +1,9 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
 <%- model_class = Equipamento -%>
 <div class="box-show">
   <div class="list-group">
@@ -5,7 +11,7 @@
           <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
     </h1>
   </div> <!-- list-group-->
-  
+
   <dl class="dl-horizontal">
     <dt><strong><%= model_class.human_attribute_name(:designacao) %>:</strong></dt>
     <dd><%= @equipamento.designacao %></dd>
@@ -37,6 +43,6 @@
                     equipamento_path(@equipamento),
                     :method => 'delete',
                     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                    :class => 'btn botaoApaga btn-sm ' %> 
+                    :class => 'btn botaoApaga btn-sm ' %>
   </center>
 </div>

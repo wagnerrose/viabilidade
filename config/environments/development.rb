@@ -8,6 +8,8 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  # config email devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -51,4 +53,12 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Better Errors
+  # Allow a specific IP address:
+  #BetterErrors::Middleware.allow_ip! '192.168.1.2'
+
+  # Allow an entire block of addresses using CIDR notation:
+  BetterErrors::Middleware.allow_ip! '10.0.105.0/24'
+
 end

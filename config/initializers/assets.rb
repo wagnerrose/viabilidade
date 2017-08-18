@@ -29,9 +29,6 @@ Rails.application.config.assets.precompile += %w( estacoes.js
 Rails.application.config.assets.precompile += %w( justificativas.js
                                                   justificativas.coffee
                                                   justificativas.scss)
-Rails.application.config.assets.precompile += %w( welcome.js
-                                                  welcome.coffee
-                                                  welcome.scss)
 Rails.application.config.assets.precompile += %w( regionais.js
                                                   regionais.coffee
                                                   regionais.scss)
@@ -47,7 +44,13 @@ Rails.application.config.assets.precompile += %w( solicitacoes.js
 Rails.application.config.assets.precompile += %w( uf.js
                                                   uf.coffee
                                                   uf.scss)
+Rails.application.config.assets.precompile += %w( backoffice.js
+                                                  backoffice.coffee
+                                                  backoffice.scss)
+Rails.application.config.assets.precompile += %w( site/site.js
+                                                  site/site.coffee
+                                                  site/site.css)
+Rails.application.config.assets.precompile += %w( scaffolds.scss)
+Rails.application.config.assets.precompile += %w( site/home.scss)
 
 
-
-                                                  

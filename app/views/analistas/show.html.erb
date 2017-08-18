@@ -1,3 +1,8 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
 
 <%- model_class = Analista -%>
 <div class="box-show" >
@@ -6,7 +11,7 @@
           <center><%=t '.title', :default => model_class.model_name.human.titleize %></center>
     </h1>
   </div> <!-- list-group-->
-  
+
   <dl class="dl-horizontal">
     <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
     <dd><%= @analista.nome %></dd>
@@ -24,11 +29,11 @@
   <center>
     <%= link_to t('.back', :default => t("helpers.links.back")),
                   analistas_path, :class => 'btn botao btn-sm'  %>
-  
-  
+
+
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
                   edit_analista_path(@analista), :class => 'btn botao btn-sm' %>
-  
+
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                   analista_path(@analista),
                   :method => 'delete',

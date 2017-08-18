@@ -14,5 +14,6 @@ module Viabilidade
     config.time_zone = 'Brasilia'
     config.i18n.default_locale = "pt-BR"
     config.encoding = "utf-8"
+    config.assets.paths << Rails.root.join("app","assets","fonts")
   end
 end

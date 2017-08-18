@@ -1,3 +1,9 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
 <%- model_class = Servico -%>
 <div class="tudo centro">
   <div class="box-show row">
@@ -5,7 +11,7 @@
       <h1 class="list-group-item-heading list-group-item-info">
             <center><%=t '.title', :default => model_class.model_name.human.titleize %></center></h1>
     </div> <!-- list-group-->
-    
+
     <div class="container">
       <dl class="dl-horizontal">
         <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
@@ -15,7 +21,7 @@
       </dl>
     </div><!-- div container -->
   </div>
-    
+
   <div class="box-show">
     <center>
     <%= link_to t('.back', :default => t("helpers.links.back")),

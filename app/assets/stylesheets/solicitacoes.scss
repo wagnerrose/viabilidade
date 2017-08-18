@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*
+*= require bootstrap
+*/
+
 .quadroRespostas{
   width: auto;
   height: auto;
@@ -16,12 +20,12 @@
 
 .campoVt {
   width: auto;
-  margin: 3px 5px;  
-  float: left;  
+  margin: 3px 5px;
+  float: left;
 }
 .campoEmpresa {
   width: auto;
-  margin: 3px 5px;  
+  margin: 3px 5px;
   text-align: left;
   vertical-align: top;
   float: left;
@@ -30,13 +34,13 @@
   width: auto;
   margin: 3px 5px;
   text-align: center;
-  float: left;  
+  float: left;
 }
 .campoSolicitante {
   width: auto;
   margin: 3px 5px;
   text-align: center;
-  float: left;  
+  float: left;
 }
 .campoAnalista {
   width: auto;
@@ -56,21 +60,21 @@
 .campoEstado {
   width: auto;
   margin: 3px 5px;
-  float: left;  
+  float: left;
 }
 .campoLocalidade{
   width: auto;
-  margin: 3px 5px;  
-  float: left;  
+  margin: 3px 5px;
+  float: left;
 }
 .campoEstado {
   width: auto;
-  margin: 3px 5px;  
-  float: left;  
+  margin: 3px 5px;
+  float: left;
 }
 .campoBanda {
   width: auto;
-  margin: 3px 5px;  
+  margin: 3px 5px;
   padding: 0px;
 }
 //
