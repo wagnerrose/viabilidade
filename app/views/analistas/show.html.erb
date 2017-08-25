@@ -28,14 +28,14 @@
 <div class="box-show">
   <center>
     <%= link_to t('.back', :default => t("helpers.links.back")),
-                  analistas_path, :class => 'btn botao btn-sm'  %>
+                  backoffice_tabelas_analistas_path, :class => 'btn botao btn-sm'  %>
 
 
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                  edit_analista_path(@analista), :class => 'btn botao btn-sm' %>
+                  edit_backoffice_tabelas_analista_path(@analista), :class => 'btn botao btn-sm' %>
 
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                  analista_path(@analista),
+                  backoffice_tabelas_analista_path(@analista),
                   :method => 'delete',
                   :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                   :class => 'btn botaoApaga btn-sm ' %>

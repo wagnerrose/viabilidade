@@ -1,0 +1,25 @@
+<!-- Navigation -->
+<div class="navbar navbar-default navbar-static-top">
+  <a class="navbar-brand" href="#">TELEBRAS ap site</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+       <ul class="nav navbar-nav navbar-right">
+        <% if usuario_signed_in? %>
+          <div><strong><%= current_usuario.email%></strong></div>
+          <li><%= link_to ('<span class="glyphicon glyphicon-edit">
+            </span> Edit profile').html_safe, edit_usuario_registration_path %></li>
+          <li><%= link_to ('<span class="glyphicon glyphicon-log-out">
+            </span> Logout').html_safe,
+            destroy_usuario_session_path,
+            method: :delete,
+            :class => 'navbar-link' %></li>
+        <% else %>
+          <li><%= link_to ('<span class="glyphicon glyphicon-user">
+            </span> Sign up').html_safe,
+            new_usuario_registration_path %></li>
+          <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
+            </span> Login').html_safe,
+            new_usuario_session_path %></li>
+        <% end %>
+      </ul>
+  </div>
+</div>

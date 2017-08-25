@@ -1,0 +1,121 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">TELEBRAS S.A. ap dashboard</a>
+  </div>
+  <!-- /.navbar-header -->
+
+       <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+          <div><strong><%= current_admin.email %></strong></div>
+          <li><%= link_to ('<span class="glyphicon glyphicon-edit">
+            </span> Edit profile').html_safe, edit_admin_registration_path %></li>
+          <li><%= link_to ('<span class="glyphicon glyphicon-log-out">
+            </span> Logout').html_safe,
+            destroy_admin_session_path,
+            method: :delete,
+            :class => 'navbar-link' %></li>
+        <% else %>
+          <li><%= link_to ('<span class="glyphicon glyphicon-user">
+            </span> Sign up').html_safe,
+            new_admin_registration_path %></li>
+          <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
+            </span> Login').html_safe,
+            new_admin_session_path %></li>
+        <% end %>
+      </ul>
+  <!-- /.navbar-top-links -->
+
+  <div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+      <ul class="nav " id="side-menu">
+        <li class="sidebar-search">
+          <div class="input-group custom-search-form">
+            <input type="text" class="form-control" placeholder="Pesquisa...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+          <!-- /input-group -->
+        </li>
+        <li>
+          <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Painel de Controle</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Estatíscias<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="flot.html">Gráficos</a>
+            </li>
+            <li>
+              <a href="morris.html">Morris.js Charts</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-table fa-fw"></i> Tabelas <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <%= link_to backoffice_tabelas_analistas_path do %>
+                  <i class="fa fa-database fa-fw"></i> Analistas
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_empresas_path do %>
+                    <i class="fa fa-database fa-fw"></i> Empresas
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_equipamentos_path do %>
+                    <i class="fa fa-database fa-fw"></i> Equipamentos
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_estacoes_path do %>
+                    <i class="fa fa-database fa-fw"></i> Estações
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_justificativas_path do %>
+                    <i class="fa fa-database fa-fw"></i> Justificativas
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_localidades_path do %>
+                    <i class="fa fa-database fa-fw"></i> Localidades
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_regionais_path do %>
+                    <i class="fa fa-database fa-fw"></i> Regionais
+                <% end %>
+              </li>
+              <li>
+                  <%= link_to backoffice_tabelas_servicos_path do %>
+                    <i class="fa fa-database fa-fw"></i> Servicos
+                <% end %>
+              </li>
+              <li><%= link_to backoffice_tabelas_uf_index_path do %>
+                  <i class="fa fa-database fa-fw"></i> UF
+                <% end %>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Relatórios</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</nav>

@@ -32,7 +32,7 @@ gem 'turbolinks', '5.0.1'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '2.4.1'
 gem "therubyracer"
-# gem "less-rails"
+#gem "less-rails"
 gem "twitter-bootstrap-rails"
 # gem 'sprockets-rails'
 gem 'bootstrap-sass', '3.3.6'
@@ -56,7 +56,7 @@ gem 'rails-assets-datatables-i18n', source: 'https://rails-assets.org'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
 # Internationalization (aka i18n) do Devise
-gem 'devise-i18n'
+#gem 'devise-i18n'
 #Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem "paperclip", "~> 5.0.0"
 

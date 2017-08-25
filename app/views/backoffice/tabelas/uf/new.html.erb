@@ -1,0 +1,26 @@
+
+<%- model_class = Uf -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+                <!-- codigo da pagina -->
+        <div class="page-header">
+          <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+        </div>
+        <%= render :partial => 'form' %>
+        <!--/ codigo da pagina -->
+
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+
+<!-- /#page-wrapper -->
+<!-- /#wrapper <--></-->

@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
-  namespace :site do
-    get 'home', to: 'home#index'
-  end
 
+  get 'backoffice', to: 'backoffice/dashboard#index'
+  get 'webmin', to: 'backoffice/dashboard#index'
   namespace :backoffice do
     get 'dashboard',to: 'dashboard#index'
+    namespace :tabelas do
+      resources :analistas
+      resources :empresas
+      resources :equipamentos
+      resources :estacoes
+      resources :justificativas
+      resources :localidades
+      resources :respostas
+      resources :regionais
+      resources :servicos
+      resources :uf
+    end
+  end
+
+  namespace :site do
+    get 'home', to: 'home#index'
   end
 
   devise_for :usuarios
@@ -12,17 +27,5 @@ Rails.application.routes.draw do
 
   root 'site/home#index'
 
-  resources :equipamentos
-  resources :estacoes
-  resources :respostas
   resources :solicitacoes
-  resources :justificativas
-  resources :localidades
-  resources :servicos
-  resources :uf
-  resources :regionais
-  resources :empresas
-  resources :analistas
-
-
 end

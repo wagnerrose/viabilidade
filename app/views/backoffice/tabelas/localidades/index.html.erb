@@ -1,0 +1,62 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+<%= stylesheet_link_tag params[:controller] %>
+<%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Localidade -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
+            <center><%=t '.title', :default => model_class.model_name.human(count: @localidades.count).titleize %></center>
+          </h1>
+        </div>
+
+        <table class="table table-striped" id="localidades">
+          <thead>
+            <tr>
+              <th><%= model_class.human_attribute_name(:uf_id) %></th>
+              <th><%= model_class.human_attribute_name(:localidade) %></th>
+              <th><%= model_class.human_attribute_name(:municipio) %></th>
+              <th><center><%= model_class.human_attribute_name(:sigla_cnl) %></center></th>
+              <th><center><%= model_class.human_attribute_name(:cod_cnl) %></center></th>
+              <th><%= model_class.human_attribute_name(:latitude) %></th>
+              <th><%= model_class.human_attribute_name(:longitude) %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @localidades.each do |localidade| %>
+            <tr>
+              <td><%= localidade.uf.sigla %></td>
+              <td><%= link_to localidade.localidade, backoffice_tabelas_localidade_path(localidade), :title => "Detalhar/Editar" %></td>
+              <td><%= localidade.municipio %></td>
+              <td><center><%= localidade.sigla_cnl %></center></td>
+              <td><center><%= localidade.cod_cnl %></center></td>
+              <td><%= number_with_precision(localidade.latitude,  precision: 10, separator: ',' , locale: 'pt-BR') %></td>
+              <td><%= number_with_precision(localidade.longitude, precision: 10, separator: ',' , locale: 'pt-BR' ) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <center>
+          <%= link_to t('.new', :default => t("helpers.links.new")),
+          new_backoffice_tabelas_localidade_path,
+          :class => 'btn botao btn-sm' %>
+        </center>
+        <!--/ codigo da pagina -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- / #page-wrapper -->
+<!-- / #wrapper <-->

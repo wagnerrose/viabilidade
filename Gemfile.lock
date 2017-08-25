@@ -267,6 +267,7 @@ DEPENDENCIES
   jquery-rails (= 4.1.1)
   jquery-turbolinks
   jquery-ui-rails
+  less-rails
   paperclip (~> 5.0.0)
   pry-rails
   puma (= 3.4.0)

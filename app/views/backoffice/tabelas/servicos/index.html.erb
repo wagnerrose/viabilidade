@@ -1,0 +1,60 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+<%= stylesheet_link_tag params[:controller] %>
+<%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Servico -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
+            <center><%=t '.title', :default => model_class.model_name.human(count: @servicos.count).titleize %></center>
+          </h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <table class="table table-striped" id="servicos">
+              <thead>
+                <tr>
+                  <th><%= model_class.human_attribute_name(:nome) %></th>
+                  <th><%= model_class.human_attribute_name(:codigo) %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @servicos.each do |servico| %>
+                <tr>
+                <td><%= link_to servico.nome, backoffice_tabelas_servico_path(servico), :title => "Detalhar/Editar" %></td>
+                  <td><%= servico.codigo %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-3"></div>
+        </div> <!-- div row-->
+        <div>
+          <center>
+            <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_backoffice_tabelas_servico_path,
+            :class => 'btn botao btn-sm' %>
+          </center>
+        </div>
+        <!--/ codigo da pagina -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- / #page-wrapper -->
+<!-- / #wrapper <-->

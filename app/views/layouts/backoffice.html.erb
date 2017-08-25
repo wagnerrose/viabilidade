@@ -19,11 +19,11 @@
 
   </head>
   <body>
-    <h1>Backoffice</h1>
-
     <script>
       $.notify("<%= notice %>", "success");
     </script>
+    <!--Navigation -->
+    <%= render partial: "./layouts/backoffice_shared/navigation" %>
 
     <div class="container">
       <div class="row">
@@ -31,9 +31,7 @@
           <%= yield %>
         </div>
       </div><!--/row-->
-      <footer>
-        <p>&copy; Telebras 2017</p>
-      </footer>
+        <%= render partial: "./layouts/backoffice_shared/footer" %>
     </div> <!-- /container -->
   </body>
 </html>
