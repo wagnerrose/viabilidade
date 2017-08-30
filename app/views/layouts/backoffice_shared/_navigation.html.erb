@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-buttom: 0;" >
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -7,13 +7,13 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">TELEBRAS S.A. ap dashboard</a>
+    <a class="navbar-brand" href="index.html">TELEBRAS S.A.</a>
   </div>
   <!-- /.navbar-header -->
 
-       <ul class="nav navbar-nav navbar-right">
+       <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
         <% if admin_signed_in? %>
-          <div><strong><%= current_admin.email %></strong></div>
+          <li><strong><%= current_admin.email %></strong></li>
           <li><%= link_to ('<span class="glyphicon glyphicon-edit">
             </span> Edit profile').html_safe, edit_admin_registration_path %></li>
           <li><%= link_to ('<span class="glyphicon glyphicon-log-out">
@@ -65,46 +65,46 @@
           <a href="#"><i class="fa fa-table fa-fw"></i> Tabelas <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
               <li>
-                <%= link_to backoffice_tabelas_analistas_path do %>
+                <%= link_to backoffice_analistas_path do %>
                   <i class="fa fa-database fa-fw"></i> Analistas
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_empresas_path do %>
+                  <%= link_to backoffice_empresas_path do %>
                     <i class="fa fa-database fa-fw"></i> Empresas
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_equipamentos_path do %>
+                  <%= link_to backoffice_equipamentos_path do %>
                     <i class="fa fa-database fa-fw"></i> Equipamentos
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_estacoes_path do %>
+                  <%= link_to backoffice_estacoes_path do %>
                     <i class="fa fa-database fa-fw"></i> Estações
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_justificativas_path do %>
+                  <%= link_to backoffice_justificativas_path do %>
                     <i class="fa fa-database fa-fw"></i> Justificativas
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_localidades_path do %>
+                  <%= link_to backoffice_localidades_path do %>
                     <i class="fa fa-database fa-fw"></i> Localidades
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_regionais_path do %>
+                  <%= link_to backoffice_regionais_path do %>
                     <i class="fa fa-database fa-fw"></i> Regionais
                 <% end %>
               </li>
               <li>
-                  <%= link_to backoffice_tabelas_servicos_path do %>
+                  <%= link_to backoffice_servicos_path do %>
                     <i class="fa fa-database fa-fw"></i> Servicos
                 <% end %>
               </li>
-              <li><%= link_to backoffice_tabelas_uf_index_path do %>
+              <li><%= link_to backoffice_uf_index_path do %>
                   <i class="fa fa-database fa-fw"></i> UF
                 <% end %>
               </li>

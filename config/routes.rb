@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'webmin', to: 'backoffice/dashboard#index'
+  get 'dashboard',to: 'dashboard#index'
+
   namespace :backoffice do
-    get 'dashboard',to: 'dashboard#index'
-    namespace :tabelas do
       resources :analistas
       resources :empresas
       resources :equipamentos
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       resources :regionais
       resources :servicos
       resources :uf
-    end
   end
 
   namespace :site do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814190655) do
+ActiveRecord::Schema.define(version: 20170829144043) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -80,21 +80,34 @@ ActiveRecord::Schema.define(version: 20170814190655) do
     t.index ["regional_id"], name: "index_analistas_on_regional_id"
   end
 
+  create_table "contatos", force: :cascade do |t|
+    t.string   "nome",       limit: 50
+    t.string   "sobrenome",  limit: 50
+    t.text     "obs"
+    t.integer  "empresa_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["empresa_id"], name: "index_contatos_on_empresa_id"
+  end
+
   create_table "empresas", force: :cascade do |t|
-    t.string   "endereco"
-    t.string   "cidade"
-    t.string   "uf"
-    t.string   "nome_contato"
     t.string   "cnpj"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "nome_fantasia"
-    t.string   "email"
     t.string   "sap"
-    t.string   "celular"
-    t.string   "fixo"
-    t.string   "cep"
     t.string   "razao"
+  end
+
+  create_table "enderecos", force: :cascade do |t|
+    t.string   "logradouro", limit: 250
+    t.string   "cidade",     limit: 50
+    t.string   "uf",         limit: 2
+    t.string   "cep",        limit: 8
+    t.integer  "empresa_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["empresa_id"], name: "index_enderecos_on_empresa_id"
   end
 
   create_table "equipamentos", force: :cascade do |t|
@@ -148,6 +161,21 @@ ActiveRecord::Schema.define(version: 20170814190655) do
     t.index ["uf_id"], name: "index_localidades_on_uf_id"
   end
 
+  create_table "produtos", force: :cascade do |t|
+    t.string   "tipo",       limit: 15
+    t.string   "fornecedor", limit: 50
+    t.integer  "velocidade"
+    t.string   "origem",     limit: 50
+    t.string   "uf_a",       limit: 2
+    t.string   "destino",    limit: 50
+    t.string   "uf_b",       limit: 2
+    t.text     "obs"
+    t.integer  "empresa_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["empresa_id"], name: "index_produtos_on_empresa_id"
+  end
+
   create_table "regionais", force: :cascade do |t|
     t.string   "cod_regional"
     t.string   "nome"
@@ -195,6 +223,14 @@ ActiveRecord::Schema.define(version: 20170814190655) do
     t.datetime "updated_at",       null: false
     t.integer  "empresa_id"
     t.index ["empresa_id"], name: "index_solicitacaes_on_empresa_id"
+  end
+
+  create_table "telefones", force: :cascade do |t|
+    t.string   "telefone",   limit: 12
+    t.integer  "contato_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["contato_id"], name: "index_telefones_on_contato_id"
   end
 
   create_table "uf", force: :cascade do |t|

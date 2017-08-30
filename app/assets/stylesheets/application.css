@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require DataTables
  *= require jquery-ui
+ *= require DataTables
  *= require_self
  *= require scaffolds
- *= require font-awesome
+ *= require bootstrap
  *= require bootstrap_sb_admin_base_v2
+ *= require font-awesome
  */
