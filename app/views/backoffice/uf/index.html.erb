@@ -18,6 +18,8 @@
             <center><%=t '.title', :default => model_class.model_name.human(count: @uf.count).titleize.upcase %></center>
           </h1>
         </div>
+        <dir class="col-lg-2"></dir>
+        <dir class="col-lg-8">
           <table  class="table table-striped table-bordered" id="uf">
             <thead>
               <tr>
@@ -28,15 +30,17 @@
             <tbody>
               <% @uf.each do |uf| %>
               <tr>
-                <td class="text-center"><%= link_to uf.sigla, backoffice_uf_path(uf), :title => "Detalhar/Editar" %></td>
+                <td class="text-center"><%= link_to uf.sigla, uf_path(uf), :title => "Detalhar/Editar" %></td>
                 <td class="text-center"><%= uf.nome %></td>
               </tr>
               <% end %>
             </tbody>
           </table> <!-- Tabela -->
+        </div>
+        <dir class="col-lg-2"></dir>
         <center>
           <%= link_to t('.new', :default => t("helpers.links.new")),
-          new_backoffice_uf_path,
+          new_uf_path,
           :class => 'btn botao btn-sm' %>
         </center>
         <!--/ codigo da pagina -->
@@ -48,5 +52,3 @@
   </div>
   <!-- /.container-fluid -->
 </div>
-<!-- / #page-wrapper -->
-<!-- / #wrapper -->

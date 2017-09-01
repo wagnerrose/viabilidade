@@ -26,7 +26,7 @@
               <tbody>
                 <% @justificativas.each do |justificativa| %>
                 <tr>
-                <td><%= link_to justificativa.nome, backoffice_justificativa_path(justificativa), :title => "Detalhar/Editar" %></td>
+                <td><%= link_to justificativa.nome, justificativa_path(justificativa), :title => "Detalhar/Editar" %></td>
                   <td><%= justificativa.cod_justificativa %></td>
                   <td><%= justificativa.tipo %></td>
                 </tr>
@@ -38,7 +38,7 @@
         </div><!-- /div row -->
         <center>
           <%= link_to t('.new', :default => t("helpers.links.new")),
-          new_backoffice_justificativa_path,
+          new_justificativa_path,
           :class => 'btn botao btn-sm' %>
         </center>
         <!--/ codigo da pagina -->

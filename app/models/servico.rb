@@ -1,5 +1,5 @@
 class Servico < ApplicationRecord
-  
-    validates :nome, :servico, presence: true
-    
+
+    validates :nome, :codigo, presence: true
+
 end

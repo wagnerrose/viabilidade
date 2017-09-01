@@ -32,7 +32,7 @@
               <tbody>
                 <% @servicos.each do |servico| %>
                 <tr>
-                <td><%= link_to servico.nome, backoffice_servico_path(servico), :title => "Detalhar/Editar" %></td>
+                <td><%= link_to servico.nome, servico_path(servico), :title => "Detalhar/Editar" %></td>
                   <td><%= servico.codigo %></td>
                 </tr>
                 <% end %>
@@ -44,7 +44,7 @@
         <div>
           <center>
             <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_backoffice_servico_path,
+            new_servico_path,
             :class => 'btn botao btn-sm' %>
           </center>
         </div>

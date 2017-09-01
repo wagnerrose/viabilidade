@@ -25,8 +25,8 @@
               <th><%= model_class.human_attribute_name(:uf_id) %></th>
               <th><%= model_class.human_attribute_name(:localidade) %></th>
               <th><%= model_class.human_attribute_name(:municipio) %></th>
-              <th><center><%= model_class.human_attribute_name(:sigla_cnl) %></center></th>
-              <th><center><%= model_class.human_attribute_name(:cod_cnl) %></center></th>
+              <th><center>Sigla</center></th>
+              <th><center>Código</center></th>
               <th><%= model_class.human_attribute_name(:latitude) %></th>
               <th><%= model_class.human_attribute_name(:longitude) %></th>
             </tr>
@@ -35,7 +35,7 @@
             <% @localidades.each do |localidade| %>
             <tr>
               <td><%= localidade.uf.sigla %></td>
-              <td><%= link_to localidade.localidade, backoffice_localidade_path(localidade), :title => "Detalhar/Editar" %></td>
+              <td><%= link_to localidade.localidade, localidade_path(localidade), :title => "Detalhar/Editar" %></td>
               <td><%= localidade.municipio %></td>
               <td><center><%= localidade.sigla_cnl %></center></td>
               <td><center><%= localidade.cod_cnl %></center></td>
@@ -47,7 +47,7 @@
         </table>
         <center>
           <%= link_to t('.new', :default => t("helpers.links.new")),
-          new_backoffice_localidade_path,
+          new_localidade_path,
           :class => 'btn botao btn-sm' %>
         </center>
         <!--/ codigo da pagina -->

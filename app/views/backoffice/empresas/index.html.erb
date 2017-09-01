@@ -30,7 +30,7 @@
             <tbody>
               <% @empresas.each do |empresa| %>
                 <tr>
-                  <td><%=link_to empresa.razao, backoffice_empresa_path(empresa), :title => "Detalhar/Editar" %></td>
+                  <td><%=link_to empresa.razao, empresa_path(empresa), :title => "Detalhar/Editar" %></td>
                   <td><%= empresa.nome_fantasia %></td>
                   <td><%= empresa.cnpj %></td>
                 </tr>
@@ -40,7 +40,7 @@
         </div><!-- /div row -->
         <center>
           <%= link_to t('.new', :default => t("helpers.links.new")),
-                      new_backoffice_empresa_path,
+                      new_empresa_path,
                       :class => 'btn botao btn-sm' %>
         </center>
         <!--/ codigo da pagina -->

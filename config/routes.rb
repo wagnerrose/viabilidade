@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'webmin', to: 'backoffice/dashboard#index'
   get 'dashboard',to: 'dashboard#index'
 
-  namespace :backoffice do
+  scope module: :backoffice do
       resources :analistas
       resources :empresas
       resources :equipamentos

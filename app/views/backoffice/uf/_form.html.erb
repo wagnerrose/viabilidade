@@ -1,4 +1,4 @@
-<%= form_for @uf, :html => { :class => "form-horizontal backoffice_uf" } do |f| %>
+<%= form_for @uf, :html => { :class => "form-horizontal uf" } do |f| %>
 
   <% if @uf.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -20,21 +20,21 @@
     <div class="col-md-10">
       <%= f.text_field :sigla, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:sigla) %>
+    <%#.error_span(:sigla) %>
   </div>
   <div class="form-group">
     <%= f.label :nome, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :nome, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:nome) %>
+    <%#f.error_span(:nome) %>
   </div>
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                backoffice_uf_index_path, :class => 'btn btn-default' %>
+                uf_index_path, :class => 'btn btn-default' %>
     </div>
   </div>
 

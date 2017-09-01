@@ -36,7 +36,7 @@
             <tbody>
               <% @estacoes.each do |estacao| %>
               <tr>
-              <td><%= link_to estacao.pop, backoffice_estacao_path(estacao), :title => "Detalhar/Editar" %></td>
+              <td><%= link_to estacao.pop, estacao_path(estacao), :title => "Detalhar/Editar" %></td>
                 <td><%= estacao.nome %></td>
                 <td><%= estacao.endereco %></td>
                 <td><%= estacao.cidade %></td>
@@ -50,7 +50,7 @@
         <div>
           <center>
             <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_backoffice_estacao_path,
+            new_estacao_path,
             :class => 'btn botao ' %>
           </center>
         </div>

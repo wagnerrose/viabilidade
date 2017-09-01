@@ -31,7 +31,7 @@
         <tbody>
           <% @analistas.each do |analista| %>
           <tr>
-            <td><%= link_to analista.nome, backoffice_analista_path(analista), :title => "Detalhar/Editar" %></td>
+            <td><%= link_to analista.nome, analista_path(analista), :title => "Detalhar/Editar" %></td>
             <td><%= analista.email %></td>
             <td><%= analista.regional.nome %></td>
             <td><%= analista.fone_contato %></td>
@@ -50,7 +50,7 @@
       </table>
       <center>
         <%= link_to t('.new', :default => t("helpers.links.new")) ,
-        new_backoffice_analista_path,
+        new_analista_path,
         :class => 'btn botao btn-sm' %>
       </center>
     </div>

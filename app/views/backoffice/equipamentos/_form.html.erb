@@ -26,7 +26,7 @@
         <%= f.text_field :designacao, :class => 'form-control' %>
       </div>
     </div>
-    <%=f.error_span(:designacao) %>
+    <%#f.error_span(:designacao) %>
   </div><!--/row-->
 
   <div class= "row">
@@ -36,7 +36,7 @@
         <%= f.text_field :descricao, :class => 'form-control' %>
       </div>
     </div>
-    <%=f.error_span(:descricao) %>
+    <%#f.error_span(:descricao) %>
   </div><!--/row-->
 
   <div class="row">
@@ -45,7 +45,7 @@
       <div class="col-md-3">
         <%= f.select(:tipo, tipo_equipamento, {include_blank: false}, :class => 'form-control') %>
       </div>
-      <%=f.error_span(:tipo) %>
+      <%#f.error_span(:tipo) %>
     </div>
   </div><!--/row-->
 
@@ -55,7 +55,7 @@
       <div class="col-md-3">
         <%= f.text_field :enderecamento, :class => 'form-control' %>
       </div>
-      <%=f.error_span(:enderecamento) %>
+      <%#f.error_span(:enderecamento) %>
     </div>
   </div><!--/row-->
 
@@ -65,7 +65,7 @@
       <div class="col-md-2">
         <%= f.text_field :firmware, :class => 'form-control' %>
       </div>
-      <%=f.error_span(:firmware) %>
+      <%#f.error_span(:firmware) %>
     </div>
   </div><!--/row-->
 
@@ -75,7 +75,7 @@
       <div class="col-md-3">
         <%= f.select(:status, status_equipamento, {include_blank: false}, :class => 'form-control') %>
       </div>
-      <%=f.error_span(:status) %>
+      <%#f.error_span(:status) %>
     </div>
   </div><!--/row-->
 
@@ -85,7 +85,7 @@
       <div class="col-md-2">
         <%= f.text_field :arco, :class => 'form-control' %>
       </div>
-      <%=f.error_span(:arco) %>
+      <%#f.error_span(:arco) %>
     </div>
   </div><!--/row-->
 
@@ -95,7 +95,7 @@
       <div class="col-md-2">
         <%= f.text_field :cluster, :class => 'form-control' %>
       </div>
-      <%=f.error_span(:cluster) %>
+      <%#f.error_span(:cluster) %>
     </div>
   </div><!--/row-->
 
@@ -106,7 +106,7 @@
         <!--<%= f.text_field :estacao_id, :class => 'form-control' %>-->
         <%= f.collection_select(:estacao_id, Estacao.all, :id, :pop, {include_blank: true},  :class => 'form-control') %>
       </div>
-      <%=f.error_span(:estacao_id) %>
+      <%#f.error_span(:estacao_id) %>
     </div>
   </div><!--/row-->
 </div><!--/container-->
@@ -116,7 +116,7 @@
     <div class="col-md-offset-1 col-md-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                backoffice_equipamentos_path, :class => 'btn btn-default' %>
+                equipamentos_path, :class => 'btn btn-default' %>
     </div>
   </div>
 </div><!--/row-->
