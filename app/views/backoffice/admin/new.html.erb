@@ -4,7 +4,7 @@
   <%= javascript_include_tag "#{params[:controller]}" %>
 <% end %>
 
-<%- model_class = Analista -%>
+<%- model_class = Admin -%>
 
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -13,14 +13,11 @@
       <div class="col-lg-12">
 
         <!-- codigo da pagina -->
-        <div class="list-group">
-          <h1  class="list-group-item-heading list-group-item-info centro">
-            <%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'],
-              :model => model_class.model_name.human.titleize %>
-          </h1>
+        <div class="page-header">
+          <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
         </div>
-
         <%= render :partial => 'form' %>
+
         <!--/ codigo da pagina -->
 
       </div>
@@ -33,4 +30,3 @@
 
 <!-- / #page-wrapper -->
 <!-- / #wrapper <-->
-

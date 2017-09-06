@@ -19,9 +19,6 @@
 
   </head>
   <body>
-    <script>
-      $.notify("<%= notice %>", "success");
-    </script>
     <!--Navigation -->
     <%= render partial: "./layouts/backoffice_shared/navigation" %>
 
@@ -33,6 +30,12 @@
       </div><!--/row-->
         <%= render partial: "./layouts/backoffice_shared/footer" %>
     </div> <!-- /container -->
+    <% if notice %>
+      <script>
+        $.notify("<%= notice %>", "success");
+      </script>
+    <% end %>
+
   </body>
 </html>
 

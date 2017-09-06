@@ -9,13 +9,13 @@
             </span> Edit profile').html_safe, edit_usuario_registration_path %></li>
           <li><%= link_to ('<span class="glyphicon glyphicon-log-out">
             </span> Logout').html_safe,
-            destroy_usuario_session_path,
+            usuario_path,
             method: :delete,
             :class => 'navbar-link' %></li>
         <% else %>
           <li><%= link_to ('<span class="glyphicon glyphicon-user">
             </span> Sign up').html_safe,
-            new_usuario_registration_path %></li>
+            new_usuario_path %></li>
           <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
             </span> Login').html_safe,
             new_usuario_session_path %></li>

@@ -1,0 +1,56 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
+<%- model_class = Contato -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <!-- codigo da pagina -->
+    <div class="row" >
+    <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <center><h1 >
+              <%=t '.title', :default => model_class.model_name.human.titleize %>
+            </h1></center>
+          </div>
+          <dl class="dl-horizontal" style="margin: 10px; font-size: 20px;" >
+            <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+            <dd><%= @contato.nome %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:sobrenome) %>:</strong></dt>
+            <dd><%= @contato.sobrenome %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:empresa_id) %>:</strong></dt>
+            <dd><%= @contato.empresa.razao %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+            <dd><%= @contato.email %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
+            <dd><%= @contato.obs %></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <center>
+          <%= link_to t('.back', :default => t("helpers.links.back")),
+          contatos_path, :class => 'btn botao btn-sm'  %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          edit_contato_path(@contato),
+          :class => 'btn botao btn-sm' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          contato_path(@contato),
+          :method => 'delete',
+          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+          :class => 'btn botaoApaga btn-sm ' %>
+        </center>
+      </div> <!-- /.col-lg-12 -->
+    </div><!-- row -->
+
+  </div><!-- div container -->
+</div>

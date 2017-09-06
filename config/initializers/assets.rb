@@ -44,6 +44,10 @@ Rails.application.config.assets.precompile += %w( solicitacoes.js
 Rails.application.config.assets.precompile += %w( backoffice/uf.js
                                                   backoffice/uf.coffee
                                                   backoffice/uf.scss)
+Rails.application.config.assets.precompile += %w( backoffice/contatos.coffee
+                                                  backoffice/contatos.scss)
+Rails.application.config.assets.precompile += %w( backoffice/admin.coffee
+                                                  backoffice/admin.scss)
 Rails.application.config.assets.precompile += %w( backoffice.js
                                                   backoffice.coffee
                                                   backoffice.scss)

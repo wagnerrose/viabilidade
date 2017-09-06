@@ -4,7 +4,7 @@
   <%= javascript_include_tag "#{params[:controller]}" %>
 <% end %>
 
-<%- model_class = Analista -%>
+<%- model_class = Contato -%>
 
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -14,9 +14,9 @@
 
         <!-- codigo da pagina -->
         <div class="list-group">
-          <h1  class="list-group-item-heading list-group-item-info centro">
-            <%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'],
-              :model => model_class.model_name.human.titleize %>
+          <h1  class="list-group-item-heading list-group-item-info">
+            <center><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'],
+              :model => model_class.model_name.human.titleize %></center>
           </h1>
         </div>
 
@@ -33,4 +33,3 @@
 
 <!-- / #page-wrapper -->
 <!-- / #wrapper <-->
-
