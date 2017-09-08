@@ -14,10 +14,10 @@
        <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
         <% if admin_signed_in? %>
           <li><%= link_to ('<span class="glyphicon glyphicon-edit" title="Edita">
-            </span>').html_safe, edit_admin_path %></li>
+            </span>').html_safe, edit_admin_path(admin) %></li>
           <li><%= link_to ('<span class="glyphicon glyphicon-log-out" title="Logout">
             </span>').html_safe,
-            admin_path,
+            admin_path(admin),
             method: :delete,
             :class => 'navbar-link' %></li>
         <% else %>
