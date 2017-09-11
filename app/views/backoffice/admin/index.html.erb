@@ -34,7 +34,7 @@
                 <td><%= link_to admin.email, edit_admin_path(admin), :title => "Detalhar/Editar" %></td>
                 <td class="centro"><%= link_to ('<span class="fa fa-times">
                         </span>').html_safe,
-                        admin_path(@admin),
+                        admin_path(admin),
                         :method => 'delete',
                         :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                         :class => 'btn btn-danger btn-circle',
