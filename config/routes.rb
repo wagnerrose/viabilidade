@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'webmin', to: 'backoffice/dashboard#index'
   get 'dashboard',to: 'dashboard#index'
-
+  delete 'sign_out', to: 'backoffice/admin/session#destroy'
+  
   scope module: :backoffice do
       resources :analistas
       resources :contatos
@@ -18,14 +19,14 @@ Rails.application.routes.draw do
       resources :servicos
       resources :telefones
       resources :uf
-      resources :admin, except: [:show, :destroy]
+      resources :admin, except: [:show]
     end
 
   namespace :site do
     get 'home', to: 'home#index'
   end
 
-  devise_for :usuarios
+  devise_for :usuarios, :skip => [:destroy]
   devise_for :admin, :skip => [:registrations]
 
 

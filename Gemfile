@@ -40,15 +40,16 @@ gem 'cocoon'
 # Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic
 gem 'slim'
 
-# The most popular front-end framework for developing responsive, mobile first projects on the web.
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-
-#A simple, versatile notification library
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-
-# datatables
-gem 'rails-assets-DataTables', source: 'https://rails-assets.org'
-
+source 'https://rails-assets.org' do
+  # The most popular front-end framework for developing responsive, mobile first projects on the web.
+  gem 'rails-assets-bootstrap'
+  #A simple, versatile notification library
+  gem 'rails-assets-notifyjs'
+  # datatables
+  gem 'rails-assets-DataTables'
+  # bootboxJS
+  gem 'rails-assets-bootbox'
+end
 # datatables-i18n
 #gem 'rails-assets-datatables-i18n', source: 'https://rails-assets.org'
 
@@ -57,6 +58,7 @@ gem 'devise'
 
 #Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem "paperclip", "~> 5.0.0"
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -76,6 +78,9 @@ group :development, :test do
 end
 
 group :development do
+  # A library for generating fake data souch as names, addresses and phones numbers
+  gem 'faker'
+  
   gem 'web-console', '>= 3.3.0'
 end
 

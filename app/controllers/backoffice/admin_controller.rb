@@ -34,7 +34,7 @@ module Backoffice
 
       respond_to do |format|
         if @admin.save
-          format.html { redirect_to @admin, notice: I18n.t('messages.created')  }
+          format.html { redirect_to admin_index_path, notice: I18n.t('messages.created')  }
           format.json { render :show, status: :created, location: @admin }
         else
           format.html { render :new }
@@ -46,9 +46,18 @@ module Backoffice
     # PATCH/PUT /admins/1
     # PATCH/PUT /admins/1.json
     def update
+      # permite apos editar, salvar sem a necessidade de alterar senha
+      passwd = params[:admin][:password]
+      passwd_confirmation = params[:admin][:password_confirmation]
+        
+      if passwd.blank? && passwd_confirmation.blank?
+        params[:admin].delete(:password)
+        params[:admin].delete(:password_confirmation)
+      end
+      ###
       respond_to do |format|
         if @admin.update(admin_params)
-          format.html { redirect_to @admin, notice: I18n.t('messages.updated')  }
+          format.html { redirect_to admin_index_path, notice: I18n.t('messages.updated')  }
           format.json { render :show, status: :ok, location: @admin }
         else
           format.html { render :edit }
@@ -75,7 +84,7 @@ module Backoffice
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def admin_params
-        params.require(:admin).permit(:email, :password, :password_confirmation)
+        params.require(:admin).permit(:email, :nome, :regra, :password, :password_confirmation)
       end
   end
 end

@@ -24,6 +24,8 @@
               <tr>
                 <th class="centro"><%= '#' %></th>
                 <th><%= model_class.human_attribute_name(:email) %></th>
+                <th><%= model_class.human_attribute_name(:nome) %></th>
+                <th><%= model_class.human_attribute_name(:regra) %></th>
                 <th style="width: 60px;">Ação</th>
               </tr>
             </thead>
@@ -32,13 +34,24 @@
               <tr>
                 <td class="centro"><%= admin.id %></td>
                 <td><%= link_to admin.email, edit_admin_path(admin), :title => "Detalhar/Editar" %></td>
-                <td class="centro"><%= link_to ('<span class="fa fa-times">
-                        </span>').html_safe,
-                        admin_path(admin),
-                        :method => 'delete',
-                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                        :class => 'btn btn-danger btn-circle',
-                        :title => 'Apagar'%>
+                <td class="centro"><%= admin.nome %></td>
+                <td class="centro"><%= admin.regra %></td>
+                <% if current_admin.id != admin.id %> 
+                  <td class="centro"><%= link_to admin_path(admin),
+                          method: 'delete',
+                          data: { confirm: "Você deseja excluir (<b>#{admin.email}</b>)?"},
+                          class: 'btn btn-danger btn-circle',
+                          title: 'Excluir' do %>
+                    <i class="fa fa-times"></i>
+                  <% end %>
+                <% else %>
+                  <td class="centro"><%= link_to '#',
+                          disabled: 'disabled',
+                          class: 'btn btn-danger btn-circle',
+                          title: 'Excluir' do %>
+                      <i class="fa fa-times"></i>
+                    <% end %>
+                  <% end %>
                 </td>
               </tr>
               <% end %>

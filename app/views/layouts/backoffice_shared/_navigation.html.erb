@@ -11,24 +11,32 @@
   </div>
   <!-- /.navbar-header -->
 
-       <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
-        <% if admin_signed_in? %>
-          <li><%# link_to ('<span class="glyphicon glyphicon-edit" title="Edita">
-            </span>').html_safe, edit_admin_path(@admin) %></li>
-          <li><%= link_to ('<span class="glyphicon glyphicon-log-out" title="Logout">
-            </span>').html_safe,
-            admin_path("1"),
-            method: :delete,
-            :class => 'navbar-link' %></li>
-        <% else %>
-          <li><%= link_to ('<span class="glyphicon glyphicon-user">
-            </span> Sign up').html_safe,
-            new_admin_path %></li>
-          <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
-            </span> Login').html_safe,
-            new_admin_path %></li>
-        <% end %>
+      <ul class="nav navbar-top-links navbar-right">
+         <li><%= current_admin.email %></li>
+         <li class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+             <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+           </a>
+           <ul class="dropdown-menu dropdown-user">
+              <% if admin_signed_in? %>
+                <li><%# link_to ('<span class="glyphicon glyphicon-edit" title="Edita">
+                  </span>').html_safe, edit_admin_path(@admin) %></li>
+                <li><%= link_to ('<span class="glyphicon glyphicon-log-out" title="Logout">
+                  </span>').html_safe,
+                  sign_out_path,
+                  :class => 'navbar-link' %></li>
+              <% else %>
+                <li><%= link_to ('<span class="glyphicon glyphicon-user">
+                  </span> Sign up').html_safe,
+                  new_admin_path %></li>
+                <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
+                  </span> Login').html_safe,
+                  new_admin_path %></li>
+              <% end %>
+          </ul>
+        </li>
       </ul>
+
   <!-- /.navbar-top-links -->
 
   <div class="navbar-default sidebar" role="navigation">
