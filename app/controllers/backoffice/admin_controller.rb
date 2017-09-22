@@ -1,7 +1,7 @@
 module Backoffice
   class AdminController < ApplicationController
 
-    before_action :authenticate_admin!
+#    before_action :authenticate_admin!
     before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
     layout "backoffice"
@@ -10,7 +10,7 @@ module Backoffice
     # GET /admins.json
     def index
       # @admins = admin.all
-      @admins = Admin.order(:email)
+      @admins = Admin.order(:nome)
     end
 
     # GET /admins/1
@@ -43,13 +43,13 @@ module Backoffice
       end
     end
 
-    # PATCH/PUT /admins/1
-    # PATCH/PUT /admins/1.json
+      # PATCH/PUT /admins/1
+      # PATCH/PUT /admins/1.json
     def update
       # permite apos editar, salvar sem a necessidade de alterar senha
       passwd = params[:admin][:password]
       passwd_confirmation = params[:admin][:password_confirmation]
-        
+
       if passwd.blank? && passwd_confirmation.blank?
         params[:admin].delete(:password)
         params[:admin].delete(:password_confirmation)
@@ -66,8 +66,8 @@ module Backoffice
       end
     end
 
-    # DELETE /admins/1
-    # DELETE /admins/1.json
+  # DELETE /admins/1
+  # DELETE /admins/1.json
     def destroy
       @admin.destroy
       respond_to do |format|
@@ -86,5 +86,5 @@ module Backoffice
       def admin_params
         params.require(:admin).permit(:email, :nome, :regra, :password, :password_confirmation)
       end
+    end
   end
-end

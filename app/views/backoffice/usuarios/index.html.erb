@@ -4,7 +4,7 @@
 <%= javascript_include_tag params[:controller] %>
 <% end %>
 
-<%- model_class = Admin -%>
+<%- model_class = Usuario -%>
 
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -13,13 +13,13 @@
       <!-- codigo da pagina -->
       <div class="list-group">
         <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
-          <center>Administradores</center>
+          <center>Usuários</center>
         </h1>
       </div>
     </div>
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-          <table class="table table-striped table-bordered col-lg-6" id="admins">
+          <table class="table table-striped table-bordered col-lg-6" id="usuarios">
             <thead>
               <tr>
                 <th class="centro"><%= '#' %></th>
@@ -30,27 +30,27 @@
               </tr>
             </thead>
             <tbody>
-              <% @admins.each do |admin| %>
+              <% @usuarios.each do |usuario| %>
               <tr>
-                <td class="centro"><%= admin.id %></td>
-                <td><%= link_to admin.email, edit_admin_path(admin), :title => "Detalhar/Editar" %></td>
-                <td class="centro"><%= admin.nome %></td>
-                <td class="centro"><%= admin.regra %></td>
-                <%# if current_admin.id != admin.id %>
-                  <td class="centro"><%= link_to admin_path(admin),
+                <td class="centro"><%= usuario.id %></td>
+                <td><%= link_to usuario.email, edit_usuario_path(usuario), :title => "Detalhar/Editar" %></td>
+                <td class="centro"><%= usuario.nome %></td>
+                <td class="centro"><%= usuario.regra %></td>
+                 <%# if current_admin.id != usuario.id %>
+                  <td class="centro"><%= link_to usuario_path(usuario),
                           method: 'delete',
-                          data: { confirm: "Você deseja excluir (<b>#{admin.email}</b>)?"},
+                          data: { confirm: "Você deseja excluir (<b>#{usuario.email}</b>)?"},
                           class: 'btn btn-danger btn-circle',
                           title: 'Excluir' do %>
                     <i class="fa fa-times"></i>
                   <% end %>
-                <%# else %>
+                  <%# else %>
                   <!-- <td class="centro"><%#= link_to '#',
                           disabled: 'disabled',
                           class: 'btn btn-danger btn-circle',
                           title: 'Excluir' do %>
-                      <i class="fa fa-times"></i> -->
-                    <%# end %>
+                      <i class="fa fa-times"></i>
+                   -->  <%# end %>
                   <%# end %>
                 </td>
               </tr>
@@ -62,7 +62,7 @@
       </div>
         <center>
           <%= link_to t('.new', :default => t("helpers.links.new")),
-          new_admin_path,
+          new_usuario_path,
           :class => 'btn botao btn-sm' %>
         </center>
 

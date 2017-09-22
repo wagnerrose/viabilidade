@@ -1,8 +1,10 @@
-class Site::HomeController < ApplicationController
-  before_action :authenticate_usuario!
+module Site
+  class HomeController < ApplicationController
+#    before_action :authenticate_usuario!
 
-  layout "site"
+    layout "site"
 
-  def index
+    def index
+    end
   end
 end

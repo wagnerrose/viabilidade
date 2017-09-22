@@ -1,6 +1,6 @@
 module Backoffice
   class UfController < ApplicationController
-      before_action :authenticate_admin!
+#      before_action :authenticate_admin!
       before_action :set_uf, only: [:show, :edit, :update, :destroy]
 
       layout "backoffice"

@@ -1,4 +1,4 @@
-module Backoffice
+module Site
   class Usuarios::SessionsController < Devise::SessionsController
      before_action :configure_sign_in_params, only: [:create]
 
@@ -13,9 +13,9 @@ module Backoffice
     # end
 
     # DELETE /resource/sign_out
-     def destroy
+    def destroy
       super
-     end
+    end
 
     # protected
 

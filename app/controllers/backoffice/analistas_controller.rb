@@ -1,7 +1,7 @@
 module Backoffice
   class AnalistasController < ApplicationController
 
-    before_action :authenticate_admin!
+#    before_action :authenticate_admin!
     before_action :set_analista, only: [:show, :edit, :update, :destroy]
 
     layout "backoffice"

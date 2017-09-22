@@ -7,32 +7,35 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">TELEBRAS S.A.</a>
+    <a class="navbar-brand" style="margin: 0px; padding: 5px;" href="#"><%= image_tag("telebras3.jpg", size: "120x40")%></a>
   </div>
   <!-- /.navbar-header -->
 
       <ul class="nav navbar-top-links navbar-right">
-         <li><%= current_admin.email %></li>
+         <li><%#= current_admin.email %></li>
          <li class="dropdown">
            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
              <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
            </a>
            <ul class="dropdown-menu dropdown-user">
-              <% if admin_signed_in? %>
+            <!--
+              <%# if admin_signed_in? %>
                 <li><%# link_to ('<span class="glyphicon glyphicon-edit" title="Edita">
                   </span>').html_safe, edit_admin_path(@admin) %></li>
-                <li><%= link_to ('<span class="glyphicon glyphicon-log-out" title="Logout">
+                <li><%#= link_to ('<span class="glyphicon glyphicon-log-out" title="Logout">
                   </span>').html_safe,
-                  sign_out_path,
-                  :class => 'navbar-link' %></li>
-              <% else %>
-                <li><%= link_to ('<span class="glyphicon glyphicon-user">
+                  destroy_admin_session_path,
+                  method: :delete,
+                  class: 'navbar-link' %></li>
+              <%# else %>
+                <li><%#= link_to ('<span class="glyphicon glyphicon-user">
                   </span> Sign up').html_safe,
                   new_admin_path %></li>
-                <li><%= link_to ('<span class="glyphicon glyphicon-log-in">
+                <li><%#= link_to ('<span class="glyphicon glyphicon-log-in">
                   </span> Login').html_safe,
-                  new_admin_path %></li>
-              <% end %>
+                  new_admin_session_path %></li>
+              <%# end %>
+            -->
           </ul>
         </li>
       </ul>
@@ -57,9 +60,14 @@
           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Painel de Controle</a>
         </li>
         <li>
-        <%= link_to admin_index_path do %>
-          <i class="fa fa-group fa-fw"></i> Administradores
-        <% end %>
+          <%= link_to admin_index_path do %>
+            <i class="fa fa-group fa-fw"></i> Administradores
+          <% end %>
+        </li>
+        <li>
+          <%= link_to usuarios_path do %>
+            <i class="fa fa-group fa-fw"></i> Usuários
+          <% end %>
         </li>
         <li>
           <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Estatíscias<span class="fa arrow"></span></a>

@@ -1,7 +1,7 @@
 module Backoffice
     class EquipamentosController < ApplicationController
 
-    before_action :authenticate_admin!
+#    before_action :authenticate_admin!
     before_action :set_equipamento, only: [:show, :edit, :update, :destroy]
 
     layout "backoffice"
