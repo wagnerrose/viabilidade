@@ -1,6 +1,6 @@
 class Telefone < ApplicationRecord
-  belogs_to :contato
+  belongs_to :contato
 
-  validates :telefone, length: {maximum: 12}, presence: true
+  validates :telefone, presence: true
 
 end

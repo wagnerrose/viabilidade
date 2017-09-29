@@ -24,7 +24,9 @@
               <tr>
                 <th><%= model_class.human_attribute_name(:razao) %></th>
                 <th><%= model_class.human_attribute_name(:nome_fantasia) %></th>
+                <th><%= model_class.human_attribute_name(:regional) %></th>
                 <th><%= model_class.human_attribute_name(:cnpj) %></th>
+                <th><%= model_class.human_attribute_name(:sap) %></th>
                </tr>
             </thead>
             <tbody>
@@ -32,7 +34,9 @@
                 <tr>
                   <td><%=link_to empresa.razao, empresa_path(empresa), :title => "Detalhar/Editar" %></td>
                   <td><%= empresa.nome_fantasia %></td>
+                  <td><%= empresa.regional %></td>
                   <td><%= empresa.cnpj %></td>
+                  <td><%= empresa.sap %></td>
                 </tr>
               <% end %>
             </tbody>

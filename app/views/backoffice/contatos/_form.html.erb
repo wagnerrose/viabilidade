@@ -24,10 +24,6 @@
         <%= f.text_field :nome, class:'form-control', placeholder: 'Informe o nome.' %>
       </div>
       <div class="form-group">
-        <%= f.label :sobrenome, class: 'control-label ' %>
-        <%= f.text_field :sobrenome, class: 'form-control', placeholder: 'Informe o sobrenome.' %>
-      </div>
-      <div class="form-group">
         <%= f.label :empresa_id, class: 'control-label' %>
         <%= f.collection_select(:empresa_id, Empresa.all, :id, :razao, {include_blank: false},
             { 'class'=> 'form-control col-lg-6'}) %>

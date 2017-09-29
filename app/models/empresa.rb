@@ -4,8 +4,9 @@ class Empresa < ApplicationRecord
     has_many :enderecos
     has_many :contatos
 
-    validates :razao, length: {maximum: 50}, presence: true
-    validates :nome_fantasia, length: {maximum: 50}, presence: true
+    validates :razao, length: {maximum: 150}, presence: true
+    validates :nome_fantasia, length: {maximum: 150}, presence: true
+    validates :regional, presence: true
     validates :cnpj, length: { maximum: 14}
     validates :sap, length: {maximum: 7}
 end

@@ -23,7 +23,6 @@
           <thead>
             <tr>
               <th><%= model_class.human_attribute_name(:nome) %></th>
-              <th><%= model_class.human_attribute_name(:sobrenome) %></th>
               <th><%= model_class.human_attribute_name(:empresa_id) %></th>
               <th><%= model_class.human_attribute_name(:email) %></th>
               <th><%= model_class.human_attribute_name(:obs) %></th>
@@ -33,7 +32,6 @@
             <% @contatos.each do |contato| %>
             <tr>
               <td><%= link_to contato.nome, contato_path(contato), :title => "Detalhar/Editar" %></td>
-              <td><%= contato.sobrenome %></td>
               <td><center><%= contato.empresa.razao %></center></td>
               <td><center><%= contato.email %></center></td>
               <td><center><%= contato.obs %></center></td>

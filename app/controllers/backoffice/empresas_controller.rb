@@ -3,6 +3,7 @@ module Backoffice
 
 #    before_action :authenticate_admin!
     before_action :set_empresa, only: [:show, :edit, :update, :destroy]
+    before_action :set_regionais
 
     layout "backoffice"
 
@@ -71,11 +72,15 @@ module Backoffice
       # Use callbacks to share common setup or constraints between actions.
       def set_empresa
         @empresa = Empresa.find(params[:id])
+        @regionais = Regional.order(:nome)
       end
-
+      # Use callbacks to share common setup or constraints between actions.
+      def set_regionais
+        @regionais = Regional.order(:nome).select(:nome)
+      end
       # Never trust parameters from the scary internet, only allow the white list through.
       def empresa_params
-        params.require(:empresa).permit(:razao,:nome_fantasia, :cnpj, :sap,
+        params.require(:empresa).permit(:razao,:nome_fantasia, :regional, :cnpj, :sap,
           enderecos_attributes: [:id, :logradouro, :cidade, :uf, :cep, :_destroy],
           contatos_attributes: [:id, :nome, :sobrenome, :obs, :_destroy],
           produtos_attribuite: [:id, :tipo, :fornecedor, :velocidade, :origem, :destino, :uf_a,

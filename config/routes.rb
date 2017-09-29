@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'webmin', to: 'backoffice/dashboard#index'
   get 'dashboard',to: 'dashboard#index'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     resources :servicos
     resources :telefones
     resources :uf
+    resources :circuitos
     resources :admin, except: [:show]
     resources :usuarios, except: [:show]
     end

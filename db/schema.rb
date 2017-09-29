@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921115232) do
+ActiveRecord::Schema.define(version: 20170927172433) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -82,13 +82,30 @@ ActiveRecord::Schema.define(version: 20170921115232) do
     t.index ["regional_id"], name: "index_analistas_on_regional_id"
   end
 
+  create_table "circuitos", force: :cascade do |t|
+    t.string   "designacao",      limit: 12
+    t.string   "descricao",       limit: 250
+    t.integer  "servico"
+    t.integer  "status"
+    t.integer  "roteamento"
+    t.integer  "asn"
+    t.integer  "bandaContratada"
+    t.integer  "bandaAtivada"
+    t.date     "dataAtivacao"
+    t.string   "contrato"
+    t.integer  "sap"
+    t.integer  "empresa_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["empresa_id"], name: "index_circuitos_on_empresa_id"
+  end
+
   create_table "contatos", force: :cascade do |t|
-    t.string   "nome",       limit: 50
-    t.string   "sobrenome",  limit: 50
+    t.string   "nome",       limit: 250
     t.text     "obs"
     t.integer  "empresa_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "email"
     t.index ["empresa_id"], name: "index_contatos_on_empresa_id"
   end
@@ -100,6 +117,7 @@ ActiveRecord::Schema.define(version: 20170921115232) do
     t.string   "nome_fantasia"
     t.string   "sap"
     t.string   "razao"
+    t.string   "regional"
   end
 
   create_table "enderecos", force: :cascade do |t|
