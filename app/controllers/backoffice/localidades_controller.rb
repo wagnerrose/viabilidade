@@ -74,7 +74,7 @@ module Backoffice
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def localidade_params
-        params.require(:localidade).permit(:localidade, :uf_id, :sigla_cnl, :cod_cnl, :municipio, :longitude, :latitude)
+        params.require(:localidade).permit(:localidade, :uf_id, :siglaCNL, :codCNL, :municipio, :longitude, :latitude, :siglaMunicipio)
 
       end
   end

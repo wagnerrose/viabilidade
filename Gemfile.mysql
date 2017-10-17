@@ -59,7 +59,6 @@ gem 'devise'
 #Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem "paperclip", "~> 5.0.0"
 
-#gem 'yaml_db'
 
 group :development, :test do
   gem 'byebug', platform: :mri
