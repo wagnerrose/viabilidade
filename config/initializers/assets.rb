@@ -50,7 +50,6 @@ Rails.application.config.assets.precompile += %w( backoffice/circuitos.coffee
                                                   backoffice/circuitos.scss)
 Rails.application.config.assets.precompile += %w( backoffice/admin.coffee
                                                   backoffice/admin.scss)
-
 Rails.application.config.assets.precompile += %w( backoffice.js
                                                   backoffice.coffee
                                                   backoffice.scss)

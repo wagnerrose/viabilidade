@@ -19,15 +19,15 @@
               <%=t '.title', :default => model_class.model_name.human.titleize %>
             </h1></center>
           </div>
-          <dl class="dl-horizontal" style="margin: 10px; font-size: 20px;" >
+          <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;" >
             <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
             <dd><%= @contato.nome %></dd>
-            <dt><strong><%= model_class.human_attribute_name(:sobrenome) %>:</strong></dt>
-            <dd><%= @contato.sobrenome %></dd>
             <dt><strong><%= model_class.human_attribute_name(:empresa_id) %>:</strong></dt>
             <dd><%= @contato.empresa.razao %></dd>
             <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
             <dd><%= @contato.email %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:telefone) %>:</strong></dt>
+            <dd><%= @contato.telefone %></dd>
             <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
             <dd><%= @contato.obs %></dd>
           </dl>

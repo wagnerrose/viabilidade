@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" style="margin: 0px; padding: 5px;" href="#"><%= image_tag("telebras3.jpg", size: "120x40")%></a>
+    <a class="navbar-brand" style="margin: 0px; padding: 5px;" href="#"><%= image_tag("telebras3_1.png", size: "120x40")%></a>
   </div>
   <!-- /.navbar-header -->
 
@@ -43,7 +43,7 @@
   <!-- /.navbar-top-links -->
 
   <div class="navbar-default sidebar" role="navigation">
-    <div class="sidebar-nav navbar-collapse">
+    <div class="sidebar-nav navbar-collapse" id="navbarResponsive">
       <ul class="nav " id="side-menu">
         <li class="sidebar-search">
           <div class="input-group custom-search-form">
@@ -138,6 +138,13 @@
         <li>
           <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Relatórios</a>
         </li>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

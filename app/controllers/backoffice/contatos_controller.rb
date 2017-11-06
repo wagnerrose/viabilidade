@@ -76,7 +76,6 @@ module Backoffice
       # Never trust parameters from the scary internet, only allow the white list through.
       def contato_params
         params.require(:contato).permit(:nome,:sobrenome, :email, :obs, :empresa_id,
-          empresas_attributes: [:id, :razap, :nome_fantasia, :sap, :cnpj, :_destroy],
           telefones_attributes: [:id, :telefone, :destroy])
       end
   end

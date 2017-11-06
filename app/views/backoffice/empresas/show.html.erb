@@ -19,17 +19,29 @@
               <%=t '.title', :default => model_class.model_name.human.titleize %>
             </h1></center>
           </div>
-          <dl class="dl-horizontal" style="margin: 10px; font-size: 20px;" >
+          <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;" >
             <dt class="campoRotulo"><%= model_class.human_attribute_name(:razao) %>:</dt>
             <dd><%= @empresa.razao %></dd>
             <dt  class="campoRotulo"><%= model_class.human_attribute_name(:nome_fantasia) %>:</dt>
             <dd><%= @empresa.nome_fantasia %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:logradouro) %>:</dt>
+            <dd><%= @empresa.endereco.logradouro %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cidade) %>:</dt>
+            <dd><%= @empresa.endereco.cidade %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:uf) %>:</dt>
+            <dd><%= @empresa.endereco.uf %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cep) %>:</dt>
+            <dd><%= @empresa.endereco.cep %></dd>
             <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cnpj) %>:</dt>
             <dd><%= @empresa.cnpj %></dd>
             <dt  class="campoRotulo"><%= model_class.human_attribute_name(:sap) %>:</dt>
             <dd><%= @empresa.sap %></dd>
             <dt  class="campoRotulo"><%= model_class.human_attribute_name(:regional) %>:</dt>
             <dd><%= @empresa.regional %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:contatos) %>:</dt>
+            <% @empresa.contatos.each do |contatos| %>
+                 <dd><%= contatos.nome %> - <%= contatos.telefone %></dd>
+            <% end %>
           </dl>
         </div>
       </div>

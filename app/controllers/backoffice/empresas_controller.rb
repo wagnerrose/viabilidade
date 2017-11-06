@@ -22,6 +22,7 @@ module Backoffice
     # GET /empresas/new
     def new
       @empresa = Empresa.new
+      @empresa.build_endereco
     end
 
     # GET /empresas/1/edit
@@ -73,6 +74,7 @@ module Backoffice
       def set_empresa
         @empresa = Empresa.find(params[:id])
         @regionais = Regional.order(:nome)
+        @uf= Uf.order(:nome)
       end
       # Use callbacks to share common setup or constraints between actions.
       def set_regionais
@@ -81,9 +83,9 @@ module Backoffice
       # Never trust parameters from the scary internet, only allow the white list through.
       def empresa_params
         params.require(:empresa).permit(:razao,:nome_fantasia, :regional, :cnpj, :sap,
-          enderecos_attributes: [:id, :logradouro, :cidade, :uf, :cep, :_destroy],
-          contatos_attributes: [:id, :nome, :sobrenome, :obs, :_destroy],
-          produtos_attribuite: [:id, :tipo, :fornecedor, :velocidade, :origem, :destino, :uf_a,
+          endereco_attributes: [:logradouro, :cidade, :uf, :cep, :_destroy],
+          contatos_attributes: [:nome, :sobrenome, :obs, :_destroy],
+          produtos_attribuite: [:tipo, :fornecedor, :velocidade, :origem, :destino, :uf_a,
             :uf_b, :obs, :_destroy])
       end
   end

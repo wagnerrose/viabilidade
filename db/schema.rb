@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013183758) do
+ActiveRecord::Schema.define(version: 20171030170133) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -87,11 +87,11 @@ ActiveRecord::Schema.define(version: 20171013183758) do
     t.integer  "pta"
     t.string   "municipio"
     t.string   "uf"
-    t.integer  "estacaoAcesso"
-    t.integer  "estacaoCliente"
-    t.integer  "switchAcesso"
-    t.integer  "pontoEntrega"
-    t.integer  "tipoAcesso"
+    t.string   "estacaoAcesso"
+    t.string   "estacaoCliente"
+    t.string   "switchAcesso"
+    t.string   "pontoEntrega"
+    t.string   "tipoAcesso"
     t.string   "fornecedorAcesso"
     t.string   "fornecedorInfo"
     t.datetime "created_at",                                 null: false
@@ -127,6 +127,15 @@ ActiveRecord::Schema.define(version: 20171013183758) do
     t.index ["empresa_id"], name: "index_circuitos_on_empresa_id", using: :btree
   end
 
+  create_table "conexoes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "numArco"
+    t.string   "nomeCluster"
+    t.integer  "equipamento_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["equipamento_id"], name: "index_conexoes_on_equipamento_id", using: :btree
+  end
+
   create_table "contatos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome",       limit: 250
     t.text     "obs",        limit: 65535
@@ -134,6 +143,7 @@ ActiveRecord::Schema.define(version: 20171013183758) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "email"
+    t.string   "telefone"
     t.index ["empresa_id"], name: "index_contatos_on_empresa_id", using: :btree
   end
 
@@ -161,12 +171,10 @@ ActiveRecord::Schema.define(version: 20171013183758) do
   create_table "equipamentos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "designacao"
     t.text     "descricao",     limit: 65535
-    t.string   "tipo"
+    t.integer  "tipo"
     t.string   "enderecamento"
     t.string   "firmware"
-    t.string   "status"
-    t.string   "arco"
-    t.string   "cluster"
+    t.integer  "status"
     t.integer  "estacao_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -185,7 +193,7 @@ ActiveRecord::Schema.define(version: 20171013183758) do
     t.decimal  "longitude",  precision: 15, scale: 13
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.string   "status"
+    t.integer  "status"
   end
 
   create_table "justificativas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -194,6 +202,19 @@ ActiveRecord::Schema.define(version: 20171013183758) do
     t.string   "tipo"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "linkequipamentos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "intLocal"
+    t.string   "eqtoDestino"
+    t.string   "intDestino"
+    t.integer  "vlan"
+    t.integer  "sentido"
+    t.integer  "velocidade"
+    t.integer  "conexao_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["conexao_id"], name: "index_linkequipamentos_on_conexao_id", using: :btree
   end
 
   create_table "localidades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -309,4 +330,6 @@ ActiveRecord::Schema.define(version: 20171013183758) do
   end
 
   add_foreign_key "circuitodados", "circuitos"
+  add_foreign_key "conexoes", "equipamentos"
+  add_foreign_key "linkequipamentos", "conexoes"
 end
