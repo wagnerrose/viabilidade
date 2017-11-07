@@ -42,6 +42,10 @@
             <% @empresa.contatos.each do |contatos| %>
                  <dd><%= contatos.nome %> - <%= contatos.telefone %></dd>
             <% end %>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:circuitos) %>:</dt>
+            <% @empresa.circuitos.each do |circuitos| %>
+                 <dd><%= circuitos.designacao %> - <%= circuitos.descricao %></dd>
+            <% end %>
           </dl>
         </div>
       </div>

@@ -3,6 +3,8 @@ class Empresa < ApplicationRecord
     has_many :produtos
     has_one :endereco
     has_many :contatos
+    has_many :circuitos
+
 
     accepts_nested_attributes_for :endereco, allow_destroy: true
     accepts_nested_attributes_for :contatos, allow_destroy: true

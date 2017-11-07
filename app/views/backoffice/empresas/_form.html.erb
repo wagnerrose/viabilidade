@@ -67,25 +67,43 @@
 
   <div class="form-group">
     <%= f.label :cnpj, :class => 'control-label col-md-2' %>
-    <div class="col-md-5">
-      <%= f.text_field :cnpj, :class => 'form-control' %>
+    <div class="col-md-3">
+      <%= f.text_field :cnpj, size: 15, class: 'form-control' %>
     </div>
     <%#f.error_span(:cnpj) %>
   </div>
-  <div class="form-group">
-    <%= f.label :sap, :class => 'control-label col-md-2' %>
-    <div class="col-md-5">
-      <%= f.text_field :sap, :class => 'form-control' %>
+  <div class="form-group ">
+    <%= f.label :sap, class: 'control-label col-md-2' %>
+    <div class="col-md-3">
+      <%= f.text_field :sap, class: 'form-control' %>
     </div>
     <%#f.error_span(:sap) %>
   </div>
   <div class="form-group">
-    <%= f.label :regional, :class => 'control-label col-md-2' %>
+    <%= f.label :regional, class: 'control-label col-md-2' %>
     <div class="col-sm-5">
       <%= f.collection_select(:regional, @regionais, :nome, :nome, {include_blank: true}, { class: 'form-control'}) %>
     </div>
     <%#f.error_span(:regional_id) %>
   </div>
+  <div class="list-group">
+    <div class="list-group-item-heading list-group-item-info">
+      <center><h2 >Contatos</h2></center>
+    </div>
+    <div class="list-group-item">
+      <%= f.fields_for :contatos do |contatos| %>
+        <div class="form-inline">
+          <div class="row">
+            <%= contatos.label :nome, class: 'control-label col-md-1', style: 'margin-bottom: 15px' %>
+            <%= contatos.text_field :nome, size: 60, class: 'form-control col-md-4 ' %>
+            <%= contatos.label :telefone, class: 'control-label col-md-1' %>
+            <%= contatos.text_field :telefone,  size: 30, class: 'form-control col-md-4' %>
+          </div>
+        </div>
+      <% end %>
+      <%#f.error_span(:sap) %>
+  </div>
+</div>
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
