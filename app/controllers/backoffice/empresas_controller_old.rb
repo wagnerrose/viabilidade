@@ -69,14 +69,6 @@ module Backoffice
       end
     end
 
-    # Cria modal para apresentar dados de contatos da empresa
-    def modal_contato
-      respond_to do |format|
-        format.html
-        format.js
-      end
-    end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_empresa

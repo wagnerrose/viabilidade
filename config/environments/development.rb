@@ -60,5 +60,7 @@ Rails.application.configure do
 
   # Allow an entire block of addresses using CIDR notation:
   BetterErrors::Middleware.allow_ip! '10.0.105.0/24'
+# correçaõ sugerida para problema "cannot request console from IP"
+  config.web_console.whiny_requests = false
 
 end

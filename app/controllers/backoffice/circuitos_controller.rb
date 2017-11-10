@@ -1,5 +1,5 @@
 module Backoffice
-  class CircuitoController < ApplicationController
+  class CircuitosController < ApplicationController
     before_action :set_circuito, only: [:show, :edit, :update, :destroy]
 
     # GET /backoffice/circuitos

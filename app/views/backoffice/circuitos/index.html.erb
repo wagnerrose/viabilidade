@@ -34,20 +34,20 @@
           </tr>
         </thead>
         <tbody>
-          <% @analistas.each do |analista| %>
+          <% @circuitos.each do |circuito| %>
           <tr>
             <td><%= link_to circuito.designacao, circuito_path(circuito), :title => "Detalhar/Editar" %></td>
-        <td><%= circuito.descricao %></td>
-        <td><%= circuito.servico %></td>
-        <td><%= circuito.status %></td>
-        <td><%= circuito.roteamento %></td>
-        <td><%= circuito.asn %></td>
-        <td><%= circuito.bandaContratada %></td>
-        <td><%= circuito.bandaAtivada %></td>
-        <td><%= circuito.dataAtivacao %></td>
-        <td><%= circuito.contrato %></td>
-        <td><%= circuito.sap %></td>
-        <td><%= circuito.empresa %></td>
+            <td><%= circuito.descricao %></td>
+            <td><%= circuito.servico %></td>
+            <td><%= circuito.status %></td>
+            <td><%= circuito.roteamento %></td>
+            <td><%= circuito.asn %></td>
+            <td><%= circuito.bandaContratada %></td>
+            <td><%= circuito.bandaAtivada %></td>
+            <td><%= circuito.dataAtivacao %></td>
+            <td><%= circuito.contrato %></td>
+            <td><%= circuito.sap %></td>
+            <td><%= circuito.empresa %></td>
             <td style="width: 80px;">
               <button type='button' class='btn btn-info btn-circle' style="border-radius: 15px; padding: 0px;" title="editar">
                 <i class='fa fa-check'></i>

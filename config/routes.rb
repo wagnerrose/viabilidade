@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :circuitos
     resources :admin, except: [:show]
     resources :usuarios, except: [:show]
-    end
+  end
 
   scope module: :site do
     get 'home', to: 'home#index'

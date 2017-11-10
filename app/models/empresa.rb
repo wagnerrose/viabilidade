@@ -6,8 +6,8 @@ class Empresa < ApplicationRecord
     has_many :circuitos
 
 
-    accepts_nested_attributes_for :endereco, allow_destroy: true
-    accepts_nested_attributes_for :contatos, allow_destroy: true
+    accepts_nested_attributes_for :endereco, reject_if: :all_blank, allow_destroy: true
+    accepts_nested_attributes_for :contatos, reject_if: :all_blank, allow_destroy: true
 
     validates :razao, length: {maximum: 150}, presence: true
     validates :nome_fantasia, length: {maximum: 150}, presence: true
