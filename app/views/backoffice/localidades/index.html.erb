@@ -1,7 +1,7 @@
 <!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
 <% content_for :head do %>
-<%= stylesheet_link_tag params[:controller] %>
-<%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
 <% end %>
 
 <%- model_class = Localidade -%>
@@ -15,34 +15,25 @@
         <!-- codigo da pagina -->
         <div class="list-group">
           <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
-            <center><%=t '.title', :default => model_class.model_name.human(count: @localidades.count).titleize %></center>
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
           </h1>
         </div>
 
-        <table class="table table-striped table-bordered" id="localidades">
+        <table id="localidades" class="table display" data-source="<%= localidades_url(format: "json") %>">
           <thead>
             <tr>
-              <th><%= model_class.human_attribute_name(:uf_id) %></th>
+              <th><%= model_class.human_attribute_name(:siglaCNL) %></th>
               <th><%= model_class.human_attribute_name(:localidade) %></th>
               <th><%= model_class.human_attribute_name(:municipio) %></th>
-              <th><center>Sigla</center></th>
-              <th><center>Código</center></th>
+              <th><%= model_class.human_attribute_name(:siglaMunicipio) %></th>
+              <th><%= model_class.human_attribute_name(:uf_id) %></th>
+              <th><%= model_class.human_attribute_name(:codCNL) %></th>
               <th><%= model_class.human_attribute_name(:latitude) %></th>
               <th><%= model_class.human_attribute_name(:longitude) %></th>
             </tr>
           </thead>
           <tbody>
-            <% @localidades.each do |localidade| %>
-            <tr>
-              <td><%= localidade.uf.sigla %></td>
-              <td><%= link_to localidade.localidade, localidade_path(localidade), :title => "Detalhar/Editar" %></td>
-              <td><%= localidade.municipio %></td>
-              <td><center><%= localidade.sigla_cnl %></center></td>
-              <td><center><%= localidade.cod_cnl %></center></td>
-              <td><%= number_with_precision(localidade.latitude,  precision: 10, separator: ',' , locale: 'pt-BR') %></td>
-              <td><%= number_with_precision(localidade.longitude, precision: 10, separator: ',' , locale: 'pt-BR' ) %></td>
-            </tr>
-            <% end %>
+
           </tbody>
         </table>
         <center>

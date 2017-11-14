@@ -2,8 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#tabela').dataTable
+  $('#circuitos').dataTable(
     destroy: true,
+    sPaginationType: "full_numbers",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#circuitos').data('source'),
+    columnDefs: [
+        {width: 30, className: "text-center", targets: 0},
+        {width: 80, targets: 1},
+        {width: 30, className: "text-center", targets: 2},
+        {width: 30, targets: 3},
+        {width: 30, className: "text-center", targets: 4},
+        {width: 150, targets: 5}
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",
@@ -27,4 +40,4 @@ jQuery ->
           "sortAscending":  ": ative para ordenamento ascendente",
           "sortDescending": ": ative para ordenamento descendente"
       }
-  }
+  });

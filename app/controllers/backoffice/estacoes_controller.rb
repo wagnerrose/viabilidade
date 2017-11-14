@@ -10,7 +10,11 @@ module Backoffice
     # GET /estacoes
     # GET /estacoes.json
     def index
-      @estacoes = Estacao.all
+      #@estacoes = Estacao.all
+      respond_to do |format|
+        format.html
+        format.json { render json: EstacoesDatatable.new(view_context) }
+      end
     end
 
     # GET /estacoes/1

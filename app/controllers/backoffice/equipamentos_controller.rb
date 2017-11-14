@@ -9,7 +9,12 @@ module Backoffice
     # GET /equipamentos
     # GET /equipamentos.json
     def index
-      @equipamentos = Equipamento.all.order(:estacao_id)
+     # @equipamentos = Equipamento.all.order(:estacao_id)
+
+      respond_to do |format|
+        format.html
+        format.json { render json: EquipamentosDatatable.new(view_context) }
+      end
     end
 
     # GET /equipamentos/1

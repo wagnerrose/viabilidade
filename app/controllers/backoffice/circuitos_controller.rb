@@ -2,10 +2,16 @@ module Backoffice
   class CircuitosController < ApplicationController
     before_action :set_circuito, only: [:show, :edit, :update, :destroy]
 
+     layout "backoffice"
+
     # GET /backoffice/circuitos
     # GET /backoffice/circuitos.json
     def index
-      @circuitos = Circuito.all
+#      @circuitos = Circuito.all
+      respond_to do |format|
+        format.html
+        format.json { render json: CircuitosDatatable.new(view_context) }
+      end
     end
 
     # GET /backoffice/circuitos/1

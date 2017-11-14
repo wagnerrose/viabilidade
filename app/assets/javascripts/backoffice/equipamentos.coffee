@@ -4,6 +4,19 @@
 jQuery ->
   $('#equipamentos').dataTable
     destroy: true,
+    sPaginationType: "full_numbers",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#equipamentos').data('source'),
+    columnDefs: [
+        {width: 40, className: "text-center", targets: 0},
+        {width: 100, className: "text-left", targets: 1},
+        {width: 20, className: "text-center", targets: 2},
+        {width: 30, className: "text-center", targets: 3},
+        {width: 30, className: "text-center", targets: 4},
+        {width: 50, className: "text-center", targets: 5}
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

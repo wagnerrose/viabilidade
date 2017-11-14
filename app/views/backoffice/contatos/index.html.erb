@@ -15,27 +15,22 @@
         <!-- codigo da pagina -->
         <div class="list-group">
           <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
-            <center><%=t '.title', :default => model_class.model_name.human(count: @contatos.count).titleize %></center>
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
           </h1>
         </div>
 
-        <table class="table table-striped table-bordered" id="contatos">
+        <table id="contatos" class="table display" data-source="<%= contatos_url(format: "json")%>" >
           <thead>
             <tr>
               <th><%= model_class.human_attribute_name(:nome) %></th>
               <th><%= model_class.human_attribute_name(:empresa_id) %></th>
               <th><%= model_class.human_attribute_name(:email) %></th>
+              <th><%= model_class.human_attribute_name(:telefone) %></th>
               <th><%= model_class.human_attribute_name(:obs) %></th>
             </tr>
           </thead>
           <tbody>
-            <% @contatos.each do |contato| %>
-            <tr>
-              <td><%= link_to contato.nome, contato_path(contato), :title => "Detalhar/Editar" %></td>
-              <td><center><%= contato.empresa.razao %></center></td>
-              <td><center><%= contato.email %></center></td>
-              <td><center><%= contato.obs %></center></td>
-            <% end %>
+
           </tbody>
         </table>
         <center>

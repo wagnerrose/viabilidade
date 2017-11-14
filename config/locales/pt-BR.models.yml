@@ -104,4 +104,10 @@
       justificativa:
         cod_justificativa: "Código"
         created_at: "Criado em "
+      circuito:
+        circuito: "Circuto"
+        bandaAtivada: "Banda Ativada"
+        servico: "Serviço"
+        designacao: "Designação"
+        descricao: "Descrição"
 

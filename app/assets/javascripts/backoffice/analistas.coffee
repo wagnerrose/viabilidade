@@ -4,6 +4,14 @@
 jQuery ->
   $('#analistas').dataTable
     destroy: true,
+    columnDefs: [
+        {width: 150, className: "text-left", targets: 0},
+        {width: 80, className: "text-left", targets: 1},
+        {width: 100, className: "text-left", targets: 2},
+        {width: 50, className: "text-center", targets: 3},
+        {width: 10, className: "text-left", targets: 4},
+        {width: 30, className: "text-center", targets: 5},
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

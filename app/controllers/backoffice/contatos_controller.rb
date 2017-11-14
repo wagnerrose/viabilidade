@@ -10,7 +10,12 @@ module Backoffice
     # GET /contatos.json
     def index
       # @contatos = Contato.all
-      @contatos = Contato.order(:nome)
+      #@contatos = Contato.order(:nome) -- Alteração Datatables paginado
+      respond_to do |format|
+        format.html
+        format.json { render json: ContatosDatatable.new(view_context) }
+      end
+
     end
 
     # GET /contatos/1

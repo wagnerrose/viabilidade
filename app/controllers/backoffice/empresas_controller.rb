@@ -11,7 +11,11 @@ module Backoffice
     # GET /empresas.json
     def index
       # @empresas = Empresa.all
-      @empresas = Empresa.order(:razao)
+      #@empresas = Empresa.order(:razao)
+      respond_to do |format|
+      format.html
+      format.json { render json: EmpresasDatatable.new(view_context) }
+      end
     end
 
     # GET /empresas/1

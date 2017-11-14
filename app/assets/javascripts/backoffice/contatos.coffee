@@ -5,6 +5,18 @@
 jQuery ->
   $('#contatos').dataTable
     destroy: true,
+    sPaginationType: "full_numbers",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#contatos').data('source'),
+    columnDefs: [
+        {width: 120, className: "text-left", targets: 0},
+        {width: 150, className: "text-left", targets: 1},
+        {width: 40, className: "text-left", targets: 2},
+        {width: 50, className: "text-center", targets: 3},
+        {width: 150, className: "text-left", targets: 4},
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

@@ -4,6 +4,17 @@
 jQuery ->
   $('#empresas').dataTable
     destroy: true,
+    sPaginationType: "full_numbers",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#empresas').data('source'),
+    columnDefs: [
+        {width: 100, className: "text-left", targets: 0},
+        {width: 100, targets: 1},
+        {width: 60, className: "text-left", targets: 2},
+        {width: 30, className: "text-center", targets: 3},
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

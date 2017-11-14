@@ -39,6 +39,8 @@ gem 'cocoon'
 
 # Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic
 gem 'slim'
+# Sinatra, Merb, DataMapper and Sequel.
+gem 'will_paginate'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.
@@ -47,6 +49,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-notifyjs'
   # datatables
   gem 'rails-assets-DataTables'
+  # will_paginate is a pagination library that integrates with Ruby on Rails,
   # bootboxJS
   gem 'rails-assets-bootbox'
 end

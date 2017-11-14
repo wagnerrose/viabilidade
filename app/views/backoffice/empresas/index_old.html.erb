@@ -15,21 +15,30 @@
         <!-- codigo da pagina -->
         <div class="list-group">
           <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
-                <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
+                <center><%=t '.title', :default => model_class.model_name.human(count: @empresas.count).titleize %></center>
           </h1>
         </div>
         <div class="row">
-          <table id="empresas" class="table display" data-source="<%= empresas_url(format: "json") %>" >
+          <table class="table table-striped table-bordered" id="empresas" >
             <thead>
               <tr>
                 <th><%= model_class.human_attribute_name(:razao) %></th>
                 <th><%= model_class.human_attribute_name(:nome_fantasia) %></th>
                 <th><%= model_class.human_attribute_name(:regional) %></th>
                 <th><%= model_class.human_attribute_name(:cnpj) %></th>
+                <th><%= model_class.human_attribute_name(:sap) %></th>
                </tr>
             </thead>
             <tbody>
-
+              <% @empresas.each do |empresa| %>
+                <tr>
+                  <td><%=link_to empresa.razao, empresa_path(empresa), :title => "Detalhar/Editar" %></td>
+                  <td><%= empresa.nome_fantasia %></td>
+                  <td><%= empresa.regional %></td>
+                  <td><%= empresa.cnpj %></td>
+                  <td><%= empresa.sap %></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
         </div><!-- /div row -->

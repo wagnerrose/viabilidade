@@ -1,7 +1,7 @@
 <!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
 <% content_for :head do %>
-<%= stylesheet_link_tag "#{params[:controller]}" %>
-<%= javascript_include_tag "#{params[:controller]}" %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
 <% end %>
 
 <%- model_class = Equipamento -%>
@@ -10,41 +10,30 @@
 <!-- Page Content -->
 <div id="page-wrapper">
   <div class="container-fluid">
-    <div class="row"  style="margin-right: -200px">
+    <div class="row"  style="margin-right: -120px">
       <div class="col-lg-12">
 
         <!-- codigo da pagina -->
         <div class="list-group">
           <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
-            <center><%=t '.title', :default => model_class.model_name.human(count: @equipamentos.count).titleize %></center>
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
           </h1>
         </div>
 
         <div >
-          <table class="table table-striped table-bordered" id="equipamentos">
+          <table id="equipamentos" class="table display"  data-source="<%= equipamentos_url(format: "json") %>" >
             <thead>
               <tr>
                 <th><%= model_class.human_attribute_name(:designacao) %></th>
                 <th><%= model_class.human_attribute_name(:descricao) %></th>
                 <th><%= model_class.human_attribute_name(:tipo) %></th>
                 <th><%= model_class.human_attribute_name(:enderecamento) %></th>
-                <th><%= model_class.human_attribute_name(:firmware) %></th>
                 <th><%= model_class.human_attribute_name(:status) %></th>
                 <th><%= model_class.human_attribute_name(:estacao_id) %></th>
               </tr>
             </thead>
             <tbody>
-              <% @equipamentos.each do |equipamento| %>
-              <tr>
-                <td><%= link_to equipamento.designacao, equipamento_path(equipamento), :title => "Detalhar/Editar" %></td>
-                <td><%= equipamento.descricao %></td>
-                <td><%= equipamento.tipo %></td>
-                <td><%= equipamento.enderecamento %></td>
-                <td><%= equipamento.firmware %></td>
-                <td><%= equipamento.status %></td>
-                <td><%= equipamento.estacao.pop %></td>
-              </tr>
-              <% end %>
+
             </tbody>
           </table>
         </div>

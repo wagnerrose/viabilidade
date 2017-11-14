@@ -4,6 +4,19 @@
 jQuery ->
   $('#estacoes').dataTable
     destroy: true,
+    sPaginationType: "full_numbers",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#estacoes').data('source'),
+    columnDefs: [
+        {width: 50, className: "text-center", targets: 0},
+        {width: 100, className: "text-left", targets: 1},
+        {width: 50, className: "text-left", targets: 2},
+        {width: 30, className: "text-left", targets: 3},
+        {width: 30, className: "text-center", targets: 4},
+        {width: 30, className: "text-left", targets: 5}
+      ],
     language: {
       "decimal":        "",
       "emptyTable":     "Sem informação disponível na tabela",

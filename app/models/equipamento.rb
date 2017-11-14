@@ -1,10 +1,10 @@
 class Equipamento < ApplicationRecord
   belongs_to :estacao
-  enum status: [:ND, :IMP, :OPE, :TI]
+  enum status: [:ND, :IMPLANTAÇÃO, :OPERAÇÃO, :TI]
   # LEGENDA STATUS
   # ND -> NAO DISPONIVEL IMP -> IMPLANTACAO
   # OPE -> OPERACAO       TI -> TECNOLOGIA DA INFORMACAO
-  enum tipo: [:NI, :RNP, :EAR, :PC, :ES, :PP, :PM, :RRD, :TC]
+  enum tipo: [:N_INFORMADO, :RNP, :EST_ATEND_REMOTO, :PC, :ESTAÇÃO_SATELITE, :PTO_PRESENÇA, :PTO_METRO, :REP_RADIO, :TC]
   # LEGENDA TIPOEQTO
   # NI -> NAO INFORMADO, RNP -> CLIENTE RNP, EAR -> ESTACAO DE ATENDIMENTO REMOTO
   # PC -> ESTACAO POP DO CLIENTE, ES -> ESTACAO SATELITE, PP -> PONTO DE PRESENÇA
