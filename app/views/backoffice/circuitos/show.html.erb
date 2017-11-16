@@ -42,7 +42,7 @@
             <dt><strong><%= model_class.human_attribute_name(:sap) %>:</strong></dt>
             <dd><%= @circuito.sap %></dd>
             <dt><strong><%= model_class.human_attribute_name(:empresa) %>:</strong></dt>
-            <dd><%= @circuito.empresa %></dd>
+            <dd><%= @circuito.empresa.razao %></dd>
           </dl>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div class="col-lg-12">
         <center>
           <%= link_to t('.back', :default => t("helpers.links.back")),
-          analistas_path, :class => 'btn botao btn-sm'  %>
+          circuitos_path, :class => 'btn botao btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
           edit_circuito_path(@circuito),
           :class => 'btn botao btn-sm' %>

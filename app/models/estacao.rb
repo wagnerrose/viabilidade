@@ -1,7 +1,7 @@
 class Estacao < ApplicationRecord
   has_many :equipamentos
 
-  enum status: [:AA, :AL, :CAN, :DES, :IMP, :OPE, :PLAN, :PROS, :SI]
+  enum status: [:NADA, :AGUARDA_ACORDO, :AGURDA_LOCAÇÃO, :CANCELADO, :DESATIVADO, :IMPLANTAÇÃO, :OPERAÇÃO, :PLANEJADO, :PROSPECÇÃO, :SEM_INFO]
   # LEGENDA
   # :AA -> AGUARDANDO ACORDO, :AL -> AGUARDANDO LOCACAO
   # :CAN -> CANCELADO, :DES -> DESATIVADO

@@ -24,18 +24,14 @@
             <dd><%= @equipamento.designacao %></dd>
             <dt><strong><%= model_class.human_attribute_name(:descricao) %>:</strong></dt>
             <dd><%= @equipamento.descricao %></dd>
-            <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
-            <dd><%= @equipamento.tipo %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:tipoEquipamento) %>:</strong></dt>
+            <dd><%= @equipamento.tipoEquipamento %></dd>
             <dt><strong><%= model_class.human_attribute_name(:enderecamento) %>:</strong></dt>
             <dd><%= @equipamento.enderecamento %></dd>
             <dt><strong><%= model_class.human_attribute_name(:firmware) %>:</strong></dt>
             <dd><%= @equipamento.firmware %></dd>
-            <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-            <dd><%= @equipamento.status %></dd>
-            <dt><strong><%= model_class.human_attribute_name(:arco) %>:</strong></dt>
-            <dd><%= @equipamento.arco %></dd>
-            <dt><strong><%= model_class.human_attribute_name(:cluster) %>:</strong></dt>
-            <dd><%= @equipamento.cluster %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:statusEquipamento) %>:</strong></dt>
+            <dd><%= @equipamento.statusEquipamento %></dd>
             <dt><strong><%= model_class.human_attribute_name(:estacao_id) %>:</strong></dt>
             <dd><%= @equipamento.estacao.pop %> - <%= @equipamento.estacao.nome  %></dd>
           </dl>

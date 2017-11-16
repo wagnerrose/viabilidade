@@ -1,5 +1,5 @@
 class LocalidadesDatatable
-  delegate :params, :h, :link_to, :number_to_currency, to: :@view
+  delegate :params, :h, :link_to, to: :@view
 
   def initialize(view)
     @view = view
@@ -20,11 +20,10 @@ private
     localidades.map do |localidade|
       [
         link_to(localidade.siglaCNL, localidade),
-        localidade.codCNL,
         localidade.localidade,
         localidade.municipio,
-        localidade.uf_id,
         localidade.siglaMunicipio,
+        localidade.uf.sigla,
         localidade.latitude,
         localidade.longitude
       ]

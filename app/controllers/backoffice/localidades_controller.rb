@@ -9,7 +9,12 @@ module Backoffice
     # GET /localidades
     # GET /localidades.json
     def index
-      @localidades = Localidade.all
+      #@localidades = Localidade.all
+
+      respond_to do |format|
+        format.html
+        format.json { render json: LocalidadesDatatable.new(view_context) }
+      end
     end
 
     # GET /localidades/1

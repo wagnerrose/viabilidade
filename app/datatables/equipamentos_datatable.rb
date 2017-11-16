@@ -21,9 +21,9 @@ private
       [
         link_to(equipamento.designacao, equipamento),
         equipamento.descricao,
-        equipamento.tipo,
+        equipamento.tipoEquipamento,
         equipamento.enderecamento,
-        equipamento.status,
+        equipamento.statusEquipamento,
         equipamento.estacao.pop
       ]
     end

@@ -10,14 +10,13 @@ jQuery ->
     bServerSide: true,
     sAjaxSource: $('#localidades').data('source'),
     columnDefs: [
-        {width: 10, className: "text-center", targets: 0},
-        {width: 10, className: "text-center", targets: 1},
+        {width: 15, className: "text-center", targets: 0},
+        {width: 10, className: "text-left", targets: 1},
         {width: 20, className: "text-left", targets: 2},
-        {width: 30, className: "text-left", targets: 3},
+        {width: 30, className: "text-center", targets: 3},
         {width: 10, className: "text-center", targets: 4},
         {width: 10, className: "text-center", targets: 5},
-        {width: 10, className: "text-center", targets: 6},
-        {width: 10, className: "text-center", targets: 7}
+        {width: 10, className: "text-center", targets: 6}
       ],
     language: {
       "decimal":        "",

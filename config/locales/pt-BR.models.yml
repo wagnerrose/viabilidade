@@ -101,6 +101,8 @@
         descricao: "Descrição"
         enderecamento: "Endereçamento"
         estacao_id: "Estação"
+        statusEquipamento: "Status"
+        tipoEquipamento: "Tipo"
       justificativa:
         cod_justificativa: "Código"
         created_at: "Criado em "
@@ -110,4 +112,14 @@
         servico: "Serviço"
         designacao: "Designação"
         descricao: "Descrição"
+        dataAtivacao: Data Ativação
+        bandaContratada: Banda Contratada
+        sap: SAP
+        asn: ASN
+      localidade:
+        siglaCNL: Sigla Loc.
+        siglaMunicipio: Sigla Municipio
+        municipio: Município
+        codCNL: Cod CNL
+
 

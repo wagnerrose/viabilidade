@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030170133) do
+ActiveRecord::Schema.define(version: 20171116144408) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -170,14 +170,14 @@ ActiveRecord::Schema.define(version: 20171030170133) do
 
   create_table "equipamentos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "designacao"
-    t.text     "descricao",     limit: 65535
-    t.integer  "tipo"
+    t.text     "descricao",         limit: 65535
+    t.integer  "tipoEquipamento"
     t.string   "enderecamento"
     t.string   "firmware"
-    t.integer  "status"
+    t.integer  "statusEquipamento"
     t.integer  "estacao_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["estacao_id"], name: "index_equipamentos_on_estacao_id", using: :btree
   end
 
