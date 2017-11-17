@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116144408) do
+ActiveRecord::Schema.define(version: 20171117144207) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -187,13 +187,13 @@ ActiveRecord::Schema.define(version: 20171116144408) do
     t.string   "endereco"
     t.string   "cidade"
     t.string   "uf"
-    t.string   "tipo"
     t.string   "cedente"
-    t.decimal  "latitude",   precision: 15, scale: 13
-    t.decimal  "longitude",  precision: 15, scale: 13
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "status"
+    t.decimal  "latitude",      precision: 15, scale: 13
+    t.decimal  "longitude",     precision: 15, scale: 13
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.integer  "statusEstacao"
+    t.integer  "tipoEstacao"
   end
 
   create_table "justificativas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

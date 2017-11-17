@@ -22,8 +22,8 @@ private
         link_to(estacao.pop, estacao),
         estacao.nome,
         estacao.cidade,
-        estacao.tipo,
-        estacao.status,
+        estacao.tipoEstacao,
+        estacao.statusEstacao,
         estacao.cedente,
       ]
     end
@@ -51,7 +51,7 @@ private
   end
 
   def sort_column
-    columns = %w[pop cidade tipo status cedente]
+    columns = %w[pop nome cidade tipoEstacao statusEstacao cedente]
     columns[params[:iSortCol_0].to_i]
   end
 

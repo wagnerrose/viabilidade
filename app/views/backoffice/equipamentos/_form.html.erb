@@ -46,7 +46,7 @@
     <div class="form-group">
       <%= f.label :tipoEquipamento, :class => 'control-label col-md-2' %>
       <div class="col-md-3">
-        <%= f.select(:tipoEquipamento, Equipamento.tipoEquipamento.map { |key, value| [key.humanize, key]}, {include_blank: false}, :class => 'form-control') %>
+        <%= f.select(:tipoEquipamento, Equipamento.tipoEquipamentos.keys, {include_blank: false}, :class => 'form-control') %>
       </div>
       <%#f.error_span(:tipo) %>
     </div>
@@ -76,7 +76,7 @@
     <div class="form-group">
       <%= f.label :statusEquipamento, :class => 'control-label col-md-2' %>
       <div class="col-md-3">
-        <%= f.select(:statusEquipamento, @statusEquipamentos, {include_blank: false}, :class => 'form-control') %>
+        <%= f.select(:statusEquipamento, Equipamento.statusEquipamentos.keys, {include_blank: false}, :class => 'form-control') %>
       </div>
       <%#f.error_span(:status) %>
     </div>

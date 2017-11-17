@@ -6,6 +6,7 @@
 
 <%- model_class_estacao = Estacao -%>
 <%- model_class_eqto = Equipamento -%>
+<%- model_class_circuito = Circuito -%>
 
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -49,12 +50,12 @@
                   <dd ><%= @estacao.cidade %></dd>
 
 
-                  <dt><%= model_class_estacao.human_attribute_name(:status) %>: </dt>
-                  <dd><%= @estacao.status %></dd>
+                  <dt><%= model_class_estacao.human_attribute_name(:statusEstacao) %>: </dt>
+                  <dd><%= @estacao.statusEstacao %></dd>
                   <dt><%= model_class_estacao.human_attribute_name(:cedente) %>: </dt>
                   <dd><%= @estacao.cedente %></dd>
-                  <dt><%= model_class_estacao.human_attribute_name(:tipo) %>: </dt>
-                  <dd><%= @estacao.tipo %></dd>
+                  <dt><%= model_class_estacao.human_attribute_name(:tipoEstacao) %>: </dt>
+                  <dd><%= @estacao.tipoEstacao %></dd>
 
                   <dt><%= model_class_estacao.human_attribute_name(:latitude) %>: </dt>
                   <dd><%= number_with_precision(@estacao.latitude, precision: 10, separator: ',' , locale: 'pt-BR') %></dd>
@@ -79,12 +80,10 @@
                 <tr>
                   <th><%= model_class_eqto.human_attribute_name(:designacao) %></th>
                   <th><%= model_class_eqto.human_attribute_name(:descricao) %></th>
-                  <th><%= model_class_eqto.human_attribute_name(:tipo) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:tipoEquipamento) %></th>
                   <th><%= model_class_eqto.human_attribute_name(:enderecamento) %></th>
                   <th><%= model_class_eqto.human_attribute_name(:firmware) %></th>
-                  <th><%= model_class_eqto.human_attribute_name(:status) %></th>
-                  <th><%= model_class_eqto.human_attribute_name(:arco) %></th>
-                  <th><%= model_class_eqto.human_attribute_name(:cluster) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:statusEquipamento) %></th>
                 </tr>
               </thead>
               <tbody>
@@ -92,17 +91,51 @@
                 <tr>
                   <td><%= link_to equipamento.designacao, equipamento_path(equipamento), :title => "Detalhar" %></td>
                   <td><%= equipamento.descricao %></td>
-                  <td><%= equipamento.tipo %></td>
+                  <td><%= equipamento.tipoEquipamento %></td>
                   <td><%= equipamento.enderecamento %></td>
                   <td><%= equipamento.firmware %></td>
-                  <td><%= equipamento.status %></td>
-                  <td><%= equipamento.arco %></td>
-                  <td><%= equipamento.cluster %></td>
+                  <td><%= equipamento.statusEquipamento %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
           </div>
+
+        <div class="row " style="margin-right: -120px;">
+          <div class="list-group">
+            <h1 class="list-group-item-heading list-group-item-success">
+              <center><%=t '.title', :default => model_class_circuito.model_name.human.pluralize.titleize %></center>
+            </h1>
+          </div> <!-- list-group-->
+
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th><%= model_class_circuito.human_attribute_name(:designacao) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:pta) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:municipio) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:uf) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:status) %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @circuitoDados.each do |circuitoDados| %>
+                <tr>
+                  <td><%= circuitoDados.circuito.designacao %></td>
+                  <td><%= circuitoDados.conv_pta %></td>
+                  <td><%= circuitoDados.municipio %></td>
+                  <td><%= circuitoDados.uf %></td>
+                  <td><%= circuitoDados.circuito.status %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+
+
+
+
         </div><!-- row -->
       </div>
     </div>

@@ -54,6 +54,8 @@
         designacao: "Designação"
         endereco: "Endereço"
         uf: "UF"
+        statusEstacao: "Status"
+        tipoEstacao: "Tipo"
         created_at: "Criado em"
       localidade:
         uf: "UF"

@@ -79,7 +79,7 @@ module Backoffice
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def equipamento_params
-        params.require(:equipamento).permit(:designacao, :descricao, :tipo, :enderecamento, :firmware, :status, :arco, :cluster, :estacao_id)
+        params.require(:equipamento).permit(:designacao, :descricao, :tipoEquipamento, :enderecamento, :firmware, :statusEquipamento, :estacao_id)
       end
   end
 end

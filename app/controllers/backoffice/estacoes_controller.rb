@@ -21,6 +21,7 @@ module Backoffice
     # GET /estacoes/1.json
     def show
       @equipamentos = @estacao.equipamentos
+      @circuitoDados = Circuitodado.where(estacaoAcesso: @estacao.pop)
     end
 
     # GET /estacoes/new
@@ -80,7 +81,7 @@ module Backoffice
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def estacao_params
-        params.require(:estacao).permit(:pop, :nome, :endereco, :cidade, :uf, :tipo, :cedente, :latitude, :longitude, :status)
+        params.require(:estacao).permit(:pop, :nome, :endereco, :cidade, :uf, :tipoEstacao, :cedente, :latitude, :longitude, :statusEstacao)
       end
   end
 end
