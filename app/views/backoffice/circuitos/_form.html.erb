@@ -1,5 +1,5 @@
 
-<%= form_for @circuito, :html => { :class => "form-horizontal circuito" } do |f| %>
+<%= form_for @circuito, :html: { :class: "form-horizontal circuito" } do |f| %>
 
   <% if @circuito.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -17,94 +17,94 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :designacao, :class => 'control-label col-md-2' %>
+    <%= f.label :designacao, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :designacao, :class => 'form-control' %>
+      <%= f.text_field :designacao, class: 'form-control' %>
     </div>
     <%#f.error_span(:designacao) %>
   </div>
   <div class="form-group">
-    <%= f.label :descricao, :class => 'control-label col-md-2' %>
+    <%= f.label :descricao, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :descricao, :class => 'form-control' %>
+      <%= f.text_field :descricao, class: 'form-control' %>
     </div>
     <%#f.error_span(:descricao) %>
   </div>
   <div class="form-group">
-    <%= f.label :servico, :class => 'control-label col-md-2' %>
+    <%= f.label :servico, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :servico, :class => 'form-control' %> %>
+      <%= f.text_field :servico, class: 'form-control' %> %>
     </div>
     <%#f.error_span(:servico) %>
   </div>
   <div class="form-group">
-    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <%= f.label :status, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :status, :class => 'form-control' %>
+      <%= f.text_field :status, class: 'form-control' %>
     </div>
     <%#f.error_span(:status) %>
   </div>
   <div class="form-group">
-    <%= f.label :roteamento, :class => 'control-label col-md-2' %>
+    <%= f.label :roteamento, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :roteamento, :class => 'form-control' %>
+      <%= f.text_field :roteamento, class:'form-control' %>
     </div>
     <%#f.error_span(:roteamento) %>
   </div>
   <div class="form-group">
-    <%= f.label :asn, :class => 'control-label col-md-2' %>
+    <%= f.label :asn, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :asn, :class => 'form-control' %>
+      <%= f.text_field :asn, class: 'form-control' %>
     </div>
     <%#f.error_span(:asn) %>
   </div>
   <div class="form-group">
-    <%= f.label :bandaContratada, :class => 'control-label col-md-2' %>
+    <%= f.label :bandaContratada, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :bandaContratada, :class => 'form-control' %>
+      <%= f.text_field :bandaContratada, class: 'form-control' %>
     </div>
     <%#f.error_span(:bandaContratada) %>
   </div>
   <div class="form-group">
-    <%= f.label :bandaAtivada, :class => 'control-label col-md-2' %>
+    <%= f.label :bandaAtivada, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :bandaAtivada, :class => 'form-control' %>
+      <%= f.text_field :bandaAtivada, class: 'form-control' %>
     </div>
     <%#f.error_span(:bandaAtivada) %>
   </div>
   <div class="form-group">
-    <%= f.label :dataAtivacao, :class => 'control-label col-md-2' %>
+    <%= f.label :dataAtivacao, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :dataAtivacao, :class => 'form-control' %>
+      <%= f.text_field :dataAtivacao, class: 'form-control' %>
     </div>
     <%#f.error_span(:dataAtivacao) %>
   </div>
   <div class="form-group">
-    <%= f.label :contrato, :class => 'control-label col-md-2' %>
+    <%= f.label :contrato, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :contrato, :class => 'form-control' %>
+      <%= f.text_field :contrato, class: 'form-control' %>
     </div>
     <%#f.error_span(:contrato) %>
   </div>
   <div class="form-group">
-    <%= f.label :sap, :class => 'control-label col-md-2' %>
+    <%= f.label :sap, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :sap, :class => 'form-control' %>
+      <%= f.text_field :sap, class: 'form-control' %>
     </div>
     <%#f.error_span(:sap) %>
   </div>
   <div class="form-group">
-    <%= f.label :empresa, :class => 'control-label col-md-2' %>
+    <%= f.label :empresa, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :empresa, :class => 'form-control' %>
+      <%= f.text_field :empresa, class: 'form-control' %>
     </div>
     <%#f.error_span(:empresa) %>
   </div>
   <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                circuitos_path, :class => 'btn btn-default' %>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                circuitos_path, class: 'btn btn-default' %>
     </div>
   </div>
 

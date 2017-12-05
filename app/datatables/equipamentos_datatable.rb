@@ -37,7 +37,7 @@ private
     equipamentos = Equipamento.order("#{sort_column} #{sort_direction}")
     equipamentos = equipamentos.page(page).per_page(per_page)
     if params[:sSearch].present?
-      equipamentos = equipamentos.where("designacao like :search or descricao like :search", search: "%#{params[:sSearch]}%")
+      equipamentos = equipamentos.where("designacao like :search or descricao like :search or estacao_id like :search", search: "%#{params[:sSearch]}%")
     end
     equipamentos
   end

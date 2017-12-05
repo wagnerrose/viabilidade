@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117144207) do
+ActiveRecord::Schema.define(version: 20171122115942) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -106,7 +106,11 @@ ActiveRecord::Schema.define(version: 20171117144207) do
     t.string   "anel"
     t.decimal  "latitude",         precision: 15, scale: 13
     t.decimal  "longitude",        precision: 15, scale: 13
+    t.integer  "estacao_id"
+    t.integer  "equipamento_id"
     t.index ["circuito_id"], name: "index_circuitodados_on_circuito_id", using: :btree
+    t.index ["equipamento_id"], name: "index_circuitodados_on_equipamento_id", using: :btree
+    t.index ["estacao_id"], name: "index_circuitodados_on_estacao_id", using: :btree
   end
 
   create_table "circuitos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -330,6 +334,8 @@ ActiveRecord::Schema.define(version: 20171117144207) do
   end
 
   add_foreign_key "circuitodados", "circuitos"
+  add_foreign_key "circuitodados", "equipamentos"
+  add_foreign_key "circuitodados", "estacoes"
   add_foreign_key "conexoes", "equipamentos"
   add_foreign_key "linkequipamentos", "conexoes"
 end

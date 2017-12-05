@@ -57,6 +57,7 @@
         statusEstacao: "Status"
         tipoEstacao: "Tipo"
         created_at: "Criado em"
+        tipoEquipamento: "Tipo Equipamento"
       localidade:
         uf: "UF"
         cod_cnl: "Cod. Localidade"
@@ -118,10 +119,15 @@
         bandaContratada: Banda Contratada
         sap: SAP
         asn: ASN
+        uf: UF
+        pta: Ponta
       localidade:
         siglaCNL: Sigla Loc.
         siglaMunicipio: Sigla Municipio
         municipio: Município
         codCNL: Cod CNL
+      circuitoDado:
+        pta: Ponta
+        uf: UF
 
 

@@ -74,24 +74,24 @@
             </h1>
           </div> <!-- list-group-->
 
-          <div class="digg_pagination">
-            <table class="table table-striped table-bordered table-hover">
+          <div>
+            <table class="table table-striped">
               <thead>
                 <tr>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:designacao) %></th>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:descricao) %></th>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:tipoEquipamento) %></th>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:enderecamento) %></th>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:firmware) %></th>
-                  <th class="centro"><%= model_class_eqto.human_attribute_name(:statusEquipamento) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:designacao) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:descricao) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:tipoEquipamento) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:enderecamento) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:firmware) %></th>
+                  <th><%= model_class_eqto.human_attribute_name(:statusEquipamento) %></th>
                 </tr>
               </thead>
               <tbody>
                 <% @equipamentos.each do |equipamento| %>
                 <tr>
-                  <td class="centro"><%= link_to equipamento.designacao, equipamento_path(equipamento), :title => "Detalhar" %></td>
+                  <td><%= link_to equipamento.designacao, equipamento_path(equipamento), :title => "Detalhar" %></td>
                   <td><%= equipamento.descricao %></td>
-                  <td class="centro"><%= equipamento.tipoEquipamento %></td>
+                  <td><%= equipamento.tipoEquipamento %></td>
                   <td><%= equipamento.enderecamento %></td>
                   <td><%= equipamento.firmware %></td>
                   <td><%= equipamento.statusEquipamento %></td>
@@ -99,11 +99,7 @@
                 <% end %>
               </tbody>
             </table>
-          <div class="centro">
-            <%= will_paginate @equipamentos, page_links: false %>
           </div>
-        </div><!-- div class digg_pagination -->
-      </div><!-- row will-pagination -->
 
         <div class="row " style="margin-right: -120px;">
           <div class="list-group">
@@ -112,34 +108,33 @@
             </h1>
           </div> <!-- list-group-->
 
-        <%#= will_paginate @circuitoDados, page_links: false %>
-          <div class="digg_pagination">
-            <table class="table table-striped table-bordered table-hover">
+          <div>
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th><%= model_class_circuito.human_attribute_name(:designacao) %></th>
-                  <th class="centro"><%= model_class_circuito.human_attribute_name(:pta) %></th>
-                  <th class="centro"><%= model_class_circuito.human_attribute_name(:municipio) %></th>
-                  <th class="centro"><%= model_class_circuito.human_attribute_name(:uf) %></th>
-                  <th class="centro"><%= model_class_circuito.human_attribute_name(:status) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:pta) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:municipio) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:uf) %></th>
+                  <th><%= model_class_circuito.human_attribute_name(:status) %></th>
                 </tr>
               </thead>
               <tbody>
                 <% @circuitoDados.each do |circuitoDados| %>
                 <tr>
-                  <td><%= link_to circuitoDados.circuito.designacao, circuito_path(circuitoDados.circuito_id), :title => "Detalhar" %></td>
-                  <td class="centro"><%= circuitoDados.conv_pta %></td>
+                  <td><%= circuitoDados.circuito.designacao %></td>
+                  <td><%= circuitoDados.conv_pta %></td>
                   <td><%= circuitoDados.municipio %></td>
-                  <td class="centro"><%= circuitoDados.uf %></td>
+                  <td><%= circuitoDados.uf %></td>
                   <td><%= circuitoDados.circuito.status %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
-            <div class="centro">
-              <%= will_paginate @circuitoDados, page_links: false %>
-            </div>
-        </div>
+          </div>
+
+
+
 
         </div><!-- row -->
       </div>

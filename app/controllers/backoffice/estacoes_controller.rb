@@ -20,8 +20,8 @@ module Backoffice
     # GET /estacoes/1
     # GET /estacoes/1.json
     def show
-      @equipamentos = @estacao.equipamentos
-      @circuitoDados = Circuitodado.where(estacaoAcesso: @estacao.pop)
+      @equipamentos = @estacao.equipamentos.paginate(page: params[:page], per_page: 5)
+      @circuitoDados = Circuitodado.where(estacaoAcesso: @estacao.pop).paginate(page: params[:page], per_page: 5)
     end
 
     # GET /estacoes/new
@@ -37,6 +37,7 @@ module Backoffice
     # POST /estacoes.json
     def create
       @estacao = Estacao.new(estacao_params)
+      @estacao.pop = params[:estacao][:pop].upcase
 
       respond_to do |format|
         if @estacao.save

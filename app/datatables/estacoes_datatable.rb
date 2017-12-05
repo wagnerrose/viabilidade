@@ -36,10 +36,21 @@ private
   def fetch_estacoes
     estacoes = Estacao.order("#{sort_column} #{sort_direction}")
     estacoes = estacoes.page(page).per_page(per_page)
+    e = "estacoes"
     if params[:sSearch].present?
-      estacoes = estacoes.where("pop like :search or nome like :search", search: "%#{params[:sSearch]}%")
+      #estacoes = estacoes.where("pop like :search or nome like :search", search: "%#{params[:sSearch]}%")
+      e += ".where('pop like :search or nome like :search', search: '%#{params[:sSearch]}%')"
+      #estacoes = eval(e)
     end
-    estacoes
+    if params[:sSearch_2].present?
+      #estacoes = estacoes.where("cidade like :search", search: "%#{params[:sSearch_2]}%")
+      e += ".where('cidade like :search', search: '%#{params[:sSearch_2]}%')"
+    end
+    if params[:sSearch_4].present?
+      #estacoes = estacoes.where("statusEstacao = ?", Estacao.statusEstacoes[eval(":#{params[:sSearch_4]}")])
+      e += ".where('statusEstacao = ?', Estacao.statusEstacoes[eval(':#{params[:sSearch_4]}')])"
+    end
+    estacoes = eval(e)
   end
 
   def page

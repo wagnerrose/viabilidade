@@ -31,27 +31,27 @@
   </div>
   <div class="form-group">
     <%= f.label :regional_id, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.collection_select(:regional_id, Regional.all, :id, :nome, include_blank: true) %>
+    <div class="col-md-5">
+      <%= f.collection_select(:regional_id, Regional.all, :id, :nome, { include_blank: true }, { class: 'form-control'} ) %>
     </div>
     <%#f.error_span(:regional_id) %>
   </div>
   <div class="form-group">
     <%= f.label :fone_contato, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :fone_contato, :class => 'form-control' %>
+    <div class="col-md-3">
+      <%= f.text_field :fone_contato, :class => 'form-control', :id => 'phone_number' %>
     </div>
     <%#f.error_span(:fone_contato) %>
   </div>
   <div class="form-group">
     <%= f.label :funcao, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.select(:funcao, ['Eng. Comercial','Gerente de Contas'], {include_blank: false}) %>
+    <div class="col-md-4">
+      <%= f.select(:funcao, ['Eng. Comercial','Gerente de Contas'], {include_blank: false}, { class: 'form-control'} ) %>
     </div>
     <%#f.error_span(:funcao) %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group centro">
     <div class="col-md-offset-2 col-md-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
