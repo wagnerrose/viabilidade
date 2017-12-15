@@ -17,4 +17,6 @@
  *= require bootstrap
  *= require bootstrap_sb_admin_base_v2
  *= require font-awesome
+ *= require sb-admin-2
+ *= require admin2-sidebar-toggle
  */

@@ -42,6 +42,13 @@
     }, 1000, 'easeInOutExpo');
     event.preventDefault();
   });
+// menu retratil
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $("#wrapper.toggled").find("#sidebar-wrapper").find(".collapse").collapse("hide");
+    });
+
 })(jQuery); // End of use strict
 
 
