@@ -1,1 +1,1 @@
-select * from equipamentos;
+drop table stations;

@@ -22,10 +22,14 @@
     <!--Navigation -->
 
 <!-- linha abaixo incluida menu retratil -->
-
+<div>
     <div class="row">
       <%= render partial: "./layouts/backoffice_shared/navigation" %>
+    </div>
+    <div class="row">
       <%= yield %>
+    </div>
+    <div class="row">
       <%= render partial: "./layouts/backoffice_shared/footer" %>
     </div>
     <% if notice %>
@@ -33,7 +37,7 @@
         $.notify("<%= notice %>", "success");
       </script>
     <% end %>
-
+</div>
   </body>
 </html>
 

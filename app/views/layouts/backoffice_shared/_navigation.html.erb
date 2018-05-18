@@ -11,16 +11,16 @@
     <a class="navbar-brand" style="margin: -15px; padding: 0px;" href="#"><%= image_tag("45_Telebras.png", size: "240x80")%></a>
   </div>
   <!-- /.navbar-header -->
-
-      <ul class="nav navbar-top-links navbar-right">
+  <div>
+      <ul class="nav navbar-top-links">
         <!-- botao de esconder a barra -->
-                <li>
-                    <button id="menu-toggle" type="button" data-toggle="button" class="btn btn-default btn-xs">
+                <li class="navbar-left">
+                    <button id="menu-toggle" type="button" data-toggle="button" class="btn btn-default btn-xs" style="margin-top: 15px">
                         <i class="fa fa-exchange fa-fw"></i>
                     </button>
                 </li>
         <!-- botao de esconder a barra -->
-         <li class="dropdown">
+         <li class="dropdown navbar-right">
            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
              <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
            </a>
@@ -46,11 +46,12 @@
           </ul>
         </li>
       </ul>
+  </div>
 
   <!-- /.navbar-top-links -->
     <div id="sidebar-wapper">
       <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="nav" id="side-menu">
             <li class="sidebar-search">
               <div class="input-group custom-search-form">
@@ -63,35 +64,42 @@
               </div>
               <!-- /input-group -->
             </li>
-            <li>
-              <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Painel de Controle</a>
-            </li>
-            <li>
-              <%= link_to admin_index_path do %>
-                <i class="fa fa-group fa-fw"></i> Administradores
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa fa-fw fa-dashboard"></i>
+                <span class="nav-link-text">Dashboard</span>
               <% end %>
             </li>
-            <li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administradores">
+              <%= link_to admin_index_path, class: "nav-link" do %>
+                <i class="fa fa-group fa-fw"></i>
+                <span class="nav-link-text">Administradores</span>
+              <% end %>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Usuaários">
               <%= link_to usuarios_path do %>
                 <i class="fa fa-group fa-fw"></i> Usuários
               <% end %>
             </li>
-            <li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estatísticas">
               <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Estatíscias<span class="fa arrow"></span></a>
               <ul class="nav nav-second-level">
-                <li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gráficos">
                   <a href="flot.html">Gráficos</a>
                 </li>
-                <li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Morris">
                   <a href="morris.html">Morris.js Charts</a>
                 </li>
               </ul>
               <!-- /.nav-second-level -->
             </li>
-            <li>
-              <a href="#"><i class="fa fa-table fa-fw"></i> Tabelas <span class="fa arrow"></span></a>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tabelas">
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-table"></i>
+                <span class="nav-link-text">Tabelas</span>
+              </a>
                 <ul class="nav nav-second-level">
-                  <li>
+                  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Analistas">
                     <%= link_to analistas_path do %>
                       <i class="fa fa-database fa-fw"></i> Analistas
                     <% end %>
@@ -151,8 +159,15 @@
               <a href="#"><i class="fa fa-edit fa-fw"></i> Relatórios</a>
             </li>
            </ul>
-        </div>
+            <ul class="navbar-nav sidenav-toggler">
+              <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                  <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+              </li>
+            </ul>
         <!-- /.sidebar-collapse -->
+        </div>
       </div>
       <!-- /.navbar-static-side -->
       </div>
