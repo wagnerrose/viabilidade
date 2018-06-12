@@ -8,14 +8,14 @@ end
 gem 'bundler', '>=1.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.1'
+gem 'rails'
 gem 'bower-rails', '~>0.10.0'
 
 # Hirb provides a mini view framework for console applications
 # gem and uses it to improve ripl(irb)'s default inspect output.
 gem 'hirb'
 
-gem 'puma', '3.4.0'
+gem 'puma'
 gem 'sass-rails', '>= 5.0.6'
 gem 'uglifier', '3.0.0'
 gem 'coffee-rails', '4.2.1'
@@ -79,11 +79,11 @@ group :development, :test do
 
   # Retrieve the binding of a methods caller im MRI 1.9.2+
   gem 'binding_of_caller'
+  # A library for generating fake data souch as names, addresses and phones numbers
+  gem 'faker'
 end
 
 group :development do
-  # A library for generating fake data souch as names, addresses and phones numbers
-  gem 'faker'
 
   gem 'web-console', '>= 3.3.0'
 end
