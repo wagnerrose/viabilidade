@@ -1,3 +1,9 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag "#{params[:controller]}" %>
+  <%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
 <%- model_class_solicitacao = Solicitacao -%>
 <% @opcao_status = ["Em Análise", "Viável", "Inviável", "Análise Eletrosul"] %>
 
@@ -21,7 +27,7 @@
                     :class => 'btn botaoApaga btn-sm btn-block' %>
     </div>
   </div> <!-- div quadrobotoes -->
-    
+
   <div class="row col-sm-10">
     <div>
       <div class='col-sm-9'>
@@ -40,30 +46,30 @@
         <%= @solicitacao.solicitante %>
       </div>
       <div class='col-sm-6'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:analista)%>: </strong>      
+        <strong><%= model_class_solicitacao.human_attribute_name(:analista)%>: </strong>
         <%= @solicitacao.analista %>
       </div>
 
     </div>
       <div class='col-sm-6'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:servico)%>: </strong>      
+        <strong><%= model_class_solicitacao.human_attribute_name(:servico)%>: </strong>
         <%= @solicitacao.servico %>
       </div>
       <div class='col-sm-6'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:banda)%>: </strong>    
+        <strong><%= model_class_solicitacao.human_attribute_name(:banda)%>: </strong>
         <%= @solicitacao.banda %>
       </div>
     <div>
-      
+
     </div>
-    
+
     <div>
       <div class='col-sm-6'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:endereco_a)%>: </strong>      
+        <strong><%= model_class_solicitacao.human_attribute_name(:endereco_a)%>: </strong>
         <%= @solicitacao.endereco_a %>
       </div>
       <div class='col-sm-4'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_a) %>: </strong>      
+        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_a) %>: </strong>
         <%= @solicitacao.localidade_a %>
       </div>
       <div class='col-sm-2'>
@@ -78,7 +84,7 @@
         <%= @solicitacao.endereco_b %>
       </div>
       <div class='col-sm-4'>
-        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_b) %>: </strong>     
+        <strong><%= model_class_solicitacao.human_attribute_name(:localidade_b) %>: </strong>
         <%= @solicitacao.localidade_b %>
       </div>
       <div class='col-sm-2'>
@@ -99,14 +105,14 @@
     <div class="row">
       <hr class='linha'>
       <strong>
-        <div class='col-sm-1 campoTipo' >Tipo</div>        
-        <div class='col-sm-1 campoEstrutura'>Estrutura</div> 
-        <div class='col-sm-4 campoDescricao'>Descrição</div>        
+        <div class='col-sm-1 campoTipo' >Tipo</div>
+        <div class='col-sm-1 campoEstrutura'>Estrutura</div>
+        <div class='col-sm-4 campoDescricao'>Descrição</div>
         <div class='col-sm-1 campoPrazo'>Prazo</div>
-        <div class='col-sm-1 campoCapex'>Capex</div> 
-        <div class='col-sm-1 campoOpexInstalacao'>Opex Inst</div> 
+        <div class='col-sm-1 campoCapex'>Capex</div>
+        <div class='col-sm-1 campoOpexInstalacao'>Opex Inst</div>
         <div class='col-sm-1 campoOpexMensal'>Opex Mês</div>
-        <div class='col-sm-1 campoVt'>Resultado</div>             
+        <div class='col-sm-1 campoVt'>Resultado</div>
       </strong>
     </div><!-- row -->
     <hr class="linha ">

@@ -1,0 +1,48 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Circuito -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row" style="margin-right: -160px">
+        <div class="col-lg-12">
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
+          </h1>
+        </div>
+
+        <table  id="circuitos"  class="table display" data-source="<%= circuitos_url(format: "json") %>" >
+          <thead>
+            <tr>
+              <th><%= model_class.human_attribute_name(:designacao) %></th>
+              <th><%= model_class.human_attribute_name(:descricao) %></th>
+              <th><%= model_class.human_attribute_name(:servico) %></th>
+              <th><%= model_class.human_attribute_name(:status) %></th>
+              <th><%= model_class.human_attribute_name(:bandaAtivada) %></th>
+              <th><%= model_class.human_attribute_name(:empresa) %></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <center>
+          <%= link_to t('.new', :default => t("helpers.links.new")) ,
+          new_circuito_path,
+          :class => 'btn botao btn-sm' %>
+        </center>
+      </div>
+    </div>
+  </div><!-- div container-fluid -->
+    <!--/ codigo da pagina -->
+</div>
+
+<!-- / #page-wrapper -->
+<!-- / #wrapper <-->

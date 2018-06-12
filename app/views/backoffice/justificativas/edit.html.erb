@@ -1,0 +1,26 @@
+<%- model_class = Justificativa -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1  class="list-group-item-heading list-group-item-info">
+            <center><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'],
+              :model => model_class.model_name.human.titleize %></center>
+            </h1>
+          </div>
+          <%= render :partial => 'form' %>
+          <!--/ codigo da pagina -->
+        </div>
+        <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- / #page-wrapper -->
+  <!-- / #wrapper <-->

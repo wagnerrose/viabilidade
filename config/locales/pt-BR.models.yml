@@ -1,39 +1,42 @@
 "pt-BR":
   activerecord:
     models:
-      servico: 
+      servico:
         one: "Serviço"
         other: "Serviços"
       uf:
         one: "UF"
         other: "UF's"
-      estacao: 
+      estacao:
         one: "Estação"
         other: "Estações"
       regional:
         one: "Regional"
         other: "Regionais"
-      localidade: 
+      localidade:
         one: "Localidade"
         other: "Localidades"
-      solicitacao: 
+      solicitacao:
         one: "Solicitação"
         other: "Solicitações"
-      analise: 
+      analise:
         one: "Análise"
         other: "Análises"
-      analista: 
+      analista:
         one: "Analista"
         other: "Analistas"
-      empresa: 
+      empresa:
         one: "Empresa"
         other: "Empresas"
-      equipamento: 
+      equipamento:
         one: "Equipamento"
         other: "Equipamentos"
-      justificativa: 
+      justificativa:
         one: "Justificativa"
         other: "Justificativas"
+      conexao:
+        one: "Conexão"
+        other: "Conexões"
 
     attributes:
       uf:
@@ -51,7 +54,10 @@
         designacao: "Designação"
         endereco: "Endereço"
         uf: "UF"
+        statusEstacao: "Status"
+        tipoEstacao: "Tipo"
         created_at: "Criado em"
+        tipoEquipamento: "Tipo Equipamento"
       localidade:
         uf: "UF"
         cod_cnl: "Cod. Localidade"
@@ -71,7 +77,7 @@
         banda: "Banda"
         endereco_a: "Endereço A"
         localidade_a: "Localidade A"
-        uf_a: "UF A" 
+        uf_a: "UF A"
         endereco_b: "Endereço B"
         uf_b: "UF B"
         localidade_b: "Localidade B"
@@ -98,6 +104,30 @@
         descricao: "Descrição"
         enderecamento: "Endereçamento"
         estacao_id: "Estação"
+        statusEquipamento: "Status"
+        tipoEquipamento: "Tipo"
       justificativa:
         cod_justificativa: "Código"
         created_at: "Criado em "
+      circuito:
+        circuito: "Circuto"
+        bandaAtivada: "Banda Ativada"
+        servico: "Serviço"
+        designacao: "Designação"
+        descricao: "Descrição"
+        dataAtivacao: Data Ativação
+        bandaContratada: Banda Contratada
+        sap: SAP
+        asn: ASN
+        uf: UF
+        pta: Ponta
+      localidade:
+        siglaCNL: Sigla Loc.
+        siglaMunicipio: Sigla Municipio
+        municipio: Município
+        codCNL: Cod CNL
+      circuitoDado:
+        pta: Ponta
+        uf: UF
+
+

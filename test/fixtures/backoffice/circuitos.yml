@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designacao: MyString
+  descricao: MyString
+  servico: 1
+  status: 1
+  roteamento: 1
+  asn: 1
+  bandaContratada: 1
+  bandaAtivada: 1
+  dataAtivacao: 2017-09-25
+  contrato: MyString
+  sap: 1
+  empresa: 
+
+two:
+  designacao: MyString
+  descricao: MyString
+  servico: 1
+  status: 1
+  roteamento: 1
+  asn: 1
+  bandaContratada: 1
+  bandaAtivada: 1
+  dataAtivacao: 2017-09-25
+  contrato: MyString
+  sap: 1
+  empresa: 

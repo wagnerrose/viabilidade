@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numArco: 1
+  nomeCluster: MyString
+  equipamento: one
+
+two:
+  numArco: 1
+  nomeCluster: MyString
+  equipamento: two

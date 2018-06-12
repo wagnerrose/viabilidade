@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  intLocal: MyString
+  eqtoDestino: MyString
+  intDestino: MyString
+  vlan: 1
+  sentido: 1
+  velocidade: 1
+  conexao: one
+
+two:
+  intLocal: MyString
+  eqtoDestino: MyString
+  intDestino: MyString
+  vlan: 1
+  sentido: 1
+  velocidade: 1
+  conexao: two

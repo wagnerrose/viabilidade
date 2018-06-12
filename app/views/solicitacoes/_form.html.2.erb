@@ -1,0 +1,104 @@
+<%- model_class = Solicitacao -%>
+<div class="row">
+  <div class="col-md-1" style="margin-top: 80px; padding: 0;"> <!-- coluna 1-->
+    <center>
+      <div style="margin: 30px 0px 5px 0px;">
+        <%= link_to t('.back', :default => t("helpers.links.back")),
+                      solicitacoes_path, :class => 'btn botao btn-sm btn-block'  %>
+      </div><!-- div botao back -->
+      <div style="margin: 5px 0px;">
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_solicitacao_path(@solicitacao), :class => 'btn botao btn-sm btn-block' %>
+      </div><!-- div botao edit -->
+      <div style="margin: 5px 0px;">
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      solicitacao_path(@solicitacao),
+                      :method => 'delete',
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn botaoApaga btn-sm btn-block' %>
+      </div><!-- div botao destroy -->
+    </center>
+  </div> <!-- div sidebar -->
+    
+  <div class="col-md-11 "> <!-- coluna 2 -->
+
+   <%= simple_form_for @solicitacao do |f| %>
+     
+     <%= f.error_notification %>
+    <div class="row">  
+      <div class="col-md-2"><%= f.input :numero_vt, hint: false, input_html: { disabled: true } %> </div> 
+      <div class="col-md-8"><%= f.input :empresa_id, 
+                                        collection: @empresa_options_for_select,
+                                        label_method: :razao,
+                                        value_method: :id,
+                                        selected: :razao,
+                                        input_html: { class: 'campoEmpresa', disabled: true} %></div>      
+      <div class="col-md-2"><%= f.input :resultado_vt %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><%= f.input :data_solicitacao, as: :string, input_html: { class: "datepicker"} %></div>
+      <div class="col-md-3"><%= f.input :solicitante, inline_label: 'solicitante' %></div>
+      <div class="col-md-3"><%= f.input :servico %></div>
+      <div class="col-md-2"><%= f.input :banda, input_html: { class: 'campoBanda'} %></div>
+    </div>
+    <div class="row">
+       <div class="col-md-6"><%= f.input :endereco_a %></div>
+       <div class="col-md-3"><%= f.input :localidade_a %></div>
+       <div class="col-md-3"><%= f.input :uf_a, 
+                                          collection: @uf_options_for_select,
+                                          label_method: :sigla,
+                                          value_method: :id,
+                                          selected: :sigla,
+                                          input_html: { class: 'campoEstado'} %></div>       
+     </div>
+     <div class="row">
+       <div class="col-md-6"><%= f.input :endereco_b %></div>
+       <div class="col-md-3"><%= f.input :localidade_b %></div>
+       <div class="col-md-3"><%= f.input :uf_b, input_html: { class: 'campoEstado'} %> </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12"><%= f.input :analista, 
+                                          collection: @analista_options_for_select,
+                                          label_method: :nome,
+                                          value_method: :id,
+                                          selected: :nome,
+                                          input_html: { class: 'campoAnalista'} %></div>
+     </div>
+  </div><!-- coluna 2 -->
+</div><!-- row -->
+
+<div>
+    <h1 class="list-group-item-success"><center>Análise Viabilidade</center></h1>
+
+  <div class="container" >
+    <div class="row">
+      <strong>
+        <div class="col-sm-1"><center>Tipo</center></div>        
+        <div class="col-sm-1">Estrutura</div> 
+        <div class="col-sm-4">Descrição</div>        
+        <div class="col-sm-1">Prazo</div>
+        <div class="col-sm-1">Capex</div> 
+        <div class="col-sm-1">Opex Inst</div> 
+        <div class="col-sm-1">Opex Mês</div>
+        <div class="col-sm-1">Resultado</div>             
+        <div class="col-sm-1">Ação</div>
+      </strong>
+    </div><!-- row -->
+    <hr class="linha">
+      <div id="respostas">
+          <%= link_to_add_association '<button class="botao glyphicon glyphicon-plus" title="Remover">Incluir</button>'.html_safe, f, :respostas %>
+          <br><br>
+          <%= f.fields_for :respostas do |respostas_fields| %>
+            <%= render partial: "resposta_fields", locals: { f: respostas_fields } %>
+          <% end %>
+      </div><!-- respostas -->
+  </div><!--/container-->
+  <% end %>
+</div>
+<div>
+  <center>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_resposta_path,
+                :class => 'btn botao btn-sm ' %>
+  </center>
+</div>

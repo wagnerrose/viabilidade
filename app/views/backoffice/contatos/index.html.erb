@@ -1,0 +1,50 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+<%= stylesheet_link_tag params[:controller] %>
+<%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Contato -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row marcador">
+      <div class="col-lg-12">
+
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
+          </h1>
+        </div>
+
+        <table id="contatos" class="table display" data-source="<%= contatos_url(format: "json")%>" >
+          <thead>
+            <tr>
+              <th><%= model_class.human_attribute_name(:nome) %></th>
+              <th><%= model_class.human_attribute_name(:empresa_id) %></th>
+              <th><%= model_class.human_attribute_name(:email) %></th>
+              <th><%= model_class.human_attribute_name(:telefone) %></th>
+              <th><%= model_class.human_attribute_name(:obs) %></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <center>
+          <%= link_to t('.new', :default => t("helpers.links.new")),
+          new_contato_path,
+          :class => 'btn botao btn-sm' %>
+        </center>
+        <!--/ codigo da pagina -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- / #page-wrapper -->
+<!-- / #wrapper <-->

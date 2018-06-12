@@ -1,0 +1,49 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+<%= stylesheet_link_tag "#{params[:controller]}" %>
+<%= javascript_include_tag "#{params[:controller]}" %>
+<% end %>
+
+<%- model_class = Regional -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid" >
+    <!-- codigo da pagina -->
+    <div class="row " style="margin-top: 20px;">
+    <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <center><h1 >
+              <%=t '.title', :default => model_class.model_name.human.titleize %>
+            </h1></center>
+          </div>
+          <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;">
+              <dt><strong><%= model_class.human_attribute_name(:cod_regional) %>:</strong></dt>
+              <dd><%= @regional.cod_regional %></dd>
+              <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+              <dd><%= @regional.nome %></dd>
+            </dl>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-12">
+            <center>
+              <%= link_to t('.back', :default => t("helpers.links.back")),
+              regionais_path, :class => 'btn botao btn-sm'  %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_regional_path(@regional), :class => 'btn botao btn-sm' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              regional_path(@regional),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn botaoApaga btn-sm' %>
+            </center>
+      </div> <!-- /.col-lg-12 -->
+    </div><!-- row -->
+
+  </div><!-- div container -->
+</div>

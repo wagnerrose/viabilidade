@@ -1,0 +1,189 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Empresa -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <!-- codigo da pagina -->
+    <div class="row style="margin-right: -120px"" >
+    <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <center><h1 >
+              <%=t '.title', :default => model_class.model_name.human.titleize %>
+            </h1></center>
+          </div><!-- div panel-heading -->
+          <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;" >
+            <dt class="campoRotulo"><%= model_class.human_attribute_name(:razao) %>:</dt>
+            <dd><%= @empresa.razao %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:nome_fantasia) %>:</dt>
+            <dd><%= @empresa.nome_fantasia %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:logradouro) %>:</dt>
+            <dd><%= @empresa.endereco.logradouro %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cidade) %>:</dt>
+            <dd><%= @empresa.endereco.cidade %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:uf) %>:</dt>
+            <dd><%= @empresa.endereco.uf %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cep) %>:</dt>
+            <dd><%= @empresa.endereco.cep %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:cnpj) %>:</dt>
+            <dd><%= @empresa.cnpj %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:sap) %>:</dt>
+            <dd><%= @empresa.sap %></dd>
+            <dt  class="campoRotulo"><%= model_class.human_attribute_name(:regional) %>:</dt>
+            <dd><%= @empresa.regional %></dd>
+          </dl><!-- dt Empresa -->
+        </div><!-- div panel -->
+        <div class="row">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <center><h2 >Contatos</h2></center>
+            </div><!-- div panel-heading -->
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th class="centro"><%= model_class.human_attribute_name(:nome) %></th>
+                      <th class="centro"><%= model_class.human_attribute_name(:telefone)%></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @empresa.contatos.each do |contato| %>
+                      <tr>
+                        <!-- cria apresentacao modal -->
+                        <td>
+                          <% @c = contato %>
+                          <%= link_to contato.nome,
+                          "#",
+                          data: {toggle: 'modal', target: '#modal_contato', title: 'Detalhar'} %>
+                        </td>
+                        <td><%= contato.telefone %></td>
+                      </tr>
+                    <% end %><!-- loop contatos -->
+                  </tbody>
+                </table><!-- table -->
+              </div> <!-- table-responsive -->
+            </div><!-- panel-body -->
+          </div><!-- panel -->
+        </div> <!-- row -->
+
+            <div class="row">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <center><h2 >Circuitos</h2></center>
+                </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th class="centro"><%= model_class.human_attribute_name(:designacao) %></th>
+                        <th class="centro"><%= model_class.human_attribute_name(:descricao) %></th>
+                        <th class="centro"><%= model_class.human_attribute_name(:status) %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @empresa.circuitos.each do |circuito| %>
+                        <tr>
+                          <td class="centro">
+                          <% @circ = circuito %>
+                          <%= link_to circuito.designacao,
+                          "#",
+                          data: {toggle: 'modal', target: '#modal_circuito', title: 'Detalhar'} %></td>
+                          <td> <%= circuito.descricao %></td>
+                          <td class="centro"> <%= circuito.status %></td>
+                         </tr>
+                      <% end %>
+                    </tbody>
+                  </table> <!-- div table -->
+                </div> <!-- table-responsive -->
+              </div> <!-- div panel-body -->
+            </div> <!-- div panel -->
+          </div><!-- div row -->
+
+        </div>
+      <div class="col-lg-1"></div>
+    </div> <!-- row -->
+    <div class="row">
+      <div class="col-lg-12">
+          <center>
+            <%= link_to t('.back', :default => t("helpers.links.back")),
+                          empresas_path, :class => 'btn botao btn-sm'  %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_empresa_path(@empresa), :class => 'btn botao btn-sm' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          empresa_path(@empresa),
+                          :method => 'delete',
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn botaoApaga btn-sm ' %>
+          </center>
+      </div> <!-- /.col-lg-12 -->
+    </div><!-- row -->
+  </div><!-- div container -->
+</div>
+
+<div id="modal_contato" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title panel-info" style="text-align-last: center">Detalhes do Contato</h4>
+            </div>
+            <div class="modal-body">
+              <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;" >
+                <dt class="campoRotulo">Nome:</dt>
+                <dd><%= @c.nome %></dd>
+                <dt  class="campoRotulo">Telefone:</dt>
+                <dd><%= @c.telefone %></dd>
+                <dt  class="campoRotulo">E-mail:</dt>
+                <dd><%= @c.email %></dd>
+                <dt  class="campoRotulo">Obs:</dt>
+                <dd><%= @c.obs %></dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao btn-sm" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal_circuito" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title panel-info" style="text-align-last: center">Detalhes do Circuito</h4>
+            </div>
+            <div class="modal-body">
+              <dl class="dl-horizontal" style="margin: 10px; font-size: 16px;" >
+                <dt class="campoRotulo">Designação:</dt>
+                <dd><%= @circ.designacao %></dd>
+                <dt  class="campoRotulo">Descricao:</dt>
+                <dd><%= @circ.descricao %></dd>
+                <dt  class="campoRotulo">Serviço:</dt>
+                <dd><%= @circ.servico %></dd>
+                <dt  class="campoRotulo">Status:</dt>
+                <dd><%= @circ.status %></dd>
+                <dt  class="campoRotulo">Banda Ativada:</dt>
+                <dd><%= @circ.bandaAtivada.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse %> Mbps</dd>
+                <dt  class="campoRotulo">Contrato:</dt>
+                <dd><%= @circ.contrato %></dd>
+                <dt  class="campoRotulo">SAP:</dt>
+                <dd><%= @circ.sap %></dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao btn-sm" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,8 @@
 class Localidade < ApplicationRecord
   belongs_to :uf
-  
-   validates :municipio, :sigla_cnl, :localidade,  presence: true
-   validates :latitude, :cod_cnl, presence: true
+
+   validates :municipio, :siglaCNL, :localidade,  presence: true
+   validates :latitude, :codCNL, presence: true
    validates :longitude, :uf_id, presence: true
+   validates :siglaMunicipio, presence: true
 end

@@ -1,0 +1,53 @@
+<!-- carregamento inteligente dos CSS e JAVASCRIPTS  -->
+<% content_for :head do %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+
+<%- model_class = Localidade -%>
+
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- codigo da pagina -->
+        <div class="list-group">
+          <h1 class="list-group-item-heading list-group-item-info" style="margin-top: 10px;">
+            <center><%=t '.title', :default => model_class.model_name.human.titleize.pluralize %></center>
+          </h1>
+        </div>
+
+        <table id="localidades" class="table display" data-source="<%= localidades_url(format: "json") %>">
+          <thead>
+            <tr>
+              <th><%= model_class.human_attribute_name(:siglaCNL) %></th>
+              <th><%= model_class.human_attribute_name(:localidade) %></th>
+              <th><%= model_class.human_attribute_name(:municipio) %></th>
+              <th>Sigla</th>
+              <th><%= model_class.human_attribute_name(:uf_id).upcase %></th>
+              <th><%= model_class.human_attribute_name(:latitude) %></th>
+              <th><%= model_class.human_attribute_name(:longitude) %></th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+          </tbody>
+        </table>
+        <center>
+          <%= link_to t('.new', :default => t("helpers.links.new")),
+          new_localidade_path,
+          :class => 'btn botao btn-sm' %>
+        </center>
+        <!--/ codigo da pagina -->
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- / #page-wrapper -->
+<!-- / #wrapper <-->

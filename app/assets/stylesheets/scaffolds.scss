@@ -14,11 +14,13 @@ body {
 .tudo{
   display: table;
 }
+
 .clear {
   clear: both;
 }
 .centro {
   margin: auto;
+  text-align: center;
 }
 .quadroBotoes {
   width: 15%;
@@ -28,13 +30,13 @@ body {
   margin: 10px auto;
   padding: 5px 10px;
   background: #C0E1FF;
- } 
- 
+ }
+
 .box-show {
   margin: 10px auto;
   padding: 0px;
-  max-width: 500px ; 
-  background: #C0E1FF; 
+  max-width: 500px ;
+  background: #C0E1FF;
   border-style: ridge;
 }
 /* usado para debug */
@@ -45,18 +47,18 @@ body {
 .campoRotulo {
   font-weight: bold;
   margin: 3px 5px;
-  float: left; 
+  float: left;
 }
 .campoInline {
   font-weight: normal;
   margin: 10px 5px;
-  float: left; 
+  float: left;
 }
 
 .campoDados {
   margin: 3px 5px;
   text-align: left;
-  float: left;   
+  float: left;
 }
 .campoEntrada {
   margin: 5px 5px;
@@ -66,10 +68,10 @@ body {
 }
 
 .linha {
-   color: black; 
-   background-color:#000; 
-   height:1px; 
-   margin-top: 0px; 
+   color: black;
+   background-color:#000;
+   height:1px;
+   margin-top: 0px;
    margin-bottom: 2px;
 }
 
@@ -86,7 +88,7 @@ body {
   -moz-box-shadow: 1px 1px 1px #4C6E91;
   text-shadow: 1px 1px 1px #5079A3;
   cursor: pointer;
-  
+
 }
 .botao:hover{
     background: #3EB1DD;
@@ -104,7 +106,7 @@ body {
   -webkit-box-shadow: 1px 1px 1px #4C6E91;
   -moz-box-shadow: 1px 1px 1px #4C6E91;
   text-shadow: 1px 1px 1px #5079A3;
-  
+
 }
 .botaoApaga:hover{
     background: #cc0000;
@@ -112,4 +114,19 @@ body {
 .notificacao{
   margin: auto;
 }
+table {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
 
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding : 0px;
+    margin-left: 0px;
+    display: inline;
+    border: 0px;
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: 0px;
+}

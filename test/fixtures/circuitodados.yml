@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  circuito: one
+  pta: 1
+  municipio: MyString
+  uf: MyString
+  estacaoAcesso: 1
+  estacaoCliente: one
+  switchAcesso: one
+  pontoEntrega: 1
+  tipoAcesso: 1
+  fornecedorAcesso: MyString
+  fornecedorInfo: MyString
+
+two:
+  circuito: two
+  pta: 1
+  municipio: MyString
+  uf: MyString
+  estacaoAcesso: 1
+  estacaoCliente: two
+  switchAcesso: two
+  pontoEntrega: 1
+  tipoAcesso: 1
+  fornecedorAcesso: MyString
+  fornecedorInfo: MyString

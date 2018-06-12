@@ -9,7 +9,7 @@
   "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
-      "notifyjs"    : "v0.4.2"
+       "notifyjs"    : "v0.4.2"
     }
   }
 }

@@ -2,6 +2,7 @@
 <% @opcao_status = ["Em Análise", "Viável", "Inviável", "Análise Eletrosul"] %>
 <br>
 
+<%= form_for @solicitacao do |f| %>
 <div class='tudo'>
   <div class="quadroBotoes row col-sm-2">
     <div>
@@ -22,7 +23,6 @@
   </div> <!-- div quadrobotoes -->
   <div class='container'>  
   <div class='col-sm-10 '>
-    <%= form_for @solicitacao do |f| %>
       <% if @solicitacao.errors.any? %>
         <div id="error_expl" class="panel panel-danger">
           <div class="panel-heading">

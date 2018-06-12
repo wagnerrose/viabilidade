@@ -1,0 +1,1164 @@
+
+
+---
+equipamentos:
+  columns:
+  - id
+  - designacao
+  - descricao
+  - tipo
+  - enderecamento
+  - firmware
+  - status
+  - arco
+  - cluster
+  - estacao_id
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - RTCE-PAE01-01
+    - DM4001 L Series - ETH24GX L Series+MPLS
+    - Terminal de Cliente
+    - 10.67.62.1/32
+    - '14.4'
+    - Operação
+    - ''
+    - ''
+    - 1
+    - '2017-04-19 11:42:56.140196'
+    - '2017-04-24 12:36:33.802473'
+  - - 2
+    - SMAC-PAE01-01
+    - DM4001 - ETH24GX+2x10GX H Series
+    - Terminal do Cliente
+    - 10.128.47.38/32
+    - '14.4'
+    - Operação
+    -
+    -
+    - 1
+    - '2017-04-19 11:48:52.506001'
+    - '2017-04-19 11:48:52.506001'
+  - - 3
+    - DRTD-FNS01-01
+    - DM4001 L Series - ETH24GX L Series+L3
+    - Ponto de Presença
+    - 10.79.109.243/32
+    - 12.4.12
+    - Operação
+    - ''
+    - ''
+    - 5
+    - '2017-04-24 14:23:57.537057'
+    - '2017-08-31 15:02:56.678833'
+  - - 4
+    - RTAC-FNS01-01
+    - ASR-9010
+    - Ponto de Presença
+    - 177.14.0.100/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 5
+    - '2017-04-24 14:25:16.103118'
+    - '2017-04-24 14:25:16.103118'
+  - - 5
+    - SMAC-FNS01-01
+    - DM4001 L Series - ETH24GX L Series
+    - Ponto de Presença
+    - 10.128.62.33/32
+    - 13.8.4
+    - Operação
+    - ''
+    - ''
+    - 1
+    - '2017-04-24 14:26:28.881903'
+    - '2017-04-24 14:26:28.881903'
+  - - 6
+    - SMAG-FNS01-01
+    - DM4004 - MPU384+MPLS
+    - Ponto de Presença
+    - 10.128.62.3/32
+    - 13.8.4
+    - Operação
+    - ''
+    - ''
+    - 5
+    - '2017-04-24 14:57:00.353887'
+    - '2017-04-24 14:57:00.353887'
+  - - 7
+    - DRTD-GTI01-01
+    - DM4001 L Series - ETH24GX L Series+L3
+    - Ponto de Presença
+    - 10.79.235.254/32
+    - 12.4.12
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:10:07.252404'
+    - '2017-04-24 15:10:30.975856'
+  - - 8
+    - DSWA-GTI01-01
+    - DM4001 L Series - ETH24GX L Series+L3
+    - Ponto de Presença
+    - 10.64.197.50/32
+    - 12.4.12
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:13:12.095733'
+    - '2017-04-24 15:13:12.095733'
+  - - 9
+    - RTED-GTI01-02
+    - ASR-9010
+    - Ponto de Presença
+    - 177.14.0.60/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:20:09.730609'
+    - '2017-04-24 15:20:43.534484'
+  - - 10
+    - RTIC-GTI01-01
+    - Cisco CRS Series 8 Slots Line Card Chassis
+    - Ponto de Presença
+    - 177.14.0.7/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:21:26.751458'
+    - '2017-04-24 15:21:26.751458'
+  - - 12
+    - RTIC-GTI01-02
+    - Cisco CRS Series 8 Slots Line Card Chassis
+    - Ponto de Presença
+    - 177.14.0.8/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:43:20.926331'
+    - '2017-04-24 15:43:20.926331'
+  - - 13
+    - RTPR-GTI01-01
+    - CRS-8 Line Card Chassis-enhanced for CRS-8/S-B
+    - Ponto de Presença
+    - 177.14.0.75/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:44:03.292093'
+    - '2017-04-24 15:44:03.292093'
+  - - 14
+    - RTPR-GTI01-02
+    - CRS-8 Line Card Chassis-enhanced for CRS-8/S-B
+    - Ponto de Presença
+    - 177.14.0.76/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:44:43.554566'
+    - '2017-04-24 15:44:43.554566'
+  - - 15
+    - RTRR-GTI01-01
+    - ASR1006
+    - Ponto de Presença
+    - 177.14.0.85/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:45:20.944105'
+    - '2017-04-24 15:45:20.944105'
+  - - 16
+    - RTRR-GTI01-02
+    - ASR1006
+    - Ponto de Presença
+    - 177.14.0.86/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:45:58.319616'
+    - '2017-04-24 15:45:58.319616'
+  - - 17
+    - SWAG-GTI01-02
+    - ETH24GX+2x10GX H Series
+    - Ponto de Presença
+    - 10.128.29.4/32
+    - '14.4'
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:46:48.332038'
+    - '2017-04-24 15:46:48.332038'
+  - - 18
+    - SWAG-GTI02-01
+    - ETH24GX+2x10GX H Series
+    - Ponto de Presença
+    - 10.128.29.3/32
+    - '14.4'
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:47:24.068967'
+    - '2017-04-24 15:49:19.699886'
+  - - 19
+    - SWED-GTI01-01
+    - DmSwitch 2104G2 - EDD E1 (SERIES II)
+    - Ponto de Presença
+    - 10.169.225.58/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 2
+    - '2017-04-24 15:48:08.606675'
+    - '2017-04-24 15:48:08.606675'
+  - - 20
+    - DRTD-GTI02-01
+    - DM4001 L Series - ETH24GX L Series
+    - Ponto de Presença
+    - 10.79.108.254/32
+    - 13.8.4
+    - Operação
+    - ''
+    - ''
+    - 3
+    - '2017-04-24 15:51:14.519148'
+    - '2017-04-24 15:51:14.519148'
+  - - 21
+    - DSWA-GTI02-01
+    - DM4001 L Series - ETH24GX L Series
+    - Ponto de Presença
+    - 10.66.100.98/32
+    - 13.8.4
+    - Operação
+    - ''
+    - ''
+    - 3
+    - '2017-04-24 15:52:00.434720'
+    - '2017-04-24 15:52:00.434720'
+  - - 22
+    - RTED-GTI02-01
+    - ASR-9010
+    - Ponto de Presença
+    - 177.14.0.102/32
+    - ''
+    - Operação
+    - ''
+    - ''
+    - 3
+    - '2017-04-24 15:52:42.737408'
+    - '2017-04-24 15:52:42.737408'
+
+---
+estacoes:
+  columns:
+  - id
+  - pop
+  - nome
+  - endereco
+  - cidade
+  - uf
+  - tipo
+  - cedente
+  - latitude
+  - longitude
+  - created_at
+  - updated_at
+  - status
+  records:
+  - - 1
+    - RSPAE0PM001
+    - Tecnopuc - Lab Telebras
+    - Av. Ipiranga, 6681 prédio 99A sl 311 Tecnopuc
+    - Porto Alegre
+    - RS
+    - Pop do Cliente
+    - Telebras
+    - -30.0597222222
+    - -51.17167
+    - '2017-04-19 11:36:00.135609'
+    - '2017-04-20 17:14:50.087972'
+    - Operação
+  - - 2
+    - RSGTI0PP001
+    - Gravataí - Conteiner
+    - ''
+    - Gravataí
+    - RS
+    - TELEBRAS
+    - Eletrosul
+    - -29.944166666667
+    - -51.061388888889
+    - '2017-04-24 14:10:45.195010'
+    - '2017-04-24 14:10:45.195010'
+    - Operação
+  - - 3
+    - RSGTI0PP002
+    - Gravataí - Sala Eletrosul
+    - ''
+    - Gravataí
+    - RS
+    - TELEBRAS
+    - Telebras
+    - -29.881666666667
+    - -51.0613888889
+    - '2017-04-24 14:12:43.697013'
+    - '2017-04-24 14:12:43.697013'
+    - Operação
+  - - 4
+    - RSGTI0CM002
+    - CM - Gravataí (Digitel)
+    - ''
+    - Gravataí
+    - RS
+    - Centro de Manutenção
+    - Digitel
+    - -29.9441666667
+    - -51.012777777778
+    - '2017-04-24 14:14:48.615913'
+    - '2017-04-24 14:14:48.615913'
+    - Operação
+  - - 5
+    - SCFNS0PP001
+    - Eletrosul Sede (Florianópolis)
+    - ''
+    - Florianópolis
+    - SC
+    - TELEBRAS
+    - Eletrosul
+    - -27.606666666667
+    - -48.521388888889
+    - '2017-04-24 14:17:07.704554'
+    - '2017-04-24 14:17:07.704554'
+    - Operação
+
+---
+localidades:
+  columns:
+  - id
+  - sigla_cnl
+  - cod_cnl
+  - localidade
+  - municipio
+  - latitude
+  - longitude
+  - created_at
+  - updated_at
+  - uf_id
+  records:
+  - - 1
+    - ACEG
+    - '51001'
+    - Aceguá
+    - Aceguá
+    - -31.8702997222
+    - 54.1616797222
+    - '2017-04-04 17:49:05.573637'
+    - '2017-04-27 13:37:57.952092'
+    - 2
+  - - 2
+    - AHS
+    - '51469'
+    - Água Santa
+    - Água Santa
+    - -28.1769497222
+    - 52.03474
+    - '2017-04-04 17:49:05.591065'
+    - '2017-04-27 13:47:47.997454'
+    - 2
+  - - 3
+    - AUD
+    - '51002'
+    - Agudo
+    - Agudo
+    - -29.64447
+    - 53.2514
+    - '2017-04-04 17:49:05.602689'
+    - '2017-04-27 13:48:00.422555'
+    - 2
+  - - 4
+    - AJR
+    - '51003'
+    - Ajuricaba
+    - Ajuricaba
+    - -28.23862
+    - 53.76613
+    - '2017-04-04 17:49:05.615394'
+    - '2017-04-27 13:48:20.704915'
+    - 2
+  - - 5
+    - AEM
+    - '51004'
+    - Alecrim
+    - Alecrim
+    - -27.65779
+    - 54.76473
+    - '2017-04-04 17:49:05.629215'
+    - '2017-04-27 13:48:36.052613'
+    - 2
+  - - 6
+    - PAE
+    - '51000'
+    - Porto Alegre
+    - Porto Alegre
+    - -30.03278
+    - 51.2297497222
+    - '2017-04-04 18:36:20.681605'
+    - '2017-04-27 13:48:50.326339'
+    - 2
+  - - 7
+    - GTI
+    - '51130'
+    - Gravataí
+    - Gravataí
+    - -29.93696
+    - 51.03169
+    - '2017-04-04 18:36:20.701666'
+    - '2017-04-27 13:49:04.338378'
+    - 2
+  - - 8
+    - SMA
+    - '51275'
+    - Santa Maria
+    - Santa Maria
+    - -29.68668
+    - 53.81474
+    - '2017-04-04 18:36:20.713577'
+    - '2017-04-27 13:49:17.587196'
+    - 2
+  - - 9
+    - SQV
+    - '51276'
+    - Santa Maria do Herval
+    - Santa Maria do Herval
+    - -29.49002
+    - 50.99169
+    - '2017-04-04 18:36:20.725895'
+    - '2017-04-27 13:49:29.480709'
+    - 2
+  - - 10
+    - PLT
+    - '51202'
+    - Pelotas
+    - Pelotas
+    - -31.76474
+    - 52.3369597222
+    - '2017-04-04 18:36:20.737807'
+    - '2017-04-27 13:49:43.160313'
+    - 2
+  - - 11
+    - NVSR
+    - '51908'
+    - Nova Santa Rita
+    - Nova Santa Rita
+    - -29.8522497222
+    - 51.28362
+    - '2017-04-04 18:36:20.749772'
+    - '2017-04-27 13:49:53.570299'
+    - 2
+
+---
+regionais:
+  columns:
+  - id
+  - cod_regional
+  - nome
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - '4770'
+    - ESCRITÓRIO REGIONAL PORTO ALEGRE
+    - '2017-03-21 15:39:19.481063'
+    - '2017-03-21 15:39:19.481063'
+  - - 2
+    - '4760'
+    - ESCRITÓRIO REGIONAL RIO DE JANEIRO
+    - '2017-03-21 15:43:03.605026'
+    - '2017-03-21 15:43:03.605026'
+  - - 3
+    - '4710'
+    - ESCRITÓRIO REGIONAL FORTALEZA
+    - '2017-03-21 15:44:04.648704'
+    - '2017-03-21 15:44:04.648704'
+  - - 4
+    - '4740'
+    - ESCRITÓRIO REGIONAL BELÉM
+    - '2017-03-21 15:45:30.753227'
+    - '2017-03-21 15:45:30.753227'
+  - - 5
+    - '4750'
+    - ESCRITÓRIO REGIONAL SÃO PAULO
+    - '2017-03-21 15:46:28.411990'
+    - '2017-03-21 15:46:28.411990'
+  - - 6
+    - '4600'
+    - GERÊNCIA DE OPERAÇÕES COMERCIAIS
+    - '2017-03-21 15:48:02.827679'
+    - '2017-03-21 15:48:02.827679'
+  - - 7
+    - '4400'
+    - GERÊNCIA DE VENDAS
+    - '2017-03-21 15:50:55.965942'
+    - '2017-03-21 15:50:55.965942'
+  - - 8
+    - '3300'
+    - GERÊNCIA DE ENGENHARIA DE CLIENTES
+    - '2017-03-21 15:51:48.655961'
+    - '2017-03-21 15:51:48.655961'
+
+---
+respostas:
+  columns:
+  - id
+  - tipo
+  - estrutura
+  - descricao
+  - prazo
+  - capex
+  - opex_instalacao
+  - opex_mensal
+  - resultado_vt
+  - created_at
+  - updated_at
+  - solicitacao_id
+  records:
+  - - 2
+    - acesso_a
+    - CPE
+    - Não solicitado
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 12:36:21.982301'
+    - '2017-06-19 12:36:21.982301'
+    - 1
+  - - 3
+    - acesso_a
+    - EDD
+    - Não solicitado
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 12:37:40.372116'
+    - '2017-06-19 12:37:40.372116'
+    - 1
+  - - 4
+    - acesso_a
+    - Rede A
+    - Cliente já busca o sinal no POP Farroupilha (RSFRL0TR001). Existe caixa de emenda.
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 12:38:28.172441'
+    - '2017-06-19 12:38:28.172441'
+    - 1
+  - - 5
+    - acesso_a
+    - Rede B
+    - N/A
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 12:38:53.497264'
+    - '2017-06-19 12:38:53.497264'
+    - 1
+  - - 6
+    - acesso_a
+    - Transmissao EA
+    - Fibra Óptica do cliente
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 12:39:26.173637'
+    - '2017-06-19 12:39:26.173637'
+    - 1
+  - - 7
+    - acesso_a
+    - IP A
+    - 'Switch SWL2-FRL001-01 com interface de 1 Gbps disponível para o upgrade de
+      100 para 150 Mbps. Prazo de provisionamento do circuito: 20 dias. '
+    - 20
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 13:26:11.377607'
+    - '2017-06-19 13:26:11.377607'
+    - 1
+  - - 8
+    - acesso_a
+    - IP B
+    - N/A
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 13:27:25.980759'
+    - '2017-06-19 13:27:25.980759'
+    - 1
+  - - 9
+    - acesso_a
+    - Transmissao
+    - 'Existe capacidade entre o POP Farroupilha e o POP Gravataí. '
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:11:35.376560'
+    - '2017-06-19 14:11:35.376560'
+    - 1
+  - - 10
+    - backbone
+    - IP A
+    - 'Switch SWAC-CSL001-01 com interface de 1 Gbps disponível para o upgrade de
+      100 para 150 Mbps. Prazo de provisionamento do circuito: 20 dias. '
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:12:18.176740'
+    - '2017-06-19 14:12:18.176740'
+    - 1
+  - - 11
+    - backbone
+    - Transmissao
+    - 'Existe capacidade entre o POP Caxias do Sul e o POP Gravataí. '
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:12:40.573215'
+    - '2017-06-19 14:12:40.573215'
+    - 1
+  - - 12
+    - backbone
+    - IP B
+    - N/A
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:13:47.774634'
+    - '2017-06-19 14:13:47.774634'
+    - 1
+  - - 13
+    - interconexao
+    - Banda Internet
+    - Não é necessária a ampliação do trânsito Internet da Telebras.
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:14:09.379494'
+    - '2017-06-19 14:14:09.379494'
+    - 1
+  - - 14
+    - acesso_a
+    - infra
+    - POP Criciúma (SCCUA0TR001)) em operação
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:14:31.143685'
+    - '2017-06-19 14:14:31.143685'
+    - 2
+  - - 15
+    - acesso_a
+    - CPE
+    - Não solicitado
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:19:00.773230'
+    - '2017-06-19 14:19:00.773230'
+    - 2
+  - - 16
+    - acesso_a
+    - EDD
+    - Não solicitado
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:19:16.576876'
+    - '2017-06-19 14:19:16.576876'
+    - 2
+  - - 17
+    - acesso_a
+    - Rede A
+    - 'Cliente buscará o sinal no POP da Telebrás. Necessário que o cliente apresente
+      projeto de abordagem em fibra óptica ao POP para análise e aprovação da Engenharia
+      da Telebras. '
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:19:31.777294'
+    - '2017-06-19 14:19:31.777294'
+    - 2
+  - - 18
+    - acesso_a
+    - Rede B
+    - N/A
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:19:47.574775'
+    - '2017-06-19 14:19:47.574775'
+    - 2
+  - - 19
+    - acesso_a
+    - Transmissao EA
+    - Fibra Óptica do cliente
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:20:03.155312'
+    - '2017-06-19 14:20:03.155312'
+    - 2
+  - - 20
+    - acesso_a
+    - IP A
+    - 'Switch SMAC-FNS01-01 noPOP Criciúma (SCCUA0TR001) com porta de 1G disponível
+      porem necessita de equipagem de módulo de longa distância para o atendimento
+      de 1000 Mbps. '
+    - 20
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:20:26.580709'
+    - '2017-06-19 14:20:26.580709'
+    - 2
+  - - 21
+    - acesso_a
+    - IP B
+    - N/A (P2P PTT São Paulo)
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:21:15.778995'
+    - '2017-06-19 14:21:15.778995'
+    - 2
+  - - 22
+    - acesso_a
+    - Transmissao
+    - Existe capacidade entre os POPs Criciúma e Curitiba.
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:21:38.589423'
+    - '2017-06-19 14:21:38.589423'
+    - 2
+  - - 23
+    - backbone
+    - IP A
+    - 'Switch SMAC-FNS01-01 noPOP Criciúma (SCCUA0TR001) com porta de 1G disponível
+      porem necessita de equipagem de módulo de longa distância para o atendimento
+      de 1000 Mbps. '
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:21:55.375490'
+    - '2017-06-19 14:21:55.375490'
+    - 2
+  - - 24
+    - backbone
+    - Transmissao
+    - Existe capacidade entre os POPs Criciúma e Curitiba.
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:22:07.973825'
+    - '2017-06-19 14:22:07.973825'
+    - 2
+  - - 25
+    - backbone
+    - IP B
+    - N/A (P2P PTT São Paulo)
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:22:25.174343'
+    - '2017-06-19 14:22:25.174343'
+    - 2
+  - - 26
+    - interconexao
+    - Banda Internet
+    - Não é necessária a ampliação do trânsito Internet da Telebras.
+    - 0
+    - 0
+    - 0
+    - 0
+    - Viável
+    - '2017-06-19 14:23:08.578275'
+    - '2017-06-19 14:23:08.578275'
+    - 2
+
+---
+servicos:
+  columns:
+  - id
+  - nome
+  - created_at
+  - updated_at
+  - codigo
+  records:
+  - - 1
+    - IP TELEBRAS(PNBL)
+    - '2017-03-22 17:06:15.953135'
+    - '2017-03-22 17:12:53.091095'
+    - IP-PNBL
+  - - 2
+    - IP TELEBRAS
+    - '2017-03-22 17:15:15.609753'
+    - '2017-03-22 17:15:15.609753'
+    - IP-TELEBRAS
+  - - 3
+    - Ponto-a-Ponto TELEBRAS
+    - '2017-03-22 17:15:59.529914'
+    - '2017-03-22 17:15:59.529914'
+    - P2P
+  - - 4
+    - REDE MPLS TELEBRAS
+    - '2017-03-22 17:16:35.891100'
+    - '2017-03-22 17:16:35.891100'
+    - L3VPN
+  - - 5
+    - P2 PTT
+    - '2017-03-22 17:17:10.521809'
+    - '2017-03-22 17:17:10.521809'
+    - P2-PTT
+  - - 6
+    - DWDM
+    - '2017-03-22 17:17:36.796115'
+    - '2017-03-22 17:17:36.796115'
+    - L2L
+  - - 7
+    - INTERRUPÇÃO DE SERVIÇO
+    - '2017-03-22 17:18:18.962156'
+    - '2017-03-22 17:18:18.962156'
+    - INTERRUPÇÃO-P2P
+
+---
+solicitacoes:
+  columns:
+  - id
+  - numero_vt
+  - data_solicitacao
+  - solicitante
+  - analista
+  - servico
+  - banda
+  - endereco_a
+  - localidade_a
+  - uf_a
+  - endereco_b
+  - localidade_b
+  - uf_b
+  - resultado_vt
+  - created_at
+  - updated_at
+  - empresa_id
+  records:
+  - - 1
+    - '201705310001'
+    - '2017-05-01'
+    - Fernando de Vasconcellos
+    - José Júlio Guimarâes
+    - IP TELEBRAS
+    - 1000
+    - rua Teste 01 - ed Lisboa 44
+    - Santa Maria
+    - RS
+    - Rua teste2, 44 ed. Prado
+    - Gravataí
+    - RS
+    - Em Analise
+    - '2017-05-10 12:16:33.206852'
+    - '2017-05-31 18:08:17.401781'
+    - 1
+  - - 2
+    - '201705310002'
+    - '2017-05-03'
+    - Vagner Schmitt
+    - Wagner Rose
+    - P2 PTT
+    - 1000
+    - Rua Teste 3, 44 - centro
+    - Porto Alegre
+    - RS
+    - Rua da Independência, 45
+    - Gravataí
+    - RS
+    - Em Analise
+    - '2017-05-10 12:28:18.488787'
+    - '2017-05-31 18:39:15.696317'
+    - 2
+
+---
+uf:
+  columns:
+  - id
+  - nome
+  - sigla
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Santa Catarina
+    - SC
+    - '2017-03-22 13:07:00.427879'
+    - '2017-03-22 13:07:00.427879'
+  - - 2
+    - Rio Grande do Sul
+    - RS
+    - '2017-03-22 13:07:28.258107'
+    - '2017-03-22 13:07:28.258107'
+  - - 3
+    - Paraná
+    - PR
+    - '2017-03-22 13:07:48.037156'
+    - '2017-03-22 13:07:48.037156'
+  - - 4
+    - Mato Grosso do Sul
+    - MS
+    - '2017-03-22 13:08:12.468099'
+    - '2017-03-22 13:08:12.468099'
+  - - 5
+    - Distrito Federal
+    - DF
+    - '2017-03-22 13:08:31.921736'
+    - '2017-03-22 13:08:31.921736'
+  - - 6
+    - São Paulo
+    - SP
+    - '2017-03-22 13:08:56.491146'
+    - '2017-03-22 13:08:56.491146'
+  - - 7
+    - Rio de Janeiro
+    - RJ
+    - '2017-03-22 13:09:17.165645'
+    - '2017-03-22 13:09:17.165645'
+  - - 8
+    - Espirito Santo
+    - ES
+    - '2017-03-22 13:09:55.876626'
+    - '2017-03-22 13:09:55.876626'
+  - - 9
+    - Goias
+    - GO
+    - '2017-03-22 13:10:15.008692'
+    - '2017-03-22 13:10:15.008692'
+  - - 10
+    - Tocantins
+    - TO
+    - '2017-03-22 13:10:40.466407'
+    - '2017-03-22 13:10:40.466407'
+  - - 11
+    - Maranhão
+    - MA
+    - '2017-03-22 13:11:02.927399'
+    - '2017-03-22 13:11:02.927399'
+  - - 12
+    - Acre
+    - AC
+    - '2017-03-31 14:12:50.125000'
+    - '2017-03-31 14:12:50.125000'
+  - - 13
+    - Alagoas
+    - AL
+    - '2017-03-31 14:13:31.775101'
+    - '2017-03-31 14:13:31.775101'
+  - - 14
+    - Amapá
+    - AP
+    - '2017-03-31 14:17:07.706771'
+    - '2017-03-31 14:17:07.706771'
+  - - 15
+    - Amazonas
+    - AM
+    - '2017-03-31 14:17:50.193537'
+    - '2017-03-31 14:17:50.193537'
+  - - 16
+    - Bahia
+    - BA
+    - '2017-03-31 14:18:12.026849'
+    - '2017-03-31 14:18:12.026849'
+  - - 17
+    - Ceará
+    - CE
+    - '2017-03-31 14:18:46.193953'
+    - '2017-03-31 14:18:46.193953'
+  - - 18
+    - Mato Grosso
+    - MT
+    - '2017-03-31 14:19:43.773357'
+    - '2017-03-31 14:19:43.773357'
+  - - 19
+    - Minas Gerais
+    - MG
+    - '2017-03-31 14:20:17.908025'
+    - '2017-03-31 14:20:17.908025'
+  - - 20
+    - Pará
+    - PA
+    - '2017-03-31 14:20:41.585365'
+    - '2017-03-31 14:20:41.585365'
+  - - 21
+    - Paraíba
+    - PB
+    - '2017-03-31 14:21:13.863779'
+    - '2017-03-31 14:21:13.863779'
+  - - 22
+    - Pernambuco
+    - PB
+    - '2017-03-31 14:21:52.892113'
+    - '2017-03-31 14:21:52.892113'
+  - - 23
+    - Piauí
+    - PI
+    - '2017-03-31 14:22:31.772802'
+    - '2017-03-31 14:22:31.772802'
+  - - 24
+    - Rio Grande do Norte
+    - RN
+    - '2017-03-31 14:23:18.900621'
+    - '2017-03-31 14:23:18.900621'
+  - - 25
+    - Rondônia
+    - RO
+    - '2017-03-31 14:23:46.252624'
+    - '2017-03-31 14:23:46.252624'
+  - - 26
+    - Roraima
+    - RR
+    - '2017-03-31 14:24:14.257052'
+    - '2017-03-31 14:24:14.257052'
+  - - 27
+    - Sergipe
+    - SE
+    - '2017-03-31 14:24:47.430600'
+    - '2017-03-31 14:24:47.430600'
+
+---
+usuarios:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - nome
+  - regra
+  records:
+  - - 1
+    - wagner_rose@telebras.com.br
+    - "$2a$11$2r0KjuNyXTGUNZaEhF7VBuQJELKF.KqnxOaVwFUx6zeQiU5xK52u."
+    -
+    -
+    -
+    - 0
+    -
+    -
+    -
+    -
+    - '2017-08-14 19:11:58.329778'
+    - '2017-09-21 12:58:23.533553'
+    - Wagner Röse
+    - 0
+  - - 3
+    - jose.fernandes@telebras.com.br
+    - "$2a$11$K0Xoebq09VEBHOcOqUSA9emXiudU85sIxts83ruazzc3dP5DFX7oi"
+    -
+    -
+    -
+    - 1
+    - '2017-08-22 14:22:09.396581'
+    - '2017-08-22 14:22:09.396581'
+    - 10.0.105.112
+    - 10.0.105.112
+    - '2017-08-22 14:22:09.361128'
+    - '2017-09-21 12:45:32.107350'
+    - José Júlio Guimarâes
+    - 0
+  - - 4
+    - wagner@yahoo.com.br
+    - "$2a$11$TfZqLWOVfrx2ikFL8U/KlOaXD8c8AwO.RhGq05zYkCIJkZPtO8tL."
+    -
+    -
+    -
+    - 2
+    - '2017-09-21 16:59:39.819208'
+    - '2017-09-21 13:16:57.503841'
+    - 10.0.105.149
+    - 10.0.105.149
+    - '2017-09-21 12:57:29.659601'
+    - '2017-09-21 16:59:39.821987'
+    - Wagner Röse
+    - 0
