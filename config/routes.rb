@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'webmin', to: 'backoffice/dashboard#index'
   get 'dashboard',to: 'dashboard#index'

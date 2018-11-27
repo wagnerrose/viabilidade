@@ -1,5 +1,6 @@
 class Equipamento < ApplicationRecord
   belongs_to :estacao
+  has_many :circuitodados
 
   enum statusEquipamento: [:NI, :IMPLANTAÇÃO, :OPERAÇÃO, :TI]
 

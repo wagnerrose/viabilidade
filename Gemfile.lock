@@ -56,7 +56,7 @@ GEM
     bootstrap_sb_admin_base_v2 (0.3.6)
       font-awesome-rails
       jquery-rails
-    bower-rails (0.10.0)
+    bower-rails (0.11.0)
     builder (3.2.3)
     byebug (10.0.2)
     choice (0.2.0)
@@ -65,9 +65,9 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.11)
     coderay (1.1.2)
-    coffee-rails (4.2.1)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -89,23 +89,39 @@ GEM
     ffi (1.9.25)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     glyphicons-rails (0.1.2)
       sass (~> 3.3)
       sass-rails
+    haml (5.0.4)
+      temple (>= 0.8.0)
+      tilt
     hirb (0.7.3)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jquery-rails (4.1.1)
+    jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
+    jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     libv8 (3.16.14.19)
     loofah (2.2.2)
       crass (~> 1.0.2)
@@ -122,6 +138,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.5.1)
+    nested_form (0.3.2)
     nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -132,6 +149,9 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    passenger (5.3.5)
+      rack
+      rake (>= 0.8.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -139,6 +159,9 @@ GEM
       pry (>= 0.10.4)
     puma (3.11.4)
     rack (2.0.5)
+    rack-pjax (1.0.0)
+      nokogiri (~> 1.5)
+      rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.7)
@@ -170,6 +193,19 @@ GEM
       ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails_admin (1.3.0)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (>= 4.0, < 6)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (>= 0.14, < 2.0)
+      nested_form (~> 0.3)
+      rack-pjax (>= 0.7)
+      rails (>= 4.0, < 6)
+      remotipart (~> 1.3)
+      sass-rails (>= 4.0, < 6)
     railties (5.0.7)
       actionpack (= 5.0.7)
       activesupport (= 5.0.7)
@@ -181,6 +217,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
+    remotipart (1.4.2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -240,20 +277,22 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (= 3.3.6)
   bootstrap_sb_admin_base_v2
-  bower-rails (~> 0.10.0)
+  bower-rails (~> 0.11.0)
   bundler (>= 1.8.4)
   byebug
   cocoon
-  coffee-rails (= 4.2.1)
+  coffee-rails (~> 4.2)
   devise
   faker
+  geocoder
   glyphicons-rails
   hirb
   jbuilder (= 2.4.1)
-  jquery-rails (= 4.1.1)
+  jquery-rails
   jquery-ui-rails
   mysql2
   paperclip (~> 5.0.0)
+  passenger
   pry-rails
   puma
   rails
@@ -262,6 +301,7 @@ DEPENDENCIES
   rails-assets-bootstrap!
   rails-assets-notifyjs!
   rails-erd
+  rails_admin (~> 1.3)
   sass-rails (>= 5.0.6)
   simple_form
   slim

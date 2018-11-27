@@ -55,8 +55,8 @@ Rails.application.config.assets.precompile += %w( backoffice.js
                                                   backoffice.scss)
 Rails.application.config.assets.precompile += %w( site/site.js
                                                   site/site.coffee
-                                                  site/site.css)
+                                                  site/site.scss)
 Rails.application.config.assets.precompile += %w( scaffolds.scss)
 Rails.application.config.assets.precompile += %w( site/home.scss)
-
+Rails.application.config.assets.precompile += %w( rails_admin/custom/ui.js)
 

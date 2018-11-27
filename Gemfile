@@ -9,7 +9,22 @@ gem 'bundler', '>=1.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
-gem 'bower-rails', '~>0.10.0'
+
+gem 'passenger'
+
+gem 'bower-rails', '~>0.11.0'
+
+source 'https://rails-assets.org' do
+  # The most popular front-end framework for developing responsive, mobile first projects on the web.
+  gem 'rails-assets-bootstrap'
+  #A simple, versatile notification library
+  gem 'rails-assets-notifyjs'
+  # datatables
+  gem 'rails-assets-DataTables'
+  # will_paginate is a pagination library that integrates with Ruby on Rails,
+  # bootboxJS
+  gem 'rails-assets-bootbox'
+end
 
 # Hirb provides a mini view framework for console applications
 # gem and uses it to improve ripl(irb)'s default inspect output.
@@ -18,8 +33,8 @@ gem 'hirb'
 gem 'puma'
 gem 'sass-rails', '>= 5.0.6'
 gem 'uglifier', '3.0.0'
-gem 'coffee-rails', '4.2.1'
-gem 'jquery-rails', '4.1.1'
+gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Rails gem of the Bootstrap based admin theme SB Admin 2
@@ -42,17 +57,7 @@ gem 'slim'
 # Sinatra, Merb, DataMapper and Sequel.
 gem 'will_paginate'
 
-source 'https://rails-assets.org' do
-  # The most popular front-end framework for developing responsive, mobile first projects on the web.
-  gem 'rails-assets-bootstrap'
-  #A simple, versatile notification library
-  gem 'rails-assets-notifyjs'
-  # datatables
-  gem 'rails-assets-DataTables'
-  # will_paginate is a pagination library that integrates with Ruby on Rails,
-  # bootboxJS
-  gem 'rails-assets-bootbox'
-end
+
 # datatables-i18n
 #gem 'rails-assets-datatables-i18n', source: 'https://rails-assets.org'
 
@@ -61,6 +66,14 @@ gem 'devise'
 
 #Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem "paperclip", "~> 5.0.0"
+
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 1.3'
+
+# Provides object geocoding (by street or IP address), reverse geocoding
+# (coordinates to street address), distance queries for ActiveRecord and Mongoid
+gem 'geocoder'
+
 
 #gem 'yaml_db'
 
