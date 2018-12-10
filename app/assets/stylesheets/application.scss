@@ -11,12 +11,20 @@
  * It is generally better to create a new file per style scope.
  *
  *= require jquery-ui
- *= require DataTables
+*= require bootstrap/dist/css/bootstrap
+*= require datatables.net-dt/css/jquery.dataTables
+*= require font-awesome
+*= require_tree .
  *= require_self
- *= require scaffolds
- *= require bootstrap
- *= require bootstrap_sb_admin_base_v2
- *= require font-awesome
- *= require sb-admin-2
- *= require admin2-sidebar-toggle
  */
+
+.centro {
+  margin: auto;
+  text-align: center;
+}
+
+// desabilita botões
+.disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}

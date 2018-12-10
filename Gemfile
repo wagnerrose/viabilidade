@@ -10,59 +10,46 @@ gem 'bundler', '>=1.8.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 
-gem 'passenger'
+# Sinatra, Merb, DataMapper and Sequel.
+gem 'will_paginate'
 
 gem 'bower-rails', '~>0.11.0'
 
-source 'https://rails-assets.org' do
-  # The most popular front-end framework for developing responsive, mobile first projects on the web.
-  gem 'rails-assets-bootstrap'
-  #A simple, versatile notification library
-  gem 'rails-assets-notifyjs'
-  # datatables
-  gem 'rails-assets-DataTables'
-  # will_paginate is a pagination library that integrates with Ruby on Rails,
-  # bootboxJS
-  gem 'rails-assets-bootbox'
-end
+gem 'puma', '~> 3.11'
 
-# Hirb provides a mini view framework for console applications
-# gem and uses it to improve ripl(irb)'s default inspect output.
-gem 'hirb'
-
-gem 'puma'
+# Ruby on Rails stylesheet engine for Sass
 gem 'sass-rails', '>= 5.0.6'
+
+# Ruby wrapper for UglifyJS JavaScript compressor
 gem 'uglifier', '3.0.0'
+
+# gem CoffeeScript adapter for the Rails asset pipeline. Also adds support for .coffee views.
 gem 'coffee-rails', '~> 4.2'
+
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5.2.0'
+
+# A gem to automate using jQuery with Rails
 gem 'jquery-rails'
+
+# jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 
-# Rails gem of the Bootstrap based admin theme SB Admin 2
-gem 'bootstrap_sb_admin_base_v2'
+gem 'jbuilder', '~> 2.5'
 
-gem 'jbuilder', '2.4.1'
 gem "therubyracer"
-gem 'bootstrap-sass', '3.3.6'
-gem 'glyphicons-rails'
 
-# Simple Form aims to be as flexible as possible while helping you with
-# powerful components to create your form
-gem 'simple_form'
+# GLYPHICONS Halflings, extracted from Twitter Bootstrap and customized for use with Sass
+gem 'glyphicons-rails'
 
 # Dynamic nested forms using jQuery made easy
 gem 'cocoon'
 
-# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic
-gem 'slim'
-# Sinatra, Merb, DataMapper and Sequel.
-gem 'will_paginate'
-
-
 # datatables-i18n
-#gem 'rails-assets-datatables-i18n', source: 'https://rails-assets.org'
+gem 'rails-i18n'
 
 # Devise is a flexible authentication solution for Rails based on Warden
-gem 'devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise'
 
 #Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem "paperclip", "~> 5.0.0"
@@ -70,10 +57,19 @@ gem "paperclip", "~> 5.0.0"
 # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
 gem 'rails_admin', '~> 1.3'
 
+# The Administration framework for Ruby on Rails
+# gem 'activeadmin'
+
 # Provides object geocoding (by street or IP address), reverse geocoding
 # (coordinates to street address), distance queries for ActiveRecord and Mongoid
-gem 'geocoder'
+# gem 'geocoder'
 
+gem 'passenger'
+# Use Webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
+# Gem para calculo de distancias
+gem 'loc'
 
 #gem 'yaml_db'
 

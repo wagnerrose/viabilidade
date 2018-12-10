@@ -9,11 +9,12 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 //= require jquery
-//= require jquery_ujs
 //= require jquery-ui
-//= require DataTables
-//= require bootstrap_sb_admin_base_v2
+//= require datatables.net-dt/js/dataTables.dataTables
+//= require bootstrap/dist/js/bootstrap
+//= require bootbox/bootbox
 // require jquery.turbolinks
 // require turbolinks
-//= require cocoon
 //= require notifyjs/dist/notify
+//= require_tree .
+

@@ -15,5 +15,11 @@ module Viabilidade
     config.i18n.default_locale = "pt-BR"
     config.encoding = "utf-8"
     config.assets.paths << Rails.root.join("app","assets","fonts")
+
+    unless Rails.env.production?
+        ## liberando rede
+        config.web_console.whitelisted_ips = ['127.0.0.1','10.0.0.0/16']
+    end
+
   end
 end

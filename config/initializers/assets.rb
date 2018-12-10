@@ -56,7 +56,7 @@ Rails.application.config.assets.precompile += %w( backoffice.js
 Rails.application.config.assets.precompile += %w( site/site.js
                                                   site/site.coffee
                                                   site/site.scss)
-Rails.application.config.assets.precompile += %w( scaffolds.scss)
 Rails.application.config.assets.precompile += %w( site/home.scss)
 Rails.application.config.assets.precompile += %w( rails_admin/custom/ui.js)
-
+# configuracao para utilizar ger pacotes Yarn
+Rails.application.config.assets.paths << Rails.root.join('node_modules')
