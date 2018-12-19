@@ -1,1 +1,0 @@
-json.partial! "justificativas/justificativa", justificativa: @justificativa

@@ -1,0 +1,16 @@
+
+@import "import/_variables.scss";
+@import "import/_mixins.scss";
+@import "import/_portfolio.scss";
+
+@import "navbar/navbar_global.scss";
+@import "navbar/navbar_fixed.scss";
+@import "navbar/navbar_static.scss";
+@import "navbar/navbar_toggle.scss";
+@import "navbar/navbar_colors.scss";
+
+
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}

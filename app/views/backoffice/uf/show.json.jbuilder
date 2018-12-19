@@ -1,1 +1,0 @@
-json.partial! "uf/uf", uf: @uf

@@ -1,1 +1,0 @@
-json.array! @regionais, partial: 'regionais/regional', as: :regional

@@ -1,32 +1,8 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'backoffice', to: 'backoffice/dashboard#index'
-  get 'webmin', to: 'backoffice/dashboard#index'
-  get 'dashboard',to: 'dashboard#index'
 
-
-  scope module: :backoffice do
-    resources :analistas
-    resources :contatos
-    resources :enderecos
-    resources :empresas
-    resources :equipamentos
-    resources :estacoes
-    resources :justificativas
-    resources :localidades
-    resources :produtos
-    resources :respostas
-    resources :regionais
-    resources :servicos
-    resources :telefones
-    resources :uf
-    resources :circuitos
-    resources :admin, except: [:show]
-    resources :usuarios, except: [:show]
-  end
-
-  scope module: :site do
+  namespace :site do
     get 'home', to: 'home#index'
 
     # devise_for :usuarios, skip: [:sessions, :registrations]
@@ -43,3 +19,4 @@ Rails.application.routes.draw do
   root 'site/home#index'
   resources :solicitacoes
 end
+

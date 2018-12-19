@@ -1,1 +1,12 @@
 @import 'layout';
+
+.centro {
+  margin: auto;
+  text-align: center;
+}
+
+// desabilita botões
+.disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
